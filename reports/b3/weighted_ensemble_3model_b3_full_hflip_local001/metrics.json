@@ -1,0 +1,20 @@
+{
+  "names": [
+    "food_lewm_b0",
+    "b0_seed123_fixed_v1",
+    "b3_full_fixed_v1"
+  ],
+  "search": "local 0.001 around step0.01 best; w0 0.090-0.150, w1 0.250-0.330",
+  "best_weights": {
+    "food_lewm_b0": 0.121,
+    "b0_seed123_fixed_v1": 0.284,
+    "b3_full_fixed_v1": 0.595
+  },
+  "full_metrics": {
+    "top1": 0.9197916388511658,
+    "top3": 0.9797618985176086,
+    "macro_f1": 0.9195527613345247
+  },
+  "num_samples": 6720,
+  "correct": 6181
+}

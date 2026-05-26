@@ -1,0 +1,16 @@
+{
+  "data_dir": "data/raw/korean_food_fixed_v1",
+  "patch": "data/processed/kfood_label_patch_v1.csv",
+  "exclude": "data/processed/kfood_exclude_list_v1.csv",
+  "train_subdir": "train",
+  "val_subdir": "val",
+  "patch_rows": 156,
+  "train_affected": 49,
+  "val_affected": 107,
+  "per_action": {
+    "train:relabel": 42,
+    "train:remove": 7,
+    "val:relabel": 84,
+    "val:remove": 23
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "model_name": "efficientnet_b2",
+  "image_size": 260,
+  "num_classes": 56
+}

@@ -1,0 +1,12 @@
+{
+  "selection_split": "validation",
+  "evaluation_split": "test",
+  "selected_strategy": "predicted_range_mean_residual",
+  "reason": "selected on validation using leakage-safe raw prediction range residual correction; test is final evaluation only.",
+  "outputs": {
+    "validation_calibration_strategy_comparison": "validation_calibration_strategy_comparison.csv",
+    "test_calibration_final_evaluation": "test_calibration_final_evaluation.csv",
+    "range_specific_calibration_table": "range_specific_calibration_table.csv",
+    "per_patient_calibration_gain": "per_patient_calibration_gain.csv"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "search": "base scaled + seed7/probe/cont local 0.001 extra grid total<=0.12",
+  "checked": 302621,
+  "best_weights": {
+    "food_lewm_b0": 0.11928,
+    "b0_seed123_fixed_v1": 0.28825999999999996,
+    "b3_full_fixed_v1": 0.58646,
+    "b3_probe_fixed_v1": 0.006
+  },
+  "metrics": {
+    "correct": 6182,
+    "top1": 0.9199404761904761,
+    "top3": 0.979315459728241,
+    "macro_f1": 0.9197103084871083
+  },
+  "num_samples": 6720
+}

@@ -1,0 +1,18 @@
+# Food-LeWM Classifier Report
+
+- epoch: `10`
+- loss: `0.5349767696431705`
+- train_acc: `0.9762112175835957`
+- val_top1: `0.8774343398249062`
+- val_top3: `0.961139896373057`
+- macro_f1: `0.8772876681652454`
+- lr: `0.0`
+- seconds: `2558.33`
+- model_type: `food_lewm_classifier`
+- model_name: `efficientnet_b0`
+- image_size: `224`
+- latent_dim: `192`
+- num_classes: `56`
+- lewm_checkpoint: `None`
+- pretrain: `imagenet_supervised_only`
+- checkpoint: `data/models/food_lewm_b0_supervised_only_ft10.pt`

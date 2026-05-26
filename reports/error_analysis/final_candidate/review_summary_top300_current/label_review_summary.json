@@ -1,0 +1,24 @@
+{
+  "reviewed": "reports/error_analysis/final_candidate/review_sheet_top300.csv",
+  "total_rows": 300,
+  "reviewed_count": 0,
+  "reviewed_ratio": 0.0,
+  "noisy_label_count": 0,
+  "noisy_label_ratio": 0.0,
+  "review_status_counts": {
+    "blank": 300
+  },
+  "action_counts": {
+    "blank": 300
+  },
+  "corrected_label_counts": {
+    "blank": 300
+  },
+  "noisy_statuses": [
+    "wrong_label",
+    "ambiguous",
+    "multi_food",
+    "low_quality",
+    "out_of_scope"
+  ]
+}

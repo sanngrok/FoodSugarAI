@@ -1,0 +1,2 @@
+epoch,loss,prediction_loss,sigreg_loss,lr,seconds
+1,0.4024338498711586,0.2853045128285885,1.1712932884693146,0.0,11.46

@@ -1,0 +1,10 @@
+{
+  "method": "time_based_per_source_patient_year",
+  "validation_fraction": 0.2,
+  "source_split": "train",
+  "test_split_used_for_selection": false,
+  "train_inner_rows": 107827,
+  "validation_rows": 26963,
+  "groups": 12,
+  "time_order_safe": true
+}

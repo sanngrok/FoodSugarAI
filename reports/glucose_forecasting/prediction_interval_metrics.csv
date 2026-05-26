@@ -1,0 +1,4 @@
+horizon_minutes,split,target_coverage,observed_coverage,mean_interval_width,uncertainty_level
+30,test,0.8,0.9191495124593716,64.48667044051167,high
+60,test,0.8,0.9150189599133262,107.1087263452637,high
+90,test,0.8,0.9122426868905742,136.1143694248554,high

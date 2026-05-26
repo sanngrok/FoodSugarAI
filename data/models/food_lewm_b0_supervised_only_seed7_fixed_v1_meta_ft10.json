@@ -1,0 +1,18 @@
+{
+  "epoch": 10,
+  "loss": 0.5295717750663881,
+  "train_acc": 0.9768088865422496,
+  "val_top1": 0.8793154761904762,
+  "val_top3": 0.965922619047619,
+  "macro_f1": 0.8789750580732257,
+  "lr": 0.0,
+  "seconds": 312.14,
+  "model_type": "food_lewm_classifier",
+  "model_name": "efficientnet_b0",
+  "image_size": 224,
+  "latent_dim": 192,
+  "num_classes": 56,
+  "lewm_checkpoint": null,
+  "pretrain": "imagenet_supervised_only",
+  "checkpoint": "data/models/food_lewm_b0_supervised_only_seed7_fixed_v1_ft10.pt"
+}

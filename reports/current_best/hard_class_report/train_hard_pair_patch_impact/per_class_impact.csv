@@ -1,0 +1,15 @@
+split,class_name,action,count
+train,갈비구이,remove,1
+train,감자전,relabel,4
+train,곰탕_설렁탕,relabel,1
+train,김치찌개,relabel,1
+train,김치찜,relabel,1
+train,닭계장,relabel,1
+train,떡볶이,relabel,2
+train,라볶이,relabel,1
+train,보쌈,remove,4
+train,삼겹살,remove,1
+train,약식,remove,1
+train,잡곡밥,remove,2
+train,칼국수,relabel,2
+train,호박전,relabel,1

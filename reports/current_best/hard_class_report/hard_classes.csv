@@ -1,0 +1,20 @@
+class_name,f1,precision,recall,support,high_conf_errors_as_true,high_conf_errors_as_pred,top_confusions,recommended_action
+곰탕_설렁탕,0.801762,0.850467,0.758333,120,16,7,갈비탕(9); 삼계탕(7),review broth-only images; prioritize images with distinctive ingredients
+닭볶음탕,0.824034,0.849558,0.800000,120,14,11,김치찜(4); 찜닭(4),review broth-only images; prioritize images with distinctive ingredients
+삼겹살,0.828194,0.878505,0.783333,120,8,2,갈비구이(4); 보쌈(4),review high-confidence errors and add diverse clean examples
+갈비구이,0.829694,0.871560,0.791667,120,10,6,갈비찜(5); 떡갈비(4); 삼겹살(4),review high-confidence errors and add diverse clean examples
+동태찌개,0.837398,0.817460,0.858333,120,7,11,,review broth-only images; prioritize images with distinctive ingredients
+김치찌개,0.842975,0.836066,0.850000,120,11,12,동태찌개(6),review broth-only images; prioritize images with distinctive ingredients
+수제비,0.863071,0.859504,0.866667,120,8,11,,review high-confidence errors and add diverse clean examples
+닭계장,0.869198,0.880342,0.858333,120,9,5,감자탕(5),review high-confidence errors and add diverse clean examples
+감자전,0.872881,0.887931,0.858333,120,9,12,호박전(12),review ingredient texture and crop quality
+칼국수,0.873950,0.881356,0.866667,120,9,8,수제비(8),review broth-only images; prioritize images with distinctive ingredients
+닭갈비,0.875000,0.875000,0.875000,120,2,9,,review high-confidence errors and add diverse clean examples
+짬뽕,0.877637,0.888889,0.866667,120,7,6,닭계장(4),review high-confidence errors and add diverse clean examples
+갈비찜,0.878661,0.882353,0.875000,120,12,8,닭볶음탕(6),review high-confidence errors and add diverse clean examples
+김치찜,0.878661,0.882353,0.875000,120,10,10,김치찌개(8),review high-confidence errors and add diverse clean examples
+불고기,0.879032,0.851562,0.908333,120,5,7,,review high-confidence errors and add diverse clean examples
+양념치킨,,,,,7,6,후라이드치킨(6),review high-confidence errors and add diverse clean examples
+삼계탕,,,,,5,7,곰탕_설렁탕(4),review broth-only images; prioritize images with distinctive ingredients
+감자탕,,,,,4,6,,review broth-only images; prioritize images with distinctive ingredients
+순두부찌개,,,,,5,10,김치찌개(6),review broth-only images; prioritize images with distinctive ingredients

@@ -1,0 +1,16 @@
+# K-Food Model Evaluation
+
+- name: `b2_clean_fixed_v1_hflip`
+- checkpoint: `data/models/efficientnet_korean_b2_clean_fixed_v1.pt`
+- metadata: `data/models/korean_food_model_meta_b2_clean_fixed_v1.json`
+- classes: `data/models/korean_food_classes_b2_clean_fixed_v1.json`
+- data_dir: `data/raw/korean_food_fixed_v1`
+- model_type: `timm_classifier`
+- model_name: `efficientnet_b2`
+- image_size: `260`
+- tta: `hflip`
+- val_top1: `0.8357142857142857`
+- val_top3: `0.9547619047619048`
+- macro_f1: `0.8353077805141021`
+- num_classes: `56`
+- num_samples: `6720`

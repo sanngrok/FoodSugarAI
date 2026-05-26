@@ -1,0 +1,21 @@
+{
+  "names": [
+    "food_lewm_b0",
+    "b0_seed123_fixed_v1",
+    "b3_full_fixed_v1"
+  ],
+  "search": "global 0.002 grid over 3-model logits weights",
+  "checked": 125751,
+  "best_weights": {
+    "food_lewm_b0": 0.112,
+    "b0_seed123_fixed_v1": 0.29,
+    "b3_full_fixed_v1": 0.5980000000000001
+  },
+  "full_metrics": {
+    "top1": 0.9197916666666667,
+    "top3": 0.979315459728241,
+    "macro_f1": 0.9195626223789966
+  },
+  "num_samples": 6720,
+  "correct": 6181
+}

@@ -1,0 +1,629 @@
+{
+  "generated_at": "2026-05-25T13:51:11.448194+00:00",
+  "status": "pass",
+  "error_count": 0,
+  "warning_count": 11,
+  "artifacts": {
+    "event_thresholds": {
+      "path": "data/processed/glucose_models_enriched/event_thresholds.json",
+      "exists": true,
+      "status": "pass",
+      "top_level_keys": [
+        "selection_split",
+        "evaluation_split",
+        "created_by",
+        "threshold_selection_method",
+        "hypo",
+        "hyper",
+        "thresholds",
+        "hypo_selection",
+        "hyper_selection_note"
+      ]
+    },
+    "validation_split_audit": {
+      "path": "reports/glucose_forecasting/validation_split_audit.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 12,
+      "columns": [
+        "source_file",
+        "patient_id",
+        "year",
+        "raw_rows",
+        "train_inner_rows",
+        "validation_rows",
+        "train_inner_start",
+        "train_inner_end",
+        "validation_start",
+        "validation_end",
+        "time_order_safe"
+      ]
+    },
+    "validation_split_summary": {
+      "path": "reports/glucose_forecasting/validation_split_summary.json",
+      "exists": true,
+      "status": "pass",
+      "top_level_keys": [
+        "method",
+        "validation_fraction",
+        "source_split",
+        "test_split_used_for_selection",
+        "train_inner_rows",
+        "validation_rows",
+        "groups",
+        "time_order_safe"
+      ]
+    },
+    "hypo_threshold_sweep": {
+      "path": "reports/glucose_forecasting/hypo_threshold_sweep.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 21,
+      "columns": [
+        "event_type",
+        "event",
+        "horizon_minutes",
+        "threshold",
+        "split",
+        "samples",
+        "positive_rate",
+        "accuracy",
+        "precision",
+        "recall",
+        "f1",
+        "roc_auc",
+        "pr_auc",
+        "true_positive_count",
+        "true_negative_count",
+        "false_positive_count",
+        "false_negative_count",
+        "positive_count",
+        "negative_count",
+        "positive_predictions",
+        "target_recall",
+        "target_met",
+        "selected"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "hypo_threshold_selection": {
+      "path": "reports/glucose_forecasting/hypo_threshold_selection.json",
+      "exists": true,
+      "status": "pass",
+      "top_level_keys": [
+        "event_type",
+        "selection_split",
+        "evaluation_split",
+        "thresholds_tested",
+        "selection_rule",
+        "horizons"
+      ]
+    },
+    "validation_hypo_threshold_sweep": {
+      "path": "reports/glucose_forecasting/validation_hypo_threshold_sweep.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 21,
+      "columns": [
+        "event_type",
+        "event",
+        "horizon_minutes",
+        "threshold",
+        "split",
+        "samples",
+        "positive_rate",
+        "accuracy",
+        "precision",
+        "recall",
+        "f1",
+        "roc_auc",
+        "pr_auc",
+        "true_positive_count",
+        "true_negative_count",
+        "false_positive_count",
+        "false_negative_count",
+        "positive_count",
+        "negative_count",
+        "positive_predictions",
+        "target_recall",
+        "target_met",
+        "selected"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "validation_hypo_threshold_selection": {
+      "path": "reports/glucose_forecasting/validation_hypo_threshold_selection.json",
+      "exists": true,
+      "status": "pass",
+      "top_level_keys": [
+        "event_type",
+        "selection_split",
+        "evaluation_split",
+        "thresholds_tested",
+        "selection_rule",
+        "horizons"
+      ]
+    },
+    "hypo_classifier_model_comparison": {
+      "path": "reports/glucose_forecasting/hypo_classifier_model_comparison.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 12,
+      "columns": [
+        "event_type",
+        "horizon_minutes",
+        "model_name",
+        "threshold",
+        "samples",
+        "selection_split",
+        "positive_rate",
+        "accuracy",
+        "precision",
+        "recall",
+        "f1",
+        "roc_auc",
+        "pr_auc",
+        "true_positive_count",
+        "true_negative_count",
+        "false_positive_count",
+        "false_negative_count",
+        "positive_count",
+        "negative_count",
+        "positive_predictions",
+        "selected",
+        "selection_reason"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "hypo_classifier_selected_models": {
+      "path": "reports/glucose_forecasting/hypo_classifier_selected_models.json",
+      "exists": true,
+      "status": "pass",
+      "top_level_keys": [
+        "selection_split",
+        "evaluation_split",
+        "selection_method",
+        "selected_models"
+      ]
+    },
+    "validation_hypo_classifier_model_comparison": {
+      "path": "reports/glucose_forecasting/validation_hypo_classifier_model_comparison.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 12,
+      "columns": [
+        "event_type",
+        "horizon_minutes",
+        "model_name",
+        "threshold",
+        "samples",
+        "selection_split",
+        "positive_rate",
+        "accuracy",
+        "precision",
+        "recall",
+        "f1",
+        "roc_auc",
+        "pr_auc",
+        "true_positive_count",
+        "true_negative_count",
+        "false_positive_count",
+        "false_negative_count",
+        "positive_count",
+        "negative_count",
+        "positive_predictions",
+        "selected",
+        "selection_reason"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "validation_hypo_classifier_selected_models": {
+      "path": "reports/glucose_forecasting/validation_hypo_classifier_selected_models.json",
+      "exists": true,
+      "status": "pass",
+      "top_level_keys": [
+        "selection_split",
+        "evaluation_split",
+        "selection_method",
+        "selected_models"
+      ]
+    },
+    "range_specific_calibration_comparison": {
+      "path": "reports/glucose_forecasting/range_specific_calibration_comparison.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 6,
+      "columns": [
+        "model_type",
+        "horizon_minutes",
+        "samples",
+        "mae",
+        "rmse",
+        "r2",
+        "calibration_strategy"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "range_specific_calibration_table": {
+      "path": "reports/glucose_forecasting/range_specific_calibration_table.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 9,
+      "columns": [
+        "horizon_minutes",
+        "predicted_range",
+        "sample_count",
+        "mean_error",
+        "median_error",
+        "mae"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "calibration_strategy_selection": {
+      "path": "reports/glucose_forecasting/calibration_strategy_selection.json",
+      "exists": true,
+      "status": "pass",
+      "top_level_keys": [
+        "selection_split",
+        "evaluation_split",
+        "selected_strategy",
+        "reason",
+        "outputs"
+      ]
+    },
+    "validation_calibration_strategy_comparison": {
+      "path": "reports/glucose_forecasting/validation_calibration_strategy_comparison.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 6,
+      "columns": [
+        "strategy",
+        "horizon_minutes",
+        "split",
+        "overall_mae",
+        "low_mae",
+        "normal_mae",
+        "high_mae",
+        "low_mean_error",
+        "high_mean_error",
+        "low_sample_count",
+        "high_sample_count",
+        "high_under_prediction_rate",
+        "low_over_prediction_rate",
+        "selected",
+        "selection_split",
+        "evaluation_split",
+        "leakage_safe"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "validation_calibration_strategy_selection": {
+      "path": "reports/glucose_forecasting/validation_calibration_strategy_selection.json",
+      "exists": true,
+      "status": "pass",
+      "top_level_keys": [
+        "selection_split",
+        "evaluation_split",
+        "selected_strategy",
+        "reason",
+        "outputs"
+      ]
+    },
+    "test_calibration_final_evaluation": {
+      "path": "reports/glucose_forecasting/test_calibration_final_evaluation.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 6,
+      "columns": [
+        "strategy",
+        "horizon_minutes",
+        "split",
+        "overall_mae",
+        "low_mae",
+        "normal_mae",
+        "high_mae",
+        "low_mean_error",
+        "high_mean_error",
+        "low_sample_count",
+        "high_sample_count",
+        "high_under_prediction_rate",
+        "low_over_prediction_rate",
+        "selected",
+        "selection_split",
+        "evaluation_split",
+        "leakage_safe"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "test_final_metrics": {
+      "path": "reports/glucose_forecasting/test_final_metrics.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 12,
+      "columns": [
+        "model_type",
+        "horizon_minutes",
+        "samples",
+        "mae",
+        "rmse",
+        "r2",
+        "persistence_mae",
+        "history_mae",
+        "mae_improvement_vs_persistence_pct",
+        "mae_improvement_vs_history_pct"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "test_final_event_classifier_metrics": {
+      "path": "reports/glucose_forecasting/test_final_event_classifier_metrics.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 6,
+      "columns": [
+        "event_type",
+        "horizon_minutes",
+        "split",
+        "threshold",
+        "samples",
+        "positive_rate",
+        "accuracy",
+        "precision",
+        "recall",
+        "f1",
+        "roc_auc",
+        "pr_auc",
+        "true_positive_count",
+        "true_negative_count",
+        "false_positive_count",
+        "false_negative_count",
+        "positive_count",
+        "negative_count",
+        "positive_predictions"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "test_final_range_metrics": {
+      "path": "reports/glucose_forecasting/test_final_range_metrics.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 36,
+      "columns": [
+        "model_type",
+        "horizon_minutes",
+        "range_name",
+        "sample_count",
+        "mae",
+        "rmse",
+        "mean_error",
+        "under_prediction_rate",
+        "over_prediction_rate"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "test_final_per_patient_metrics": {
+      "path": "reports/glucose_forecasting/test_final_per_patient_metrics.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 144,
+      "columns": [
+        "model_type",
+        "patient_id",
+        "year",
+        "split",
+        "horizon_minutes",
+        "sample_count",
+        "mae",
+        "rmse",
+        "r2"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "per_patient_event_metrics": {
+      "path": "reports/glucose_forecasting/per_patient_event_metrics.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 72,
+      "columns": [
+        "event_type",
+        "horizon_minutes",
+        "patient_id",
+        "year",
+        "split",
+        "threshold",
+        "samples",
+        "positive_rate",
+        "accuracy",
+        "precision",
+        "recall",
+        "f1",
+        "roc_auc",
+        "pr_auc",
+        "true_positive_count",
+        "true_negative_count",
+        "false_positive_count",
+        "false_negative_count",
+        "positive_count",
+        "negative_count",
+        "positive_predictions"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "per_patient_calibration_gain": {
+      "path": "reports/glucose_forecasting/per_patient_calibration_gain.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 36,
+      "columns": [
+        "patient_id",
+        "year",
+        "split",
+        "horizon_minutes",
+        "enriched",
+        "enriched_calibrated",
+        "history",
+        "persistence",
+        "mae_gain_raw_minus_calibrated"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "patient_data_quality_audit": {
+      "path": "reports/glucose_forecasting/patient_data_quality_audit.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 12,
+      "columns": [
+        "patient_id",
+        "year",
+        "split",
+        "rows",
+        "start_timestamp",
+        "end_timestamp",
+        "median_interval_minutes",
+        "large_gap_count_gt_10m",
+        "hypo_rate_current",
+        "hyper_rate_current"
+      ]
+    },
+    "worst_patient_diagnostic_report": {
+      "path": "reports/glucose_forecasting/worst_patient_diagnostic_report.csv",
+      "exists": true,
+      "status": "pass",
+      "rows": 20,
+      "columns": [
+        "patient_id",
+        "year",
+        "split",
+        "horizon_minutes",
+        "enriched",
+        "enriched_calibrated",
+        "history",
+        "persistence",
+        "mae_gain_raw_minus_calibrated"
+      ],
+      "horizons": [
+        30,
+        60,
+        90
+      ]
+    },
+    "test_final_evidence_summary": {
+      "path": "reports/glucose_forecasting/test_final_evidence_summary.md",
+      "exists": true,
+      "status": "pass",
+      "characters": 2287
+    }
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "artifact": "hypo_classifier_selected_models",
+      "message": "90m hypo precision is low; UI must phrase this as possibility/caution"
+    },
+    {
+      "severity": "warning",
+      "artifact": "range_specific_calibration_table",
+      "message": "recommended column missing: calibration_key"
+    },
+    {
+      "severity": "warning",
+      "artifact": "range_specific_calibration_table",
+      "message": "recommended column missing: correction_value"
+    },
+    {
+      "severity": "warning",
+      "artifact": "range_specific_calibration_table",
+      "message": "recommended column missing: min_required_samples"
+    },
+    {
+      "severity": "warning",
+      "artifact": "range_specific_calibration_table",
+      "message": "recommended column missing: fallback_used"
+    },
+    {
+      "severity": "warning",
+      "artifact": "patient_data_quality_audit",
+      "message": "recommended column missing: meal_event_count"
+    },
+    {
+      "severity": "warning",
+      "artifact": "patient_data_quality_audit",
+      "message": "recommended column missing: bolus_event_count"
+    },
+    {
+      "severity": "warning",
+      "artifact": "patient_data_quality_audit",
+      "message": "recommended column missing: basal_coverage"
+    },
+    {
+      "severity": "warning",
+      "artifact": "patient_data_quality_audit",
+      "message": "recommended column missing: glucose_volatility"
+    },
+    {
+      "severity": "warning",
+      "artifact": "patient_data_quality_audit",
+      "message": "recommended column missing: train_rows"
+    },
+    {
+      "severity": "warning",
+      "artifact": "patient_data_quality_audit",
+      "message": "recommended column missing: test_rows"
+    }
+  ]
+}

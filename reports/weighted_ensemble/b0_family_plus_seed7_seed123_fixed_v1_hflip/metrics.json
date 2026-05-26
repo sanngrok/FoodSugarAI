@@ -1,0 +1,113 @@
+{
+  "cache": "reports/weighted_ensemble/b0_family_plus_seed7_seed123_fixed_v1_hflip/logits_cache.pt",
+  "names": [
+    "b0_baseline",
+    "food_lewm_b0",
+    "b0_supervised_only",
+    "b0_supervised_seed7_fixed_v1",
+    "b0_supervised_seed123_fixed_v1"
+  ],
+  "data_dir": "data/raw/korean_food_fixed_v1",
+  "tta": "hflip",
+  "weight_step": 0.05,
+  "calibration_ratio": 0.5,
+  "seed": 42,
+  "num_samples": 6720,
+  "num_calibration": 3360,
+  "num_evaluation": 3360,
+  "best_weights": {
+    "b0_baseline": 0.1,
+    "food_lewm_b0": 0.2,
+    "b0_supervised_only": 0.0,
+    "b0_supervised_seed7_fixed_v1": 0.2,
+    "b0_supervised_seed123_fixed_v1": 0.5
+  },
+  "best_metrics": {
+    "calibration": {
+      "top1": 0.9026785492897034,
+      "top3": 0.975595235824585,
+      "macro_f1": 0.902676835982211
+    },
+    "evaluation": {
+      "top1": 0.893750011920929,
+      "top3": 0.9669643044471741,
+      "macro_f1": 0.893056842170292
+    },
+    "full": {
+      "top1": 0.8982142806053162,
+      "top3": 0.9712797403335571,
+      "macro_f1": 0.8979793158403641
+    }
+  },
+  "diagnostic_full_best_weights": {
+    "b0_baseline": 0.1,
+    "food_lewm_b0": 0.2,
+    "b0_supervised_only": 0.0,
+    "b0_supervised_seed7_fixed_v1": 0.2,
+    "b0_supervised_seed123_fixed_v1": 0.5
+  },
+  "diagnostic_full_best_metrics": {
+    "top1": 0.8982142806053162,
+    "top3": 0.9712797403335571,
+    "macro_f1": 0.8979793158403641
+  },
+  "simple_average_metrics": {
+    "full": {
+      "top1": 0.8936011791229248,
+      "top3": 0.9726190567016602,
+      "macro_f1": 0.8933875364431442
+    },
+    "calibration": {
+      "top1": 0.8970237970352173,
+      "top3": 0.9773809313774109,
+      "macro_f1": 0.8969901388430311
+    },
+    "evaluation": {
+      "top1": 0.8901785612106323,
+      "top3": 0.9678571224212646,
+      "macro_f1": 0.8895767890261916
+    }
+  },
+  "models": [
+    {
+      "name": "b0_baseline",
+      "checkpoint": "data/models/efficientnet_korean_b0_val08275.pt",
+      "metadata": "data/models/korean_food_model_meta.json",
+      "model_type": "timm_classifier",
+      "model_name": "efficientnet_b0",
+      "image_size": 224
+    },
+    {
+      "name": "food_lewm_b0",
+      "checkpoint": "data/models/food_lewm_b0_classifier_3ep_ft10.pt",
+      "metadata": "data/models/food_lewm_b0_meta_3ep_ft10.json",
+      "model_type": "food_lewm_classifier",
+      "model_name": "efficientnet_b0",
+      "image_size": 224
+    },
+    {
+      "name": "b0_supervised_only",
+      "checkpoint": "data/models/food_lewm_b0_supervised_only_ft10.pt",
+      "metadata": "data/models/food_lewm_b0_supervised_only_meta_ft10.json",
+      "model_type": "food_lewm_classifier",
+      "model_name": "efficientnet_b0",
+      "image_size": 224
+    },
+    {
+      "name": "b0_supervised_seed7_fixed_v1",
+      "checkpoint": "data/models/food_lewm_b0_supervised_only_seed7_fixed_v1_ft10.pt",
+      "metadata": "data/models/food_lewm_b0_supervised_only_seed7_fixed_v1_meta_ft10.json",
+      "model_type": "food_lewm_classifier",
+      "model_name": "efficientnet_b0",
+      "image_size": 224
+    },
+    {
+      "name": "b0_supervised_seed123_fixed_v1",
+      "checkpoint": "data/models/food_lewm_b0_supervised_only_seed123_fixed_v1_ft10.pt",
+      "metadata": "data/models/food_lewm_b0_supervised_only_seed123_fixed_v1_meta_ft10.json",
+      "model_type": "food_lewm_classifier",
+      "model_name": "efficientnet_b0",
+      "image_size": 224
+    }
+  ]
+}

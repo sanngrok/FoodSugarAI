@@ -1,0 +1,28 @@
+{
+  "high_conf_review_exists": true,
+  "train_review_exists": true,
+  "high_conf_status_counts": {
+    "wrong_label": 129,
+    "model_error": 112,
+    "ambiguous": 34,
+    "multi_food": 23,
+    "bad_crop": 2
+  },
+  "train_status_counts": {
+    "correct": 277,
+    "wrong_label": 14,
+    "multi_food": 7,
+    "ambiguous": 2
+  },
+  "high_conf_label_boundary_ratio": 0.6266666666666667,
+  "train_patch_rows": 23,
+  "decision": "label_hard_pair_cleaning_first",
+  "outputs": {
+    "status_json": "reports/current_best/review_and_decision_status.json",
+    "status_md": "reports/current_best/review_and_decision_status.md",
+    "high_summary_dir": "reports/current_best/error_analysis/review_summary_high_conf_top300",
+    "patch_output": "data/processed/kfood_train_hard_pair_patch_v2.csv",
+    "exclude_output": "data/processed/kfood_train_hard_pair_exclude_v2.csv",
+    "patch_audit_dir": "reports/current_best/hard_class_report/train_hard_pair_patch_impact"
+  }
+}

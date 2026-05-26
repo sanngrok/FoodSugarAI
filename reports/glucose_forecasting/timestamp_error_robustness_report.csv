@@ -1,0 +1,7 @@
+case,input_condition,current_behavior,expected_pilot_behavior,status
+invalid_timestamp,unparseable timestamp string,Pydantic validation returns 422,ask user to confirm device time,pass
+timezone_omitted,naive timestamp accepted,server parses and model uses order,record device timezone in pilot schema,watch
+mixed_timezone,mixed timestamp style may parse but needs product policy,not recommended for pilot import,watch
+future_timestamp,timestamp later than device now not explicitly rejected,flag in app/import layer,planned
+non_5min_spacing,readings not near 5-minute cadence,feature generation may be weaker,add import-level cadence warning,planned
+

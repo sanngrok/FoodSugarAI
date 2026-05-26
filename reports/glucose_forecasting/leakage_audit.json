@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-25T13:51:11.448620+00:00",
+  "status": "pass",
+  "threshold_selection": {
+    "selection_split": "validation",
+    "evaluation_split": "test",
+    "threshold_selection_method": "threshold sweep maximizing F1 under recall target",
+    "leakage_warning": false
+  },
+  "hypo_model_selection": {
+    "selection_split": "validation",
+    "leakage_warning": false
+  },
+  "calibration_selection": {
+    "selection_split": "validation",
+    "evaluation_split": "test",
+    "leakage_warning": false
+  },
+  "calibration": {
+    "fit_source": "train_predictions",
+    "grouping_columns_checked": "reports/glucose_forecasting/range_specific_calibration_table.csv",
+    "forbidden_columns_found": [],
+    "leakage_safe": true
+  },
+  "issues": []
+}

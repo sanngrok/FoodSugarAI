@@ -1,0 +1,21 @@
+# Korean Food Classifier Training
+
+- epoch: `25`
+- loss: `0.6913041681235219`
+- train_acc: `0.932335560384217`
+- val_top1: `0.903422619047619`
+- val_top3: `0.9730654761904762`
+- macro_f1: `0.903170155685274`
+- lr: `0.0`
+- seconds: `1288.67`
+- model_type: `timm_classifier`
+- model_name: `efficientnet_b3`
+- image_size: `300`
+- num_classes: `56`
+- checkpoint: `data/models/efficientnet_korean_b3_full_fixed_v1.pt`
+- data_dir: `data/raw/korean_food_fixed_v1`
+- train_subdir: `train`
+- val_subdir: `val`
+- best_val_acc: `0.903422619047619`
+- best_macro_f1: `0.903170155685274`
+- args: `{'data_dir': 'data/raw/korean_food_fixed_v1', 'train_subdir': 'train', 'val_subdir': 'val', 'epochs': 25, 'batch_size': 8, 'lr': 3e-05, 'head_lr': 0.0003, 'num_workers': 2, 'warmup_epochs': 2, 'model_save_path': 'data/models/efficientnet_korean_b3_full_fixed_v1.pt', 'classes_save_path': 'data/models/korean_food_classes_b3_full_fixed_v1.json', 'metadata_save_path': 'data/models/korean_food_model_meta_b3_full_fixed_v1.json', 'model_name': 'efficientnet_b3', 'image_size': 300, 'log_every': 50, 'resume_from': None, 'initial_best_acc': 0.0, 'label_smoothing': 0.05, 'weight_decay': 0.0001, 'randaugment_n': 2, 'randaugment_m': 7, 'random_erasing_p': 0.1, 'drop_rate': 0.1, 'drop_path_rate': 0.1, 'grad_accum_steps': 4, 'report_dir': 'reports/b3/b3_full_fixed_v1', 'seed': 42}`

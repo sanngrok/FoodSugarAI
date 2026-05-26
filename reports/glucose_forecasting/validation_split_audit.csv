@@ -1,0 +1,13 @@
+source_file,patient_id,year,raw_rows,train_inner_rows,validation_rows,train_inner_start,train_inner_end,validation_start,validation_end,time_order_safe
+/Users/sangrok/Downloads/OhioT1DM/2018/train/559-ws-training.xml,559,2018,10796,8636,2160,2021-12-07 01:17:00,2022-01-09 20:35:00,2022-01-09 20:40:00,2022-01-17 23:56:00,True
+/Users/sangrok/Downloads/OhioT1DM/2018/train/563-ws-training.xml,563,2018,12124,9699,2425,2021-09-13 12:33:00,2021-10-19 20:54:00,2021-10-19 20:59:00,2021-10-28 23:56:00,True
+/Users/sangrok/Downloads/OhioT1DM/2018/train/570-ws-training.xml,570,2018,10982,8785,2197,2021-12-07 16:29:00,2022-01-08 18:18:00,2022-01-08 18:23:00,2022-01-16 23:59:00,True
+/Users/sangrok/Downloads/OhioT1DM/2018/train/575-ws-training.xml,575,2018,11866,9492,2374,2021-11-17 12:04:00,2021-12-23 21:35:00,2021-12-23 21:40:00,2022-01-01 23:55:00,True
+/Users/sangrok/Downloads/OhioT1DM/2018/train/588-ws-training.xml,588,2018,12640,10112,2528,2021-08-30 11:53:00,2021-10-06 02:11:00,2021-10-06 02:16:00,2021-10-14 23:55:00,True
+/Users/sangrok/Downloads/OhioT1DM/2018/train/591-ws-training.xml,591,2018,10847,8677,2170,2021-11-30 17:06:00,2022-01-06 04:26:00,2022-01-06 04:31:00,2022-01-13 23:58:00,True
+/Users/sangrok/Downloads/OhioT1DM/2020/train/540-ws-training.xml,540,2020,11947,9557,2390,2027-05-19 11:36:29,2027-06-23 22:39:15,2027-06-23 22:44:15,2027-07-03 23:56:44,True
+/Users/sangrok/Downloads/OhioT1DM/2020/train/544-ws-training.xml,544,2020,10623,8498,2125,2027-05-11 00:02:00,2027-06-16 01:44:00,2027-06-16 01:49:00,2027-06-23 23:55:00,True
+/Users/sangrok/Downloads/OhioT1DM/2020/train/552-ws-training.xml,552,2020,9080,7264,1816,2025-04-16 11:17:05,2025-05-17 07:26:54,2025-05-17 07:31:54,2025-05-24 23:59:14,True
+/Users/sangrok/Downloads/OhioT1DM/2020/train/567-ws-training.xml,567,2020,10858,8686,2172,2026-12-28 00:04:30,2027-02-03 04:04:02,2027-02-03 04:09:02,2027-02-12 23:59:21,True
+/Users/sangrok/Downloads/OhioT1DM/2020/train/584-ws-training.xml,584,2020,12150,9720,2430,2025-05-14 00:03:00,2025-06-19 04:57:00,2025-06-19 05:02:00,2025-06-28 23:56:00,True
+/Users/sangrok/Downloads/OhioT1DM/2020/train/596-ws-training.xml,596,2020,10877,8701,2176,2027-04-09 16:15:00,2027-05-16 05:12:00,2027-05-16 05:17:00,2027-05-26 23:59:00,True

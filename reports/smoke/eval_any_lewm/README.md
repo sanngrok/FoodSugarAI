@@ -1,0 +1,16 @@
+# K-Food Model Evaluation
+
+- name: `smoke_lewm`
+- checkpoint: `data/models/food_lewm_b0_classifier_smoke.pt`
+- metadata: `data/models/food_lewm_b0_meta_smoke.json`
+- classes: `data/models/food_lewm_b0_classes_smoke.json`
+- data_dir: `data/raw/korean_food_smoke`
+- model_type: `food_lewm_classifier`
+- model_name: `efficientnet_b0`
+- image_size: `224`
+- tta: `hflip`
+- val_top1: `0.020833333333333332`
+- val_top3: `0.050595238095238096`
+- macro_f1: `0.0026558690351793797`
+- num_classes: `56`
+- num_samples: `336`

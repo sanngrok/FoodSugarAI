@@ -1,0 +1,11 @@
+# Food-LeWM Pretraining Report
+
+- model_name: `efficientnet_b0`
+- image_size: `224`
+- latent_dim: `192`
+- lambda_sigreg: `0.1`
+- num_projections: `256`
+- pretrain_epochs: `3`
+- images: `150513`
+- best_loss: `0.029694246769946517`
+- checkpoint: `data/models/food_lewm_b0_pretrain_3ep.pt`

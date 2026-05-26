@@ -1,0 +1,31 @@
+true_class,pred_class,count,true_total,true_accuracy,recommended_action
+곰탕_설렁탕,갈비탕,13,200,0.8,review broth-only images; prioritize images with distinctive ingredients; compare against 갈비탕
+김치찌개,동태찌개,13,200,0.82,review broth-only images; prioritize images with distinctive ingredients; compare against 동태찌개
+호박전,감자전,12,200,0.875,review ingredient texture and crop quality; compare against 감자전
+감자전,호박전,11,200,0.88,review ingredient texture and crop quality; compare against 호박전
+갈비구이,갈비찜,10,200,0.835,review high-confidence errors and add diverse clean examples; compare against 갈비찜
+곰탕_설렁탕,삼계탕,10,200,0.8,review broth-only images; prioritize images with distinctive ingredients; compare against 삼계탕
+비빔냉면,물냉면,10,200,0.905,review broth/sauce visibility; compare against 물냉면
+삼겹살,갈비구이,10,199,0.7839195979899497,review high-confidence errors and add diverse clean examples; compare against 갈비구이
+칼국수,수제비,10,200,0.84,review broth-only images; prioritize images with distinctive ingredients; compare against 수제비
+김치찜,김치찌개,9,200,0.845,review high-confidence errors and add diverse clean examples; compare against 김치찌개
+수제비,칼국수,9,199,0.8391959798994975,review high-confidence errors and add diverse clean examples; compare against 칼국수
+잔치국수,칼국수,9,200,0.875,review broth-only images; prioritize images with distinctive ingredients; compare against 칼국수
+갈비구이,삼겹살,8,200,0.835,review high-confidence errors and add diverse clean examples; compare against 삼겹살
+떡볶이,라볶이,8,199,0.8793969849246231,review noodle visibility and class boundary; compare against 라볶이
+라면,라볶이,8,199,0.7989949748743719,review high-confidence errors and add diverse clean examples; compare against 라볶이
+순두부찌개,김치찌개,8,200,0.86,review broth-only images; prioritize images with distinctive ingredients; compare against 김치찌개
+양념치킨,후라이드치킨,8,200,0.91,review high-confidence errors and add diverse clean examples; compare against 후라이드치킨
+족발,보쌈,8,200,0.9,review meat texture and plating ambiguity; compare against 보쌈
+칼국수,잔치국수,8,200,0.84,review broth-only images; prioritize images with distinctive ingredients; compare against 잔치국수
+갈비구이,떡갈비,7,200,0.835,review high-confidence errors and add diverse clean examples; compare against 떡갈비
+갈비탕,곰탕_설렁탕,7,200,0.88,review broth-only images; prioritize images with distinctive ingredients; compare against 곰탕_설렁탕
+김치볶음밥,새우볶음밥,7,200,0.92,review high-confidence errors and add diverse clean examples; compare against 새우볶음밥
+닭계장,동태찌개,7,200,0.84,review high-confidence errors and add diverse clean examples; compare against 동태찌개
+닭볶음탕,갈비찜,7,200,0.815,review broth-only images; prioritize images with distinctive ingredients; compare against 갈비찜
+된장찌개,동태찌개,7,200,0.875,review broth-only images; prioritize images with distinctive ingredients; compare against 동태찌개
+라볶이,떡볶이,7,200,0.915,review noodle visibility and class boundary; compare against 떡볶이
+불고기,갈비구이,7,200,0.835,review high-confidence errors and add diverse clean examples; compare against 갈비구이
+삼계탕,곰탕_설렁탕,7,200,0.925,review broth-only images; prioritize images with distinctive ingredients; compare against 곰탕_설렁탕
+알밥,새우볶음밥,7,200,0.93,review high-confidence errors and add diverse clean examples; compare against 새우볶음밥
+호박전,파전,7,200,0.875,review ingredient texture and crop quality; compare against 파전

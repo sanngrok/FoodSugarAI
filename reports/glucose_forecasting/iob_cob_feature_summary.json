@@ -1,0 +1,52 @@
+{
+  "feature_type": "predictive_proxy_not_medical_iob_cob",
+  "no_future_event_columns_used": true,
+  "features": [
+    {
+      "feature": "time_since_last_meal",
+      "non_null_count": 101385,
+      "mean": 188.1207279183311,
+      "p95": 240.0,
+      "min": 0.0,
+      "max": 240.0,
+      "past_only_proxy": true
+    },
+    {
+      "feature": "time_since_last_bolus",
+      "non_null_count": 101385,
+      "mean": 167.72688267495192,
+      "p95": 240.0,
+      "min": 0.0,
+      "max": 240.0,
+      "past_only_proxy": true
+    },
+    {
+      "feature": "carbs_on_board_proxy",
+      "non_null_count": 101385,
+      "mean": 16.39853775213296,
+      "p95": 83.78,
+      "min": 0.0,
+      "max": 507.5,
+      "past_only_proxy": true
+    },
+    {
+      "feature": "insulin_on_board_proxy",
+      "non_null_count": 101385,
+      "mean": 5.2050506830398975,
+      "p95": 21.959999999999997,
+      "min": 0.0,
+      "max": 91.37500000000001,
+      "past_only_proxy": true
+    },
+    {
+      "feature": "net_glucose_pressure_proxy",
+      "non_null_count": 101385,
+      "mean": -46.062070444345814,
+      "p95": 23.84799999999988,
+      "min": -1084.2600000000002,
+      "max": 406.0,
+      "past_only_proxy": true
+    }
+  ],
+  "safety_note": "These features are for forecasting experiments only and are not insulin dosing guidance."
+}

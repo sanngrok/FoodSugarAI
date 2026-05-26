@@ -1,0 +1,59 @@
+{
+  "event_type": "hypo",
+  "selection_split": "validation",
+  "evaluation_split": "test",
+  "thresholds_tested": [
+    0.5,
+    0.4,
+    0.3,
+    0.25,
+    0.2,
+    0.15,
+    0.1
+  ],
+  "selection_rule": "choose highest F1 among thresholds meeting horizon recall target; fallback to best F1 if target is not met",
+  "horizons": {
+    "30": {
+      "threshold": 0.5,
+      "target_recall": 0.65,
+      "target_met": true,
+      "selection_split": "validation",
+      "evaluation_split": "test",
+      "precision": 0.33043478260869563,
+      "recall": 0.8394698085419735,
+      "f1": 0.47420965058236275,
+      "roc_auc": 0.9752907372386943,
+      "pr_auc": 0.5303729672934479,
+      "false_negative_count": 109,
+      "false_positive_count": 1155
+    },
+    "60": {
+      "threshold": 0.5,
+      "target_recall": 0.4,
+      "target_met": true,
+      "selection_split": "validation",
+      "evaluation_split": "test",
+      "precision": 0.17960971724412583,
+      "recall": 0.6536231884057971,
+      "f1": 0.281786941580756,
+      "roc_auc": 0.9181027226520768,
+      "pr_auc": 0.24096035612294875,
+      "false_negative_count": 239,
+      "false_positive_count": 2060
+    },
+    "90": {
+      "threshold": 0.5,
+      "target_recall": 0.25,
+      "target_met": true,
+      "selection_split": "validation",
+      "evaluation_split": "test",
+      "precision": 0.13691322901849218,
+      "recall": 0.5384615384615384,
+      "f1": 0.21831584916359512,
+      "roc_auc": 0.8520211495821252,
+      "pr_auc": 0.16132028303243431,
+      "false_negative_count": 330,
+      "false_positive_count": 2427
+    }
+  }
+}

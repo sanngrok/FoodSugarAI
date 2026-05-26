@@ -1,0 +1,501 @@
+rank,image_path,true_label,pred_label,confidence,top3,review_status,corrected_label,review_note,action,review_source,priority_reason
+1,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0065.JPG,갈비구이,갈비찜,,,wrong_label,갈비찜,ai_visual_draft: image appears closer to predicted label `갈비찜` than current label `갈비구이`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+2,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0127.jpg,갈비구이,갈비찜,,,wrong_label,갈비찜,ai_visual_draft: image appears closer to predicted label `갈비찜` than current label `갈비구이`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+3,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0426.jpg,갈비구이,갈비찜,,,wrong_label,갈비찜,ai_visual_draft: image appears closer to predicted label `갈비찜` than current label `갈비구이`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+4,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0656.jpg,갈비구이,떡갈비,,,wrong_label,떡갈비,ai_visual_draft: image appears closer to predicted label `떡갈비` than current label `갈비구이`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+5,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0612.jpg,갈비탕,갈비찜,,,wrong_label,갈비찜,ai_visual_draft: image appears closer to predicted label `갈비찜` than current label `갈비탕`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+6,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0908.jpg,갈비탕,된장찌개,,,wrong_label,된장찌개,ai_visual_draft: image appears closer to predicted label `된장찌개` than current label `갈비탕`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+7,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0525.jpg,감자전,약식,,,wrong_label,약식,ai_visual_draft: image appears closer to predicted label `약식` than current label `감자전`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+8,data/raw/korean_food_fixed_v1/train/계란말이/Img_098_0309.jpg,계란말이,호박전,,,wrong_label,호박전,ai_visual_draft: image appears closer to predicted label `호박전` than current label `계란말이`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+9,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0158.JPG,곰탕_설렁탕,불고기,,,wrong_label,불고기,ai_visual_draft: image appears closer to predicted label `불고기` than current label `곰탕_설렁탕`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+10,data/raw/korean_food_fixed_v1/train/김치볶음밥/Img_070_0173.jpg,김치볶음밥,약식,,,wrong_label,약식,ai_visual_draft: image appears closer to predicted label `약식` than current label `김치볶음밥`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+11,data/raw/korean_food_fixed_v1/train/김치볶음밥/Img_070_0771.jpg,김치볶음밥,새우볶음밥,,,wrong_label,새우볶음밥,ai_visual_draft: image appears closer to predicted label `새우볶음밥` than current label `김치볶음밥`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+12,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0156.jpg,김치찌개,순두부찌개,,,wrong_label,순두부찌개,ai_visual_draft: image appears closer to predicted label `순두부찌개` than current label `김치찌개`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+13,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0797.jpg,김치찌개,라볶이,,,wrong_label,라볶이,ai_visual_draft: image appears closer to predicted label `라볶이` than current label `김치찌개`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+14,data/raw/korean_food_fixed_v1/train/닭계장/Img_120_0945.jpg,닭계장,김치찜,,,wrong_label,김치찜,ai_visual_draft: image appears closer to predicted label `김치찜` than current label `닭계장`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+15,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0494.jpg,떡볶이,양념치킨,,,wrong_label,양념치킨,ai_visual_draft: image appears closer to predicted label `양념치킨` than current label `떡볶이`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+16,data/raw/korean_food_fixed_v1/train/라면/Img_050_0104.jpg,라면,라볶이,,,wrong_label,라볶이,ai_visual_draft: image appears closer to predicted label `라볶이` than current label `라면`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+17,data/raw/korean_food_fixed_v1/train/라면/Img_050_0168.jpg,라면,비빔밥,,,wrong_label,비빔밥,ai_visual_draft: image appears closer to predicted label `비빔밥` than current label `라면`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+18,data/raw/korean_food_fixed_v1/train/라면/Img_050_0622.jpg,라면,짬뽕,,,wrong_label,짬뽕,ai_visual_draft: image appears closer to predicted label `짬뽕` than current label `라면`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+19,data/raw/korean_food_fixed_v1/train/라면/Img_050_0788.jpg,라면,순두부찌개,,,wrong_label,순두부찌개,ai_visual_draft: image appears closer to predicted label `순두부찌개` than current label `라면`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+20,data/raw/korean_food_fixed_v1/train/물냉면/Img_052_0792.jpg,물냉면,잔치국수,,,wrong_label,잔치국수,ai_visual_draft: image appears closer to predicted label `잔치국수` than current label `물냉면`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+21,data/raw/korean_food_fixed_v1/train/보쌈/Img_090_0342.jpg,보쌈,족발,,,wrong_label,족발,ai_visual_draft: image appears closer to predicted label `족발` than current label `보쌈`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+22,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0161.jpg,불고기,remove_candidate,,,multi_food,,ai_visual_draft: multiple foods or target dish is not visually isolated.,remove,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+23,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0277.jpg,불고기,떡갈비,,,wrong_label,떡갈비,ai_visual_draft: image appears closer to predicted label `떡갈비` than current label `불고기`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+24,data/raw/korean_food_fixed_v1/train/비빔밥/Img_072_0101.jpg,비빔밥,쫄면,,,wrong_label,쫄면,ai_visual_draft: image appears closer to predicted label `쫄면` than current label `비빔밥`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+25,data/raw/korean_food_fixed_v1/train/비빔밥/Img_072_0477.jpg,비빔밥,remove_candidate,,,multi_food,,ai_visual_draft: multiple foods or target dish is not visually isolated.,remove,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+26,data/raw/korean_food_fixed_v1/train/비빔밥/Img_072_0612.jpg,비빔밥,불고기,,,wrong_label,불고기,ai_visual_draft: image appears closer to predicted label `불고기` than current label `비빔밥`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+27,data/raw/korean_food_fixed_v1/train/비빔밥/Img_072_0624.jpg,비빔밥,remove_candidate,,,multi_food,,ai_visual_draft: multiple foods or target dish is not visually isolated.,remove,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+28,data/raw/korean_food_fixed_v1/train/비빔밥/Img_072_0918.JPG,비빔밥,알밥,,,wrong_label,알밥,ai_visual_draft: image appears closer to predicted label `알밥` than current label `비빔밥`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+29,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0842.jpg,삼겹살,고등어구이,,,wrong_label,고등어구이,ai_visual_draft: image appears closer to predicted label `고등어구이` than current label `삼겹살`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+30,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0852.jpg,수제비,순두부찌개,,,wrong_label,순두부찌개,ai_visual_draft: image appears closer to predicted label `순두부찌개` than current label `수제비`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+31,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0308.jpg,알밥,비빔밥,,,wrong_label,비빔밥,ai_visual_draft: image appears closer to predicted label `비빔밥` than current label `알밥`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+32,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0354.jpg,알밥,새우볶음밥,,,wrong_label,새우볶음밥,ai_visual_draft: image appears closer to predicted label `새우볶음밥` than current label `알밥`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+33,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0640.jpg,알밥,새우볶음밥,,,wrong_label,새우볶음밥,ai_visual_draft: image appears closer to predicted label `새우볶음밥` than current label `알밥`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+34,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0789.jpg,알밥,새우볶음밥,,,wrong_label,새우볶음밥,ai_visual_draft: image appears closer to predicted label `새우볶음밥` than current label `알밥`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+35,data/raw/korean_food_fixed_v1/train/약식/Img_144_0311.jpg,약식,잡곡밥,,,wrong_label,잡곡밥,ai_visual_draft: image appears closer to predicted label `잡곡밥` than current label `약식`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+36,data/raw/korean_food_fixed_v1/train/양념치킨/Img_023_0106.jpg,양념치킨,떡볶이,,,wrong_label,떡볶이,ai_visual_draft: image appears closer to predicted label `떡볶이` than current label `양념치킨`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+37,data/raw/korean_food_fixed_v1/train/양념치킨/Img_023_0374.jpg,양념치킨,remove_candidate,,,multi_food,,ai_visual_draft: multiple foods or target dish is not visually isolated.,remove,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+38,data/raw/korean_food_fixed_v1/train/유부초밥/Img_075_0377.jpg,유부초밥,remove_candidate,,,multi_food,,ai_visual_draft: multiple foods or target dish is not visually isolated.,remove,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+39,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0206.jpg,잔치국수,물냉면,,,wrong_label,물냉면,ai_visual_draft: image appears closer to predicted label `물냉면` than current label `잔치국수`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+40,data/raw/korean_food_fixed_v1/train/잡곡밥/Img_076_0593.jpg,잡곡밥,약식,,,wrong_label,약식,ai_visual_draft: image appears closer to predicted label `약식` than current label `잡곡밥`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+41,data/raw/korean_food_fixed_v1/train/족발/Img_131_0545.jpg,족발,닭갈비,,,wrong_label,닭갈비,ai_visual_draft: image appears closer to predicted label `닭갈비` than current label `족발`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+42,data/raw/korean_food_fixed_v1/train/족발/Img_131_0747.jpg,족발,쫄면,,,wrong_label,쫄면,ai_visual_draft: image appears closer to predicted label `쫄면` than current label `족발`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+43,data/raw/korean_food_fixed_v1/train/족발/Img_131_0833.jpg,족발,보쌈,,,wrong_label,보쌈,ai_visual_draft: image appears closer to predicted label `보쌈` than current label `족발`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+44,data/raw/korean_food_fixed_v1/train/족발/Img_131_0906.jpg,족발,삼겹살,,,wrong_label,삼겹살,ai_visual_draft: image appears closer to predicted label `삼겹살` than current label `족발`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+45,data/raw/korean_food_fixed_v1/train/주먹밥/Img_077_0218.jpg,주먹밥,유부초밥,,,wrong_label,유부초밥,ai_visual_draft: image appears closer to predicted label `유부초밥` than current label `주먹밥`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+46,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0508.jpg,칼국수,remove_candidate,,,multi_food,,ai_visual_draft: multiple foods or target dish is not visually isolated.,remove,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+47,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0558.jpg,칼국수,라면,,,wrong_label,라면,ai_visual_draft: image appears closer to predicted label `라면` than current label `칼국수`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+48,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0877.jpg,칼국수,짬뽕,,,wrong_label,짬뽕,ai_visual_draft: image appears closer to predicted label `짬뽕` than current label `칼국수`.,relabel,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+49,data/raw/korean_food_fixed_v1/train/훈제오리/Img_013_0055.jpg,훈제오리,remove_candidate,,,multi_food,,ai_visual_draft: multiple foods or target dish is not visually isolated.,remove,existing_ai_patch_train_affected,Already matched by the AI draft patch on fixed_v1 train; confirm before applying to cleaned train.
+50,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0282.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+51,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0126.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+52,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0865.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+53,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0658.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+54,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0548.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+55,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0055.png,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+56,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0586.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+57,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0538.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+58,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0818.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+59,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0049.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+60,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0702.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+61,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0227.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 갈비탕; val confusion count=13.
+62,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0931.jpg,김치찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+63,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0504.jpg,김치찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+64,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0885.jpg,김치찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+65,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0914.jpg,김치찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+66,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0302.jpg,김치찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+67,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0897.jpg,김치찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+68,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0366.jpg,동태찌개,김치찌개,,,,,,,hard_pair_pred_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+69,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0000.jpg,동태찌개,김치찌개,,,,,,,hard_pair_pred_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+70,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0589.jpg,동태찌개,김치찌개,,,,,,,hard_pair_pred_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+71,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0071.jpg,동태찌개,김치찌개,,,,,,,hard_pair_pred_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+72,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0314.jpg,동태찌개,김치찌개,,,,,,,hard_pair_pred_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+73,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0979.jpg,동태찌개,김치찌개,,,,,,,hard_pair_pred_side,Review boundary pair 김치찌개 vs 동태찌개; val confusion count=13.
+74,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0283.jpg,호박전,감자전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+75,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0003.JPG,호박전,감자전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+76,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0579.jpg,호박전,감자전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+77,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0516.jpg,호박전,감자전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+78,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0624.jpg,호박전,감자전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+79,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0153.jpg,호박전,감자전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+80,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0168.jpg,감자전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+81,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0926.jpg,감자전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+82,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0481.jpg,감자전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+83,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0703.jpg,감자전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+84,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0650.jpg,감자전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+85,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0150.jpg,감자전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 감자전; val confusion count=12.
+86,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0652.jpg,감자전,호박전,,,,,,,hard_pair_true_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+87,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0260.jpg,감자전,호박전,,,,,,,hard_pair_true_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+88,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0241.jpg,감자전,호박전,,,,,,,hard_pair_true_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+89,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0917.jpg,감자전,호박전,,,,,,,hard_pair_true_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+90,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0127.jpg,감자전,호박전,,,,,,,hard_pair_true_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+91,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0434.jpg,감자전,호박전,,,,,,,hard_pair_true_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+92,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0154.jpg,호박전,감자전,,,,,,,hard_pair_pred_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+93,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0783.jpg,호박전,감자전,,,,,,,hard_pair_pred_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+94,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0610.jpg,호박전,감자전,,,,,,,hard_pair_pred_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+95,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0215.jpg,호박전,감자전,,,,,,,hard_pair_pred_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+96,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0865.jpg,호박전,감자전,,,,,,,hard_pair_pred_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+97,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0057.jpg,호박전,감자전,,,,,,,hard_pair_pred_side,Review boundary pair 감자전 vs 호박전; val confusion count=11.
+98,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0671.jpg,갈비구이,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+99,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0957.jpg,갈비구이,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+100,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0142.jpg,갈비구이,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+101,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0455.jpg,갈비구이,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+102,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0097.jpg,갈비구이,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+103,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0261.jpg,갈비구이,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+104,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0190.jpg,갈비찜,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+105,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0688.jpg,갈비찜,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+106,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0832.jpg,갈비찜,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+107,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0535.jpg,갈비찜,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+108,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0000.jpg,갈비찜,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+109,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0775.jpg,갈비찜,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 갈비찜; val confusion count=10.
+110,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0934.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+111,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0594.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+112,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0388.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+113,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0034.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+114,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0119.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+115,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0750.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_true_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+116,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0898.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+117,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0513.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+118,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0235.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+119,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0293.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+120,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0934.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+121,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0643.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_pred_side,Review boundary pair 곰탕_설렁탕 vs 삼계탕; val confusion count=10.
+122,data/raw/korean_food_fixed_v1/train/비빔냉면/Img_053_0146.jpg,비빔냉면,물냉면,,,,,,,hard_pair_true_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+123,data/raw/korean_food_fixed_v1/train/비빔냉면/Img_053_0856.jpg,비빔냉면,물냉면,,,,,,,hard_pair_true_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+124,data/raw/korean_food_fixed_v1/train/비빔냉면/Img_053_0970.jpg,비빔냉면,물냉면,,,,,,,hard_pair_true_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+125,data/raw/korean_food_fixed_v1/train/비빔냉면/Img_053_0057.jpg,비빔냉면,물냉면,,,,,,,hard_pair_true_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+126,data/raw/korean_food_fixed_v1/train/비빔냉면/Img_053_0764.jpg,비빔냉면,물냉면,,,,,,,hard_pair_true_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+127,data/raw/korean_food_fixed_v1/train/비빔냉면/Img_053_0626.jpg,비빔냉면,물냉면,,,,,,,hard_pair_true_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+128,data/raw/korean_food_fixed_v1/train/물냉면/Img_052_0186.jpg,물냉면,비빔냉면,,,,,,,hard_pair_pred_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+129,data/raw/korean_food_fixed_v1/train/물냉면/Img_052_0777.jpg,물냉면,비빔냉면,,,,,,,hard_pair_pred_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+130,data/raw/korean_food_fixed_v1/train/물냉면/Img_052_0966.jpg,물냉면,비빔냉면,,,,,,,hard_pair_pred_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+131,data/raw/korean_food_fixed_v1/train/물냉면/Img_052_0174.jpg,물냉면,비빔냉면,,,,,,,hard_pair_pred_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+132,data/raw/korean_food_fixed_v1/train/물냉면/Img_052_0828.jpg,물냉면,비빔냉면,,,,,,,hard_pair_pred_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+133,data/raw/korean_food_fixed_v1/train/물냉면/Img_052_0123.jpg,물냉면,비빔냉면,,,,,,,hard_pair_pred_side,Review boundary pair 비빔냉면 vs 물냉면; val confusion count=10.
+134,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0741.jpg,삼겹살,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 삼겹살 vs 갈비구이; val confusion count=10.
+135,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0237.jpg,삼겹살,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 삼겹살 vs 갈비구이; val confusion count=10.
+136,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0539.jpg,삼겹살,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 삼겹살 vs 갈비구이; val confusion count=10.
+137,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0625.jpg,삼겹살,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 삼겹살 vs 갈비구이; val confusion count=10.
+138,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0675.jpg,삼겹살,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 삼겹살 vs 갈비구이; val confusion count=10.
+139,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0729.jpg,삼겹살,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 삼겹살 vs 갈비구이; val confusion count=10.
+140,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0637.jpg,갈비구이,삼겹살,,,,,,,hard_pair_pred_side,Review boundary pair 삼겹살 vs 갈비구이; val confusion count=10.
+141,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0226.jpg,갈비구이,삼겹살,,,,,,,hard_pair_pred_side,Review boundary pair 삼겹살 vs 갈비구이; val confusion count=10.
+142,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0124.jpg,갈비구이,삼겹살,,,,,,,hard_pair_pred_side,Review boundary pair 삼겹살 vs 갈비구이; val confusion count=10.
+143,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0395.jpg,갈비구이,삼겹살,,,,,,,hard_pair_pred_side,Review boundary pair 삼겹살 vs 갈비구이; val confusion count=10.
+144,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0492.jpg,갈비구이,삼겹살,,,,,,,hard_pair_pred_side,Review boundary pair 삼겹살 vs 갈비구이; val confusion count=10.
+145,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0185.jpg,칼국수,수제비,,,,,,,hard_pair_true_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+146,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0228.jpg,칼국수,수제비,,,,,,,hard_pair_true_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+147,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0412.jpg,칼국수,수제비,,,,,,,hard_pair_true_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+148,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0263.jpg,칼국수,수제비,,,,,,,hard_pair_true_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+149,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0709.jpg,칼국수,수제비,,,,,,,hard_pair_true_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+150,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0567.jpg,칼국수,수제비,,,,,,,hard_pair_true_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+151,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0785.jpg,수제비,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+152,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0123.jpg,수제비,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+153,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0051.jpg,수제비,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+154,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0942.jpg,수제비,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+155,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0915.jpg,수제비,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+156,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0325.jpg,수제비,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 수제비; val confusion count=10.
+157,data/raw/korean_food_fixed_v1/train/김치찜/Img_126_0686.jpg,김치찜,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+158,data/raw/korean_food_fixed_v1/train/김치찜/Img_126_0408.jpg,김치찜,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+159,data/raw/korean_food_fixed_v1/train/김치찜/Img_126_0928.jpg,김치찜,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+160,data/raw/korean_food_fixed_v1/train/김치찜/Img_126_0138.jpg,김치찜,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+161,data/raw/korean_food_fixed_v1/train/김치찜/Img_126_0362.jpg,김치찜,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+162,data/raw/korean_food_fixed_v1/train/김치찜/Img_126_0164.jpg,김치찜,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+163,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0141.jpg,김치찌개,김치찜,,,,,,,hard_pair_pred_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+164,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0984.jpg,김치찌개,김치찜,,,,,,,hard_pair_pred_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+165,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0726.jpg,김치찌개,김치찜,,,,,,,hard_pair_pred_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+166,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0952.jpg,김치찌개,김치찜,,,,,,,hard_pair_pred_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+167,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0526.jpg,김치찌개,김치찜,,,,,,,hard_pair_pred_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+168,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0487.jpg,김치찌개,김치찜,,,,,,,hard_pair_pred_side,Review boundary pair 김치찜 vs 김치찌개; val confusion count=9.
+169,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0867.jpg,수제비,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+170,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0460.jpg,수제비,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+171,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0822.jpg,수제비,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+172,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0608.jpg,수제비,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+173,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0610.jpg,수제비,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+174,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0208.jpg,수제비,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+175,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0704.jpg,칼국수,수제비,,,,,,,hard_pair_pred_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+176,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0487.jpg,칼국수,수제비,,,,,,,hard_pair_pred_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+177,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0100.jpg,칼국수,수제비,,,,,,,hard_pair_pred_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+178,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0242.jpg,칼국수,수제비,,,,,,,hard_pair_pred_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+179,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0126.jpg,칼국수,수제비,,,,,,,hard_pair_pred_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+180,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0339.jpg,칼국수,수제비,,,,,,,hard_pair_pred_side,Review boundary pair 수제비 vs 칼국수; val confusion count=9.
+181,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0364.jpg,잔치국수,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+182,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0527.jpg,잔치국수,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+183,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0645.jpg,잔치국수,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+184,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0545.jpg,잔치국수,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+185,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0927.jpg,잔치국수,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+186,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0836.jpg,잔치국수,칼국수,,,,,,,hard_pair_true_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+187,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0037.jpg,칼국수,잔치국수,,,,,,,hard_pair_pred_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+188,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0378.jpg,칼국수,잔치국수,,,,,,,hard_pair_pred_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+189,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0149.jpg,칼국수,잔치국수,,,,,,,hard_pair_pred_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+190,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0065.jpg,칼국수,잔치국수,,,,,,,hard_pair_pred_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+191,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0669.jpg,칼국수,잔치국수,,,,,,,hard_pair_pred_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+192,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0573.jpg,칼국수,잔치국수,,,,,,,hard_pair_pred_side,Review boundary pair 잔치국수 vs 칼국수; val confusion count=9.
+193,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0093.jpg,갈비구이,삼겹살,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+194,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0811.jpg,갈비구이,삼겹살,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+195,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0406.jpg,갈비구이,삼겹살,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+196,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0881.jpg,갈비구이,삼겹살,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+197,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0084.jpg,갈비구이,삼겹살,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+198,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0826.jpg,갈비구이,삼겹살,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+199,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0597.jpg,삼겹살,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+200,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0603.jpg,삼겹살,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+201,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0946.jpg,삼겹살,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+202,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0557.jpg,삼겹살,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+203,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0679.jpg,삼겹살,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+204,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0614.jpg,삼겹살,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 삼겹살; val confusion count=8.
+205,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0291.jpg,떡볶이,라볶이,,,,,,,hard_pair_true_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+206,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0324.jpg,떡볶이,라볶이,,,,,,,hard_pair_true_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+207,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0930.jpg,떡볶이,라볶이,,,,,,,hard_pair_true_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+208,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0389.jpg,떡볶이,라볶이,,,,,,,hard_pair_true_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+209,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0249.jpg,떡볶이,라볶이,,,,,,,hard_pair_true_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+210,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0055.jpg,떡볶이,라볶이,,,,,,,hard_pair_true_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+211,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0121.jpg,라볶이,떡볶이,,,,,,,hard_pair_pred_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+212,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0351.jpg,라볶이,떡볶이,,,,,,,hard_pair_pred_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+213,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0951.jpg,라볶이,떡볶이,,,,,,,hard_pair_pred_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+214,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0161.jpg,라볶이,떡볶이,,,,,,,hard_pair_pred_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+215,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0039.jpg,라볶이,떡볶이,,,,,,,hard_pair_pred_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+216,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0661.jpg,라볶이,떡볶이,,,,,,,hard_pair_pred_side,Review boundary pair 떡볶이 vs 라볶이; val confusion count=8.
+217,data/raw/korean_food_fixed_v1/train/라면/Img_050_0683.jpg,라면,라볶이,,,,,,,hard_pair_true_side,Review boundary pair 라면 vs 라볶이; val confusion count=8.
+218,data/raw/korean_food_fixed_v1/train/라면/Img_050_0819.jpg,라면,라볶이,,,,,,,hard_pair_true_side,Review boundary pair 라면 vs 라볶이; val confusion count=8.
+219,data/raw/korean_food_fixed_v1/train/라면/Img_050_0224.jpg,라면,라볶이,,,,,,,hard_pair_true_side,Review boundary pair 라면 vs 라볶이; val confusion count=8.
+220,data/raw/korean_food_fixed_v1/train/라면/Img_050_0428.jpg,라면,라볶이,,,,,,,hard_pair_true_side,Review boundary pair 라면 vs 라볶이; val confusion count=8.
+221,data/raw/korean_food_fixed_v1/train/라면/Img_050_0600.jpg,라면,라볶이,,,,,,,hard_pair_true_side,Review boundary pair 라면 vs 라볶이; val confusion count=8.
+222,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0231.jpg,라볶이,라면,,,,,,,hard_pair_pred_side,Review boundary pair 라면 vs 라볶이; val confusion count=8.
+223,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0253.jpg,라볶이,라면,,,,,,,hard_pair_pred_side,Review boundary pair 라면 vs 라볶이; val confusion count=8.
+224,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0043.jpg,라볶이,라면,,,,,,,hard_pair_pred_side,Review boundary pair 라면 vs 라볶이; val confusion count=8.
+225,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0037.jpg,라볶이,라면,,,,,,,hard_pair_pred_side,Review boundary pair 라면 vs 라볶이; val confusion count=8.
+226,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0638.jpg,라볶이,라면,,,,,,,hard_pair_pred_side,Review boundary pair 라면 vs 라볶이; val confusion count=8.
+227,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0257.jpg,라볶이,라면,,,,,,,hard_pair_pred_side,Review boundary pair 라면 vs 라볶이; val confusion count=8.
+228,data/raw/korean_food_fixed_v1/train/순두부찌개/Img_123_0938.jpg,순두부찌개,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 순두부찌개 vs 김치찌개; val confusion count=8.
+229,data/raw/korean_food_fixed_v1/train/순두부찌개/Img_123_0759.jpg,순두부찌개,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 순두부찌개 vs 김치찌개; val confusion count=8.
+230,data/raw/korean_food_fixed_v1/train/순두부찌개/Img_123_0951.jpg,순두부찌개,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 순두부찌개 vs 김치찌개; val confusion count=8.
+231,data/raw/korean_food_fixed_v1/train/순두부찌개/Img_123_0386.jpg,순두부찌개,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 순두부찌개 vs 김치찌개; val confusion count=8.
+232,data/raw/korean_food_fixed_v1/train/순두부찌개/Img_123_0429.jpg,순두부찌개,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 순두부찌개 vs 김치찌개; val confusion count=8.
+233,data/raw/korean_food_fixed_v1/train/순두부찌개/Img_123_0335.jpg,순두부찌개,김치찌개,,,,,,,hard_pair_true_side,Review boundary pair 순두부찌개 vs 김치찌개; val confusion count=8.
+234,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0567.jpg,김치찌개,순두부찌개,,,,,,,hard_pair_pred_side,Review boundary pair 순두부찌개 vs 김치찌개; val confusion count=8.
+235,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0596.jpg,김치찌개,순두부찌개,,,,,,,hard_pair_pred_side,Review boundary pair 순두부찌개 vs 김치찌개; val confusion count=8.
+236,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0968.jpg,김치찌개,순두부찌개,,,,,,,hard_pair_pred_side,Review boundary pair 순두부찌개 vs 김치찌개; val confusion count=8.
+237,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0223.jpg,김치찌개,순두부찌개,,,,,,,hard_pair_pred_side,Review boundary pair 순두부찌개 vs 김치찌개; val confusion count=8.
+238,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0624.jpg,김치찌개,순두부찌개,,,,,,,hard_pair_pred_side,Review boundary pair 순두부찌개 vs 김치찌개; val confusion count=8.
+239,data/raw/korean_food_fixed_v1/train/양념치킨/Img_023_0579.jpg,양념치킨,후라이드치킨,,,,,,,hard_pair_true_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+240,data/raw/korean_food_fixed_v1/train/양념치킨/Img_023_0509.jpg,양념치킨,후라이드치킨,,,,,,,hard_pair_true_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+241,data/raw/korean_food_fixed_v1/train/양념치킨/Img_023_0417.jpg,양념치킨,후라이드치킨,,,,,,,hard_pair_true_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+242,data/raw/korean_food_fixed_v1/train/양념치킨/Img_023_0489.jpg,양념치킨,후라이드치킨,,,,,,,hard_pair_true_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+243,data/raw/korean_food_fixed_v1/train/양념치킨/Img_023_0823.jpg,양념치킨,후라이드치킨,,,,,,,hard_pair_true_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+244,data/raw/korean_food_fixed_v1/train/양념치킨/Img_023_0707.jpg,양념치킨,후라이드치킨,,,,,,,hard_pair_true_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+245,data/raw/korean_food_fixed_v1/train/후라이드치킨/Img_028_0632.jpg,후라이드치킨,양념치킨,,,,,,,hard_pair_pred_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+246,data/raw/korean_food_fixed_v1/train/후라이드치킨/Img_028_0075.jpg,후라이드치킨,양념치킨,,,,,,,hard_pair_pred_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+247,data/raw/korean_food_fixed_v1/train/후라이드치킨/Img_028_0638.jpg,후라이드치킨,양념치킨,,,,,,,hard_pair_pred_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+248,data/raw/korean_food_fixed_v1/train/후라이드치킨/Img_028_0521.jpg,후라이드치킨,양념치킨,,,,,,,hard_pair_pred_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+249,data/raw/korean_food_fixed_v1/train/후라이드치킨/Img_028_0766.jpg,후라이드치킨,양념치킨,,,,,,,hard_pair_pred_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+250,data/raw/korean_food_fixed_v1/train/후라이드치킨/Img_028_0432.jpg,후라이드치킨,양념치킨,,,,,,,hard_pair_pred_side,Review boundary pair 양념치킨 vs 후라이드치킨; val confusion count=8.
+251,data/raw/korean_food_fixed_v1/train/족발/Img_131_0894.jpg,족발,보쌈,,,,,,,hard_pair_true_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+252,data/raw/korean_food_fixed_v1/train/족발/Img_131_0892.jpg,족발,보쌈,,,,,,,hard_pair_true_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+253,data/raw/korean_food_fixed_v1/train/족발/Img_131_0711.jpg,족발,보쌈,,,,,,,hard_pair_true_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+254,data/raw/korean_food_fixed_v1/train/족발/Img_131_0482.jpg,족발,보쌈,,,,,,,hard_pair_true_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+255,data/raw/korean_food_fixed_v1/train/족발/Img_131_0191.jpg,족발,보쌈,,,,,,,hard_pair_true_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+256,data/raw/korean_food_fixed_v1/train/족발/Img_131_0670.jpg,족발,보쌈,,,,,,,hard_pair_true_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+257,data/raw/korean_food_fixed_v1/train/보쌈/Img_090_0624.jpg,보쌈,족발,,,,,,,hard_pair_pred_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+258,data/raw/korean_food_fixed_v1/train/보쌈/Img_090_0218.jpg,보쌈,족발,,,,,,,hard_pair_pred_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+259,data/raw/korean_food_fixed_v1/train/보쌈/Img_090_0306.jpg,보쌈,족발,,,,,,,hard_pair_pred_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+260,data/raw/korean_food_fixed_v1/train/보쌈/Img_090_0500.jpg,보쌈,족발,,,,,,,hard_pair_pred_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+261,data/raw/korean_food_fixed_v1/train/보쌈/Img_090_0184.jpg,보쌈,족발,,,,,,,hard_pair_pred_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+262,data/raw/korean_food_fixed_v1/train/보쌈/Img_090_0751.jpg,보쌈,족발,,,,,,,hard_pair_pred_side,Review boundary pair 족발 vs 보쌈; val confusion count=8.
+263,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0914.jpg,칼국수,잔치국수,,,,,,,hard_pair_true_side,Review boundary pair 칼국수 vs 잔치국수; val confusion count=8.
+264,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0808.jpg,칼국수,잔치국수,,,,,,,hard_pair_true_side,Review boundary pair 칼국수 vs 잔치국수; val confusion count=8.
+265,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0614.jpg,칼국수,잔치국수,,,,,,,hard_pair_true_side,Review boundary pair 칼국수 vs 잔치국수; val confusion count=8.
+266,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0953.jpg,칼국수,잔치국수,,,,,,,hard_pair_true_side,Review boundary pair 칼국수 vs 잔치국수; val confusion count=8.
+267,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0416.jpg,칼국수,잔치국수,,,,,,,hard_pair_true_side,Review boundary pair 칼국수 vs 잔치국수; val confusion count=8.
+268,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0453.jpg,잔치국수,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 잔치국수; val confusion count=8.
+269,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0144.JPG,잔치국수,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 잔치국수; val confusion count=8.
+270,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0734.jpg,잔치국수,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 잔치국수; val confusion count=8.
+271,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0192.jpg,잔치국수,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 잔치국수; val confusion count=8.
+272,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0372.jpg,잔치국수,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 잔치국수; val confusion count=8.
+273,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0124.jpg,잔치국수,칼국수,,,,,,,hard_pair_pred_side,Review boundary pair 칼국수 vs 잔치국수; val confusion count=8.
+274,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0842.jpg,갈비구이,떡갈비,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+275,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0524.jpg,갈비구이,떡갈비,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+276,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0680.jpg,갈비구이,떡갈비,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+277,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0700.jpg,갈비구이,떡갈비,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+278,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0667.jpg,갈비구이,떡갈비,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+279,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0365.jpg,갈비구이,떡갈비,,,,,,,hard_pair_true_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+280,data/raw/korean_food_fixed_v1/train/떡갈비/Img_006_0610.jpg,떡갈비,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+281,data/raw/korean_food_fixed_v1/train/떡갈비/Img_006_0001.jpg,떡갈비,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+282,data/raw/korean_food_fixed_v1/train/떡갈비/Img_006_0495.jpg,떡갈비,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+283,data/raw/korean_food_fixed_v1/train/떡갈비/Img_006_0569.jpg,떡갈비,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+284,data/raw/korean_food_fixed_v1/train/떡갈비/Img_006_0265.jpg,떡갈비,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+285,data/raw/korean_food_fixed_v1/train/떡갈비/Img_006_0063.jpg,떡갈비,갈비구이,,,,,,,hard_pair_pred_side,Review boundary pair 갈비구이 vs 떡갈비; val confusion count=7.
+286,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0435.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+287,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0322.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+288,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0502.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+289,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0044.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+290,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0105.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+291,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0248.jpg,갈비탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+292,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0007.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_pred_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+293,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0292.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_pred_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+294,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0295.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_pred_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+295,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0149.JPG,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_pred_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+296,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0568.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_pred_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+297,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0715.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_pair_pred_side,Review boundary pair 갈비탕 vs 곰탕_설렁탕; val confusion count=7.
+298,data/raw/korean_food_fixed_v1/train/김치볶음밥/Img_070_0364.jpg,김치볶음밥,새우볶음밥,,,,,,,hard_pair_true_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+299,data/raw/korean_food_fixed_v1/train/김치볶음밥/Img_070_0401.jpg,김치볶음밥,새우볶음밥,,,,,,,hard_pair_true_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+300,data/raw/korean_food_fixed_v1/train/김치볶음밥/Img_070_0828.jpg,김치볶음밥,새우볶음밥,,,,,,,hard_pair_true_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+301,data/raw/korean_food_fixed_v1/train/김치볶음밥/Img_070_0842.jpg,김치볶음밥,새우볶음밥,,,,,,,hard_pair_true_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+302,data/raw/korean_food_fixed_v1/train/김치볶음밥/Img_070_0147.jpg,김치볶음밥,새우볶음밥,,,,,,,hard_pair_true_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+303,data/raw/korean_food_fixed_v1/train/김치볶음밥/Img_070_0515.jpg,김치볶음밥,새우볶음밥,,,,,,,hard_pair_true_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+304,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0070.jpg,새우볶음밥,김치볶음밥,,,,,,,hard_pair_pred_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+305,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0178.jpg,새우볶음밥,김치볶음밥,,,,,,,hard_pair_pred_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+306,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0442.jpg,새우볶음밥,김치볶음밥,,,,,,,hard_pair_pred_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+307,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0941.jpg,새우볶음밥,김치볶음밥,,,,,,,hard_pair_pred_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+308,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0970.jpg,새우볶음밥,김치볶음밥,,,,,,,hard_pair_pred_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+309,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0796.jpg,새우볶음밥,김치볶음밥,,,,,,,hard_pair_pred_side,Review boundary pair 김치볶음밥 vs 새우볶음밥; val confusion count=7.
+310,data/raw/korean_food_fixed_v1/train/닭계장/Img_120_0130.jpg,닭계장,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+311,data/raw/korean_food_fixed_v1/train/닭계장/Img_120_0575.jpg,닭계장,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+312,data/raw/korean_food_fixed_v1/train/닭계장/Img_120_0386.jpg,닭계장,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+313,data/raw/korean_food_fixed_v1/train/닭계장/Img_120_0820.jpg,닭계장,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+314,data/raw/korean_food_fixed_v1/train/닭계장/Img_120_0464.jpg,닭계장,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+315,data/raw/korean_food_fixed_v1/train/닭계장/Img_120_0957.jpg,닭계장,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+316,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0375.jpg,동태찌개,닭계장,,,,,,,hard_pair_pred_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+317,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0889.jpg,동태찌개,닭계장,,,,,,,hard_pair_pred_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+318,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0345.jpg,동태찌개,닭계장,,,,,,,hard_pair_pred_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+319,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0008.jpg,동태찌개,닭계장,,,,,,,hard_pair_pred_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+320,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0433.jpg,동태찌개,닭계장,,,,,,,hard_pair_pred_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+321,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0643.jpg,동태찌개,닭계장,,,,,,,hard_pair_pred_side,Review boundary pair 닭계장 vs 동태찌개; val confusion count=7.
+322,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0557.jpg,닭볶음탕,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+323,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0618.jpg,닭볶음탕,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+324,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0768.jpg,닭볶음탕,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+325,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0954.jpg,닭볶음탕,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+326,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0243.jpg,닭볶음탕,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+327,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0763.jpg,닭볶음탕,갈비찜,,,,,,,hard_pair_true_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+328,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0913.jpg,갈비찜,닭볶음탕,,,,,,,hard_pair_pred_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+329,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0898.jpg,갈비찜,닭볶음탕,,,,,,,hard_pair_pred_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+330,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0483.jpg,갈비찜,닭볶음탕,,,,,,,hard_pair_pred_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+331,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0018.jpg,갈비찜,닭볶음탕,,,,,,,hard_pair_pred_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+332,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0256.jpg,갈비찜,닭볶음탕,,,,,,,hard_pair_pred_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+333,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0219.jpg,갈비찜,닭볶음탕,,,,,,,hard_pair_pred_side,Review boundary pair 닭볶음탕 vs 갈비찜; val confusion count=7.
+334,data/raw/korean_food_fixed_v1/train/된장찌개/Img_122_0196.jpg,된장찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+335,data/raw/korean_food_fixed_v1/train/된장찌개/Img_122_0616.jpg,된장찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+336,data/raw/korean_food_fixed_v1/train/된장찌개/Img_122_0558.jpg,된장찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+337,data/raw/korean_food_fixed_v1/train/된장찌개/Img_122_0321.jpg,된장찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+338,data/raw/korean_food_fixed_v1/train/된장찌개/Img_122_0555.jpg,된장찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+339,data/raw/korean_food_fixed_v1/train/된장찌개/Img_122_0532.jpg,된장찌개,동태찌개,,,,,,,hard_pair_true_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+340,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0437.jpg,동태찌개,된장찌개,,,,,,,hard_pair_pred_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+341,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0978.jpg,동태찌개,된장찌개,,,,,,,hard_pair_pred_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+342,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0594.jpg,동태찌개,된장찌개,,,,,,,hard_pair_pred_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+343,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0119.jpg,동태찌개,된장찌개,,,,,,,hard_pair_pred_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+344,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0688.jpg,동태찌개,된장찌개,,,,,,,hard_pair_pred_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+345,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0856.jpg,동태찌개,된장찌개,,,,,,,hard_pair_pred_side,Review boundary pair 된장찌개 vs 동태찌개; val confusion count=7.
+346,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0506.jpg,라볶이,떡볶이,,,,,,,hard_pair_true_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+347,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0607.jpg,라볶이,떡볶이,,,,,,,hard_pair_true_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+348,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0425.jpg,라볶이,떡볶이,,,,,,,hard_pair_true_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+349,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0681.jpg,라볶이,떡볶이,,,,,,,hard_pair_true_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+350,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0347.jpg,라볶이,떡볶이,,,,,,,hard_pair_true_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+351,data/raw/korean_food_fixed_v1/train/라볶이/Img_083_0824.jpg,라볶이,떡볶이,,,,,,,hard_pair_true_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+352,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0002.jpg,떡볶이,라볶이,,,,,,,hard_pair_pred_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+353,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0565.jpg,떡볶이,라볶이,,,,,,,hard_pair_pred_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+354,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0261.jpg,떡볶이,라볶이,,,,,,,hard_pair_pred_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+355,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0794.jpg,떡볶이,라볶이,,,,,,,hard_pair_pred_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+356,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0489.jpg,떡볶이,라볶이,,,,,,,hard_pair_pred_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+357,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0689.jpg,떡볶이,라볶이,,,,,,,hard_pair_pred_side,Review boundary pair 라볶이 vs 떡볶이; val confusion count=7.
+358,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0220.jpg,불고기,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+359,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0427.jpg,불고기,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+360,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0262.jpg,불고기,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+361,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0041.jpg,불고기,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+362,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0751.jpg,불고기,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+363,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0968.jpg,불고기,갈비구이,,,,,,,hard_pair_true_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+364,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0977.jpg,갈비구이,불고기,,,,,,,hard_pair_pred_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+365,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0644.jpg,갈비구이,불고기,,,,,,,hard_pair_pred_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+366,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0153.jpg,갈비구이,불고기,,,,,,,hard_pair_pred_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+367,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0062.jpg,갈비구이,불고기,,,,,,,hard_pair_pred_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+368,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0704.jpg,갈비구이,불고기,,,,,,,hard_pair_pred_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+369,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0786.jpg,갈비구이,불고기,,,,,,,hard_pair_pred_side,Review boundary pair 불고기 vs 갈비구이; val confusion count=7.
+370,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0847.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+371,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0220.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+372,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0919.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+373,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0884.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+374,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0040.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+375,data/raw/korean_food_fixed_v1/train/삼계탕/Img_138_0961.jpg,삼계탕,곰탕_설렁탕,,,,,,,hard_pair_true_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+376,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0920.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_pred_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+377,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0231.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_pred_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+378,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0829.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_pred_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+379,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0868.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_pred_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+380,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0196.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_pred_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+381,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0316.jpg,곰탕_설렁탕,삼계탕,,,,,,,hard_pair_pred_side,Review boundary pair 삼계탕 vs 곰탕_설렁탕; val confusion count=7.
+382,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0051.jpg,알밥,새우볶음밥,,,,,,,hard_pair_true_side,Review boundary pair 알밥 vs 새우볶음밥; val confusion count=7.
+383,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0316.jpg,알밥,새우볶음밥,,,,,,,hard_pair_true_side,Review boundary pair 알밥 vs 새우볶음밥; val confusion count=7.
+384,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0107.jpg,알밥,새우볶음밥,,,,,,,hard_pair_true_side,Review boundary pair 알밥 vs 새우볶음밥; val confusion count=7.
+385,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0957.jpg,알밥,새우볶음밥,,,,,,,hard_pair_true_side,Review boundary pair 알밥 vs 새우볶음밥; val confusion count=7.
+386,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0742.jpg,알밥,새우볶음밥,,,,,,,hard_pair_true_side,Review boundary pair 알밥 vs 새우볶음밥; val confusion count=7.
+387,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0005.jpg,새우볶음밥,알밥,,,,,,,hard_pair_pred_side,Review boundary pair 알밥 vs 새우볶음밥; val confusion count=7.
+388,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0545.jpg,새우볶음밥,알밥,,,,,,,hard_pair_pred_side,Review boundary pair 알밥 vs 새우볶음밥; val confusion count=7.
+389,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0054.jpg,새우볶음밥,알밥,,,,,,,hard_pair_pred_side,Review boundary pair 알밥 vs 새우볶음밥; val confusion count=7.
+390,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0693.jpg,새우볶음밥,알밥,,,,,,,hard_pair_pred_side,Review boundary pair 알밥 vs 새우볶음밥; val confusion count=7.
+391,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0886.jpg,새우볶음밥,알밥,,,,,,,hard_pair_pred_side,Review boundary pair 알밥 vs 새우볶음밥; val confusion count=7.
+392,data/raw/korean_food_fixed_v1/train/새우볶음밥/Img_073_0132.jpg,새우볶음밥,알밥,,,,,,,hard_pair_pred_side,Review boundary pair 알밥 vs 새우볶음밥; val confusion count=7.
+393,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0178.jpg,호박전,파전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+394,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0378.jpg,호박전,파전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+395,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0324.jpg,호박전,파전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+396,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0549.jpg,호박전,파전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+397,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0586.jpg,호박전,파전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+398,data/raw/korean_food_fixed_v1/train/호박전/Img_104_0479.jpg,호박전,파전,,,,,,,hard_pair_true_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+399,data/raw/korean_food_fixed_v1/train/파전/Img_103_0997.jpg,파전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+400,data/raw/korean_food_fixed_v1/train/파전/Img_103_0475.jpg,파전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+401,data/raw/korean_food_fixed_v1/train/파전/Img_103_0882.jpg,파전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+402,data/raw/korean_food_fixed_v1/train/파전/Img_103_0374.jpg,파전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+403,data/raw/korean_food_fixed_v1/train/파전/Img_103_0680.jpg,파전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+404,data/raw/korean_food_fixed_v1/train/파전/Img_103_0819.jpg,파전,호박전,,,,,,,hard_pair_pred_side,Review boundary pair 호박전 vs 파전; val confusion count=7.
+405,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0354.jpg,동태찌개,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.798165, recall=0.870000, top_confusions=."
+406,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0897.jpg,동태찌개,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.798165, recall=0.870000, top_confusions=."
+407,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0443.jpg,동태찌개,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.798165, recall=0.870000, top_confusions=."
+408,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0619.jpg,동태찌개,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.798165, recall=0.870000, top_confusions=."
+409,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0372.jpg,동태찌개,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.798165, recall=0.870000, top_confusions=."
+410,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0675.jpg,동태찌개,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.798165, recall=0.870000, top_confusions=."
+411,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0614.jpg,동태찌개,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.798165, recall=0.870000, top_confusions=."
+412,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0541.jpg,동태찌개,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.798165, recall=0.870000, top_confusions=."
+413,data/raw/korean_food_fixed_v1/train/동태찌개/Img_121_0705.jpg,동태찌개,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.798165, recall=0.870000, top_confusions=."
+414,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0523.jpg,갈비찜,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.816626, recall=0.835000, top_confusions=."
+415,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0675.jpg,갈비찜,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.816626, recall=0.835000, top_confusions=."
+416,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0704.jpg,갈비찜,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.816626, recall=0.835000, top_confusions=."
+417,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0415.jpg,갈비찜,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.816626, recall=0.835000, top_confusions=."
+418,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0710.jpg,갈비찜,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.816626, recall=0.835000, top_confusions=."
+419,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0189.jpg,갈비찜,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.816626, recall=0.835000, top_confusions=."
+420,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0628.jpg,갈비찜,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.816626, recall=0.835000, top_confusions=."
+421,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0441.jpg,갈비찜,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.816626, recall=0.835000, top_confusions=."
+422,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0702.jpg,갈비찜,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.816626, recall=0.835000, top_confusions=."
+423,data/raw/korean_food_fixed_v1/train/갈비찜/Img_124_0401.jpg,갈비찜,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.816626, recall=0.835000, top_confusions=."
+424,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0883.jpg,김치찌개,동태찌개,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.817955, recall=0.820000, top_confusions=동태찌개(13)."
+425,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0496.jpg,김치찌개,동태찌개,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.817955, recall=0.820000, top_confusions=동태찌개(13)."
+426,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0132.jpg,김치찌개,동태찌개,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.817955, recall=0.820000, top_confusions=동태찌개(13)."
+427,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0603.jpg,김치찌개,동태찌개,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.817955, recall=0.820000, top_confusions=동태찌개(13)."
+428,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0372.jpg,김치찌개,동태찌개,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.817955, recall=0.820000, top_confusions=동태찌개(13)."
+429,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0150.jpg,김치찌개,동태찌개,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.817955, recall=0.820000, top_confusions=동태찌개(13)."
+430,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0287.jpg,김치찌개,동태찌개,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.817955, recall=0.820000, top_confusions=동태찌개(13)."
+431,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0619.jpg,김치찌개,동태찌개,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.817955, recall=0.820000, top_confusions=동태찌개(13)."
+432,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0546.jpg,김치찌개,동태찌개,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.817955, recall=0.820000, top_confusions=동태찌개(13)."
+433,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0478.jpg,갈비구이,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.824691, recall=0.835000, top_confusions=갈비찜(10); 삼겹살(8); 떡갈비(7)."
+434,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0470.jpg,갈비구이,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.824691, recall=0.835000, top_confusions=갈비찜(10); 삼겹살(8); 떡갈비(7)."
+435,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0598.jpg,갈비구이,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.824691, recall=0.835000, top_confusions=갈비찜(10); 삼겹살(8); 떡갈비(7)."
+436,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0960.jpg,갈비구이,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.824691, recall=0.835000, top_confusions=갈비찜(10); 삼겹살(8); 떡갈비(7)."
+437,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0612.jpg,갈비구이,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.824691, recall=0.835000, top_confusions=갈비찜(10); 삼겹살(8); 떡갈비(7)."
+438,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0911.jpg,갈비구이,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.824691, recall=0.835000, top_confusions=갈비찜(10); 삼겹살(8); 떡갈비(7)."
+439,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0676.jpg,갈비구이,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.824691, recall=0.835000, top_confusions=갈비찜(10); 삼겹살(8); 떡갈비(7)."
+440,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0859.jpg,갈비구이,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.824691, recall=0.835000, top_confusions=갈비찜(10); 삼겹살(8); 떡갈비(7)."
+441,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0280.jpg,갈비구이,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.824691, recall=0.835000, top_confusions=갈비찜(10); 삼겹살(8); 떡갈비(7)."
+442,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0047.jpg,갈비구이,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.824691, recall=0.835000, top_confusions=갈비찜(10); 삼겹살(8); 떡갈비(7)."
+443,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0096.jpg,삼겹살,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.827586, recall=0.783920, top_confusions=갈비구이(10)."
+444,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0885.jpg,삼겹살,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.827586, recall=0.783920, top_confusions=갈비구이(10)."
+445,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0961.jpg,삼겹살,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.827586, recall=0.783920, top_confusions=갈비구이(10)."
+446,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0529.jpg,삼겹살,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.827586, recall=0.783920, top_confusions=갈비구이(10)."
+447,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0573.jpg,삼겹살,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.827586, recall=0.783920, top_confusions=갈비구이(10)."
+448,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0556.jpg,삼겹살,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.827586, recall=0.783920, top_confusions=갈비구이(10)."
+449,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0043.jpg,삼겹살,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.827586, recall=0.783920, top_confusions=갈비구이(10)."
+450,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0286.jpg,삼겹살,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.827586, recall=0.783920, top_confusions=갈비구이(10)."
+451,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0474.jpg,삼겹살,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.827586, recall=0.783920, top_confusions=갈비구이(10)."
+452,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0224.jpg,삼겹살,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.827586, recall=0.783920, top_confusions=갈비구이(10)."
+453,data/raw/korean_food_fixed_v1/train/라면/Img_050_0198.jpg,라면,라볶이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.834646, recall=0.798995, top_confusions=라볶이(8)."
+454,data/raw/korean_food_fixed_v1/train/라면/Img_050_0099.jpg,라면,라볶이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.834646, recall=0.798995, top_confusions=라볶이(8)."
+455,data/raw/korean_food_fixed_v1/train/라면/Img_050_0689.jpg,라면,라볶이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.834646, recall=0.798995, top_confusions=라볶이(8)."
+456,data/raw/korean_food_fixed_v1/train/라면/Img_050_0357.jpg,라면,라볶이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.834646, recall=0.798995, top_confusions=라볶이(8)."
+457,data/raw/korean_food_fixed_v1/train/라면/Img_050_0933.jpg,라면,라볶이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.834646, recall=0.798995, top_confusions=라볶이(8)."
+458,data/raw/korean_food_fixed_v1/train/라면/Img_050_0708.jpg,라면,라볶이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.834646, recall=0.798995, top_confusions=라볶이(8)."
+459,data/raw/korean_food_fixed_v1/train/라면/Img_050_0142.jpg,라면,라볶이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.834646, recall=0.798995, top_confusions=라볶이(8)."
+460,data/raw/korean_food_fixed_v1/train/라면/Img_050_0762.jpg,라면,라볶이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.834646, recall=0.798995, top_confusions=라볶이(8)."
+461,data/raw/korean_food_fixed_v1/train/라면/Img_050_0610.jpg,라면,라볶이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.834646, recall=0.798995, top_confusions=라볶이(8)."
+462,data/raw/korean_food_fixed_v1/train/라면/Img_050_0295.jpg,라면,라볶이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.834646, recall=0.798995, top_confusions=라볶이(8)."
+463,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0213.jpg,닭볶음탕,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.835897, recall=0.815000, top_confusions=갈비찜(7)."
+464,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0967.jpg,닭볶음탕,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.835897, recall=0.815000, top_confusions=갈비찜(7)."
+465,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0457.jpg,닭볶음탕,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.835897, recall=0.815000, top_confusions=갈비찜(7)."
+466,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0026.jpg,닭볶음탕,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.835897, recall=0.815000, top_confusions=갈비찜(7)."
+467,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0129.jpg,닭볶음탕,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.835897, recall=0.815000, top_confusions=갈비찜(7)."
+468,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0446.jpg,닭볶음탕,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.835897, recall=0.815000, top_confusions=갈비찜(7)."
+469,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0346.jpg,닭볶음탕,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.835897, recall=0.815000, top_confusions=갈비찜(7)."
+470,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0984.jpg,닭볶음탕,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.835897, recall=0.815000, top_confusions=갈비찜(7)."
+471,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0324.jpg,닭볶음탕,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.835897, recall=0.815000, top_confusions=갈비찜(7)."
+472,data/raw/korean_food_fixed_v1/train/닭볶음탕/Img_128_0365.jpg,닭볶음탕,갈비찜,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.835897, recall=0.815000, top_confusions=갈비찜(7)."
+473,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0808.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.839895, recall=0.800000, top_confusions=갈비탕(13); 삼계탕(10)."
+474,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0526.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.839895, recall=0.800000, top_confusions=갈비탕(13); 삼계탕(10)."
+475,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0180.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.839895, recall=0.800000, top_confusions=갈비탕(13); 삼계탕(10)."
+476,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0226.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.839895, recall=0.800000, top_confusions=갈비탕(13); 삼계탕(10)."
+477,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0499.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.839895, recall=0.800000, top_confusions=갈비탕(13); 삼계탕(10)."
+478,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0166.JPG,곰탕_설렁탕,갈비탕,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.839895, recall=0.800000, top_confusions=갈비탕(13); 삼계탕(10)."
+479,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0167.png,곰탕_설렁탕,갈비탕,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.839895, recall=0.800000, top_confusions=갈비탕(13); 삼계탕(10)."
+480,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0489.jpg,곰탕_설렁탕,갈비탕,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.839895, recall=0.800000, top_confusions=갈비탕(13); 삼계탕(10)."
+481,data/raw/korean_food_fixed_v1/train/닭갈비/Img_004_0090.jpg,닭갈비,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.842365, recall=0.855000, top_confusions=."
+482,data/raw/korean_food_fixed_v1/train/닭갈비/Img_004_0918.jpg,닭갈비,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.842365, recall=0.855000, top_confusions=."
+483,data/raw/korean_food_fixed_v1/train/닭갈비/Img_004_0416.jpg,닭갈비,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.842365, recall=0.855000, top_confusions=."
+484,data/raw/korean_food_fixed_v1/train/닭갈비/Img_004_0630.jpg,닭갈비,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.842365, recall=0.855000, top_confusions=."
+485,data/raw/korean_food_fixed_v1/train/닭갈비/Img_004_0470.jpg,닭갈비,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.842365, recall=0.855000, top_confusions=."
+486,data/raw/korean_food_fixed_v1/train/닭갈비/Img_004_0928.jpg,닭갈비,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.842365, recall=0.855000, top_confusions=."
+487,data/raw/korean_food_fixed_v1/train/닭갈비/Img_004_0059.jpg,닭갈비,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.842365, recall=0.855000, top_confusions=."
+488,data/raw/korean_food_fixed_v1/train/닭갈비/Img_004_0671.jpg,닭갈비,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.842365, recall=0.855000, top_confusions=."
+489,data/raw/korean_food_fixed_v1/train/닭갈비/Img_004_0538.jpg,닭갈비,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.842365, recall=0.855000, top_confusions=."
+490,data/raw/korean_food_fixed_v1/train/닭갈비/Img_004_0726.jpg,닭갈비,hard_class_review,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.842365, recall=0.855000, top_confusions=."
+491,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0344.jpg,불고기,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.843434, recall=0.835000, top_confusions=갈비구이(7)."
+492,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0170.jpg,불고기,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.843434, recall=0.835000, top_confusions=갈비구이(7)."
+493,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0201.jpg,불고기,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.843434, recall=0.835000, top_confusions=갈비구이(7)."
+494,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0962.jpg,불고기,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.843434, recall=0.835000, top_confusions=갈비구이(7)."
+495,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0016.jpg,불고기,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.843434, recall=0.835000, top_confusions=갈비구이(7)."
+496,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0490.jpg,불고기,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.843434, recall=0.835000, top_confusions=갈비구이(7)."
+497,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0122.jpg,불고기,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.843434, recall=0.835000, top_confusions=갈비구이(7)."
+498,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0002.jpg,불고기,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.843434, recall=0.835000, top_confusions=갈비구이(7)."
+499,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0811.jpg,불고기,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.843434, recall=0.835000, top_confusions=갈비구이(7)."
+500,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0435.jpg,불고기,갈비구이,,,,,,,hard_class_extra,"Low F1 hard class review; f1=0.843434, recall=0.835000, top_confusions=갈비구이(7)."

@@ -1,0 +1,16 @@
+# Food-LeWM Classifier Report
+
+- epoch: `1`
+- loss: `2.1967044174671173`
+- train_acc: `0.625`
+- val_top1: `0.21875`
+- val_top3: `0.375`
+- macro_f1: `0.08843537414965986`
+- lr: `0.0`
+- seconds: `15.26`
+- model_name: `efficientnet_b0`
+- image_size: `224`
+- latent_dim: `192`
+- num_classes: `56`
+- lewm_checkpoint: `data/models/food_lewm_b0_pretrain_smoke.pt`
+- checkpoint: `data/models/food_lewm_b0_classifier_smoke.pt`

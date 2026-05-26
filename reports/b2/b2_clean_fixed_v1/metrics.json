@@ -1,0 +1,19 @@
+{
+  "epoch": 4,
+  "loss": 1.135050209332318,
+  "train_acc": 0.7812277887212395,
+  "val_top1": 0.8339285714285715,
+  "val_top3": 0.953125,
+  "macro_f1": 0.8335263399815835,
+  "lr": 4.849231551964772e-05,
+  "seconds": 16772.22,
+  "model_type": "timm_classifier",
+  "model_name": "efficientnet_b2",
+  "image_size": 260,
+  "num_classes": 56,
+  "checkpoint": "data/models/efficientnet_korean_b2_clean_fixed_v1.pt",
+  "data_dir": "data/raw/korean_food_fixed_v1",
+  "best_val_acc": 0.8339285714285715,
+  "best_macro_f1": 0.8335263399815835,
+  "training_status": "interrupted_after_epoch4_checkpoint_due_to_extreme_runtime_slowdown"
+}

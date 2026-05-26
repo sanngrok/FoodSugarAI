@@ -1,0 +1,11 @@
+# Food-LeWM Evaluation Report
+
+- checkpoints: `['data/models/food_lewm_b0_classifier_smoke.pt']`
+- data_dir: `data/raw/korean_food_smoke`
+- num_models: `1`
+- tta: `hflip`
+- val_top1: `0.21875`
+- val_top3: `0.375`
+- macro_f1: `0.08843537414965986`
+- num_classes: `56`
+- num_samples: `32`

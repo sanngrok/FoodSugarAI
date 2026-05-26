@@ -1,0 +1,11 @@
+{
+  "model_name": "efficientnet_b0",
+  "image_size": 224,
+  "latent_dim": 192,
+  "lambda_sigreg": 0.1,
+  "num_projections": 64,
+  "pretrain_epochs": 1,
+  "images": 16,
+  "best_loss": 0.4024338498711586,
+  "checkpoint": "data/models/food_lewm_b0_pretrain_smoke.pt"
+}

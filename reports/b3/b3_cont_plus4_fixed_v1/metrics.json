@@ -1,0 +1,21 @@
+{
+  "epoch": 1,
+  "loss": 0.7064124670864855,
+  "train_acc": 0.9352192189752858,
+  "val_top1": 0.8912202380952381,
+  "val_top3": 0.971577380952381,
+  "macro_f1": 0.8907775435780338,
+  "lr": 2.5606601717798212e-06,
+  "seconds": 5614.9,
+  "model_type": "timm_classifier",
+  "model_name": "efficientnet_b3",
+  "image_size": 300,
+  "num_classes": 56,
+  "checkpoint": "data/models/efficientnet_korean_b3_cont_plus4_fixed_v1.pt",
+  "data_dir": "data/raw/korean_food_fixed_v1",
+  "train_subdir": "train",
+  "val_subdir": "val",
+  "best_val_acc": 0.8912202380952381,
+  "best_macro_f1": 0.8907775435780338,
+  "note": "Diagnostic plus4 continuation from the epoch 6 B3 continuation checkpoint. It was intentionally stopped during epoch 2 because epoch 1 validation was lower than the epoch 6 source checkpoint."
+}

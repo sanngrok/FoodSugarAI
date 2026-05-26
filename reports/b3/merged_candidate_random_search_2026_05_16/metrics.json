@@ -1,0 +1,27 @@
+{
+  "selected_names": [
+    "food_lewm_b0",
+    "b0_seed123_fixed_v1",
+    "b3_full_fixed_v1",
+    "b0_seed7_fixed_v1",
+    "b3_probe_fixed_v1",
+    "b3_cont_fixed_v1",
+    "b0_supervised_only"
+  ],
+  "best_correct": 6184,
+  "num_samples": 6720,
+  "best_top1": 0.9202380952380952,
+  "best_top3": 0.9794642925262451,
+  "best_macro_f1": 0.9200379850437458,
+  "best_weights": {
+    "food_lewm_b0": 0.14236057323734339,
+    "b0_seed123_fixed_v1": 0.25673506877108193,
+    "b3_full_fixed_v1": 0.5294900339823901,
+    "b0_seed7_fixed_v1": 0.06212042836978826,
+    "b3_probe_fixed_v1": 0.0010083266638448514,
+    "b3_cont_fixed_v1": 0.004964520201094591,
+    "b0_supervised_only": 0.0033210487744569734
+  },
+  "total_trials": 251000,
+  "source_cache": "reports/b3/weighted_ensemble_merged_candidates_hflip/logits_cache.pt"
+}

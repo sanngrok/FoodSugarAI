@@ -1,0 +1,8 @@
+case,input_condition,current_behavior,expected_pilot_behavior,status
+missing_meal_input,no meal events provided,defaults meal features to zero and continues,continue with context-limited warning,pass
+missing_bolus_input,no bolus events provided,defaults bolus features to zero and continues,continue without treatment implication,pass
+missing_basal_input,no basal events provided,defaults basal features to zero and continues,continue with basal features zero,pass
+missing_cgm_readings,fewer than 13 readings,Pydantic/API rejects or forecasting raises 422,ask for at least 13 recent readings,pass
+missing_prediction_intervals,interval artifact absent,response can omit interval fields,do not show 90m as precise if interval unavailable,watch
+missing_food_confidence,low classifier confidence not a glucose API input,ask user to confirm food name before nutrition/risk,policy
+

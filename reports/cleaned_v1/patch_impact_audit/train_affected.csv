@@ -1,0 +1,50 @@
+split,path,class_name,filename,action,new_label,review_status,note
+train,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0065.JPG,갈비구이,Img_000_0065.JPG,relabel,갈비찜,wrong_label,ai_visual_draft: image appears closer to predicted label `갈비찜` than current label `갈비구이`.
+train,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0127.jpg,갈비구이,Img_000_0127.jpg,relabel,갈비찜,wrong_label,ai_visual_draft: image appears closer to predicted label `갈비찜` than current label `갈비구이`.
+train,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0426.jpg,갈비구이,Img_000_0426.jpg,relabel,갈비찜,wrong_label,ai_visual_draft: image appears closer to predicted label `갈비찜` than current label `갈비구이`.
+train,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0656.jpg,갈비구이,Img_000_0656.jpg,relabel,떡갈비,wrong_label,ai_visual_draft: image appears closer to predicted label `떡갈비` than current label `갈비구이`.
+train,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0612.jpg,갈비탕,Img_134_0612.jpg,relabel,갈비찜,wrong_label,ai_visual_draft: image appears closer to predicted label `갈비찜` than current label `갈비탕`.
+train,data/raw/korean_food_fixed_v1/train/갈비탕/Img_134_0908.jpg,갈비탕,Img_134_0908.jpg,relabel,된장찌개,wrong_label,ai_visual_draft: image appears closer to predicted label `된장찌개` than current label `갈비탕`.
+train,data/raw/korean_food_fixed_v1/train/감자전/Img_097_0525.jpg,감자전,Img_097_0525.jpg,relabel,약식,wrong_label,ai_visual_draft: image appears closer to predicted label `약식` than current label `감자전`.
+train,data/raw/korean_food_fixed_v1/train/계란말이/Img_098_0309.jpg,계란말이,Img_098_0309.jpg,relabel,호박전,wrong_label,ai_visual_draft: image appears closer to predicted label `호박전` than current label `계란말이`.
+train,data/raw/korean_food_fixed_v1/train/곰탕_설렁탕/Img_136_0158.JPG,곰탕_설렁탕,Img_136_0158.JPG,relabel,불고기,wrong_label,ai_visual_draft: image appears closer to predicted label `불고기` than current label `곰탕_설렁탕`.
+train,data/raw/korean_food_fixed_v1/train/김치볶음밥/Img_070_0173.jpg,김치볶음밥,Img_070_0173.jpg,relabel,약식,wrong_label,ai_visual_draft: image appears closer to predicted label `약식` than current label `김치볶음밥`.
+train,data/raw/korean_food_fixed_v1/train/김치볶음밥/Img_070_0771.jpg,김치볶음밥,Img_070_0771.jpg,relabel,새우볶음밥,wrong_label,ai_visual_draft: image appears closer to predicted label `새우볶음밥` than current label `김치볶음밥`.
+train,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0156.jpg,김치찌개,Img_119_0156.jpg,relabel,순두부찌개,wrong_label,ai_visual_draft: image appears closer to predicted label `순두부찌개` than current label `김치찌개`.
+train,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0797.jpg,김치찌개,Img_119_0797.jpg,relabel,라볶이,wrong_label,ai_visual_draft: image appears closer to predicted label `라볶이` than current label `김치찌개`.
+train,data/raw/korean_food_fixed_v1/train/닭계장/Img_120_0945.jpg,닭계장,Img_120_0945.jpg,relabel,김치찜,wrong_label,ai_visual_draft: image appears closer to predicted label `김치찜` than current label `닭계장`.
+train,data/raw/korean_food_fixed_v1/train/떡볶이/Img_082_0494.jpg,떡볶이,Img_082_0494.jpg,relabel,양념치킨,wrong_label,ai_visual_draft: image appears closer to predicted label `양념치킨` than current label `떡볶이`.
+train,data/raw/korean_food_fixed_v1/train/라면/Img_050_0104.jpg,라면,Img_050_0104.jpg,relabel,라볶이,wrong_label,ai_visual_draft: image appears closer to predicted label `라볶이` than current label `라면`.
+train,data/raw/korean_food_fixed_v1/train/라면/Img_050_0168.jpg,라면,Img_050_0168.jpg,relabel,비빔밥,wrong_label,ai_visual_draft: image appears closer to predicted label `비빔밥` than current label `라면`.
+train,data/raw/korean_food_fixed_v1/train/라면/Img_050_0622.jpg,라면,Img_050_0622.jpg,relabel,짬뽕,wrong_label,ai_visual_draft: image appears closer to predicted label `짬뽕` than current label `라면`.
+train,data/raw/korean_food_fixed_v1/train/라면/Img_050_0788.jpg,라면,Img_050_0788.jpg,relabel,순두부찌개,wrong_label,ai_visual_draft: image appears closer to predicted label `순두부찌개` than current label `라면`.
+train,data/raw/korean_food_fixed_v1/train/물냉면/Img_052_0792.jpg,물냉면,Img_052_0792.jpg,relabel,잔치국수,wrong_label,ai_visual_draft: image appears closer to predicted label `잔치국수` than current label `물냉면`.
+train,data/raw/korean_food_fixed_v1/train/보쌈/Img_090_0342.jpg,보쌈,Img_090_0342.jpg,relabel,족발,wrong_label,ai_visual_draft: image appears closer to predicted label `족발` than current label `보쌈`.
+train,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0161.jpg,불고기,Img_007_0161.jpg,remove,,multi_food,ai_visual_draft: multiple foods or target dish is not visually isolated.
+train,data/raw/korean_food_fixed_v1/train/불고기/Img_007_0277.jpg,불고기,Img_007_0277.jpg,relabel,떡갈비,wrong_label,ai_visual_draft: image appears closer to predicted label `떡갈비` than current label `불고기`.
+train,data/raw/korean_food_fixed_v1/train/비빔밥/Img_072_0101.jpg,비빔밥,Img_072_0101.jpg,relabel,쫄면,wrong_label,ai_visual_draft: image appears closer to predicted label `쫄면` than current label `비빔밥`.
+train,data/raw/korean_food_fixed_v1/train/비빔밥/Img_072_0477.jpg,비빔밥,Img_072_0477.jpg,remove,,multi_food,ai_visual_draft: multiple foods or target dish is not visually isolated.
+train,data/raw/korean_food_fixed_v1/train/비빔밥/Img_072_0612.jpg,비빔밥,Img_072_0612.jpg,relabel,불고기,wrong_label,ai_visual_draft: image appears closer to predicted label `불고기` than current label `비빔밥`.
+train,data/raw/korean_food_fixed_v1/train/비빔밥/Img_072_0624.jpg,비빔밥,Img_072_0624.jpg,remove,,multi_food,ai_visual_draft: multiple foods or target dish is not visually isolated.
+train,data/raw/korean_food_fixed_v1/train/비빔밥/Img_072_0918.JPG,비빔밥,Img_072_0918.JPG,relabel,알밥,wrong_label,ai_visual_draft: image appears closer to predicted label `알밥` than current label `비빔밥`.
+train,data/raw/korean_food_fixed_v1/train/삼겹살/Img_008_0842.jpg,삼겹살,Img_008_0842.jpg,relabel,고등어구이,wrong_label,ai_visual_draft: image appears closer to predicted label `고등어구이` than current label `삼겹살`.
+train,data/raw/korean_food_fixed_v1/train/수제비/Img_054_0852.jpg,수제비,Img_054_0852.jpg,relabel,순두부찌개,wrong_label,ai_visual_draft: image appears closer to predicted label `순두부찌개` than current label `수제비`.
+train,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0308.jpg,알밥,Img_074_0308.jpg,relabel,비빔밥,wrong_label,ai_visual_draft: image appears closer to predicted label `비빔밥` than current label `알밥`.
+train,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0354.jpg,알밥,Img_074_0354.jpg,relabel,새우볶음밥,wrong_label,ai_visual_draft: image appears closer to predicted label `새우볶음밥` than current label `알밥`.
+train,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0640.jpg,알밥,Img_074_0640.jpg,relabel,새우볶음밥,wrong_label,ai_visual_draft: image appears closer to predicted label `새우볶음밥` than current label `알밥`.
+train,data/raw/korean_food_fixed_v1/train/알밥/Img_074_0789.jpg,알밥,Img_074_0789.jpg,relabel,새우볶음밥,wrong_label,ai_visual_draft: image appears closer to predicted label `새우볶음밥` than current label `알밥`.
+train,data/raw/korean_food_fixed_v1/train/약식/Img_144_0311.jpg,약식,Img_144_0311.jpg,relabel,잡곡밥,wrong_label,ai_visual_draft: image appears closer to predicted label `잡곡밥` than current label `약식`.
+train,data/raw/korean_food_fixed_v1/train/양념치킨/Img_023_0106.jpg,양념치킨,Img_023_0106.jpg,relabel,떡볶이,wrong_label,ai_visual_draft: image appears closer to predicted label `떡볶이` than current label `양념치킨`.
+train,data/raw/korean_food_fixed_v1/train/양념치킨/Img_023_0374.jpg,양념치킨,Img_023_0374.jpg,remove,,multi_food,ai_visual_draft: multiple foods or target dish is not visually isolated.
+train,data/raw/korean_food_fixed_v1/train/유부초밥/Img_075_0377.jpg,유부초밥,Img_075_0377.jpg,remove,,multi_food,ai_visual_draft: multiple foods or target dish is not visually isolated.
+train,data/raw/korean_food_fixed_v1/train/잔치국수/Img_056_0206.jpg,잔치국수,Img_056_0206.jpg,relabel,물냉면,wrong_label,ai_visual_draft: image appears closer to predicted label `물냉면` than current label `잔치국수`.
+train,data/raw/korean_food_fixed_v1/train/잡곡밥/Img_076_0593.jpg,잡곡밥,Img_076_0593.jpg,relabel,약식,wrong_label,ai_visual_draft: image appears closer to predicted label `약식` than current label `잡곡밥`.
+train,data/raw/korean_food_fixed_v1/train/족발/Img_131_0545.jpg,족발,Img_131_0545.jpg,relabel,닭갈비,wrong_label,ai_visual_draft: image appears closer to predicted label `닭갈비` than current label `족발`.
+train,data/raw/korean_food_fixed_v1/train/족발/Img_131_0747.jpg,족발,Img_131_0747.jpg,relabel,쫄면,wrong_label,ai_visual_draft: image appears closer to predicted label `쫄면` than current label `족발`.
+train,data/raw/korean_food_fixed_v1/train/족발/Img_131_0833.jpg,족발,Img_131_0833.jpg,relabel,보쌈,wrong_label,ai_visual_draft: image appears closer to predicted label `보쌈` than current label `족발`.
+train,data/raw/korean_food_fixed_v1/train/족발/Img_131_0906.jpg,족발,Img_131_0906.jpg,relabel,삼겹살,wrong_label,ai_visual_draft: image appears closer to predicted label `삼겹살` than current label `족발`.
+train,data/raw/korean_food_fixed_v1/train/주먹밥/Img_077_0218.jpg,주먹밥,Img_077_0218.jpg,relabel,유부초밥,wrong_label,ai_visual_draft: image appears closer to predicted label `유부초밥` than current label `주먹밥`.
+train,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0508.jpg,칼국수,Img_060_0508.jpg,remove,,multi_food,ai_visual_draft: multiple foods or target dish is not visually isolated.
+train,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0558.jpg,칼국수,Img_060_0558.jpg,relabel,라면,wrong_label,ai_visual_draft: image appears closer to predicted label `라면` than current label `칼국수`.
+train,data/raw/korean_food_fixed_v1/train/칼국수/Img_060_0877.jpg,칼국수,Img_060_0877.jpg,relabel,짬뽕,wrong_label,ai_visual_draft: image appears closer to predicted label `짬뽕` than current label `칼국수`.
+train,data/raw/korean_food_fixed_v1/train/훈제오리/Img_013_0055.jpg,훈제오리,Img_013_0055.jpg,remove,,multi_food,ai_visual_draft: multiple foods or target dish is not visually isolated.

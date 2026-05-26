@@ -1,0 +1,16 @@
+# K-Food Model Evaluation
+
+- name: `b0_supervised_only_seed7_fixed_v1_hflip`
+- checkpoint: `data/models/food_lewm_b0_supervised_only_seed7_fixed_v1_ft10.pt`
+- metadata: `data/models/food_lewm_b0_supervised_only_seed7_fixed_v1_meta_ft10.json`
+- classes: `data/models/food_lewm_b0_supervised_only_seed7_fixed_v1_classes_ft10.json`
+- data_dir: `data/raw/korean_food_fixed_v1`
+- model_type: `food_lewm_classifier`
+- model_name: `efficientnet_b0`
+- image_size: `224`
+- tta: `hflip`
+- val_top1: `0.8803571428571428`
+- val_top3: `0.9651785714285714`
+- macro_f1: `0.8800143833566485`
+- num_classes: `56`
+- num_samples: `6720`

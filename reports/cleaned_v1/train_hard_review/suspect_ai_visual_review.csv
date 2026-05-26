@@ -1,0 +1,8 @@
+rank,image_path,current_label,ensemble_label,ensemble_confidence,ai_visual_decision,proposed_action,proposed_label,confidence_level,apply_to_ai_candidate,notes
+37,data/raw/korean_food_fixed_v1/train/양념치킨/Img_023_0374.jpg,양념치킨,족발,0.967783,multi_food,remove,,high,yes,"족발과 양념치킨이 함께 크게 보이는 다중 음식 이미지라 단일 class 학습 샘플로는 부적합."
+250,data/raw/korean_food_fixed_v1/train/후라이드치킨/Img_028_0432.jpg,후라이드치킨,양념치킨,0.897281,multi_food,remove,,high,yes,"후라이드치킨 박스와 양념치킨 박스가 동시에 중심에 있어 relabel보다 remove가 적절."
+1,data/raw/korean_food_fixed_v1/train/갈비구이/Img_000_0065.JPG,갈비구이,갈비찜,0.859257,wrong_label,relabel,갈비찜,high,yes,"국물/소스가 있는 찜 형태의 갈비로 보이며 갈비구이보다 갈비찜에 가까움."
+35,data/raw/korean_food_fixed_v1/train/약식/Img_144_0311.jpg,약식,잡곡밥,0.830952,wrong_label,relabel,잡곡밥,medium_high,yes,"검은콩/잡곡이 섞인 밥으로 보이며 약식 특유의 찰진 디저트 형태와 다름."
+41,data/raw/korean_food_fixed_v1/train/족발/Img_131_0545.jpg,족발,닭갈비,0.828424,model_error,keep,족발,medium_high,no,"시장 진열대의 족발 이미지로 보이며 current label 족발을 유지하는 것이 타당."
+12,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0156.jpg,김치찌개,순두부찌개,0.816365,wrong_label,relabel,순두부찌개,high,yes,"순두부 덩어리가 뚜렷하고 김치찌개보다 순두부찌개 형태에 가까움."
+163,data/raw/korean_food_fixed_v1/train/김치찌개/Img_119_0141.jpg,김치찌개,순두부찌개,0.800908,wrong_label,relabel,순두부찌개,high,yes,"계란과 순두부가 중심인 순두부찌개 이미지로 보이며 current label 김치찌개와 다름."

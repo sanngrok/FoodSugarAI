@@ -1,0 +1,16 @@
+{
+  "epoch": 9,
+  "loss": 0.5751547159041677,
+  "train_acc": 0.958252362125578,
+  "val_top1": 0.86796498123995,
+  "val_top3": 0.961586564230838,
+  "macro_f1": 0.8680396484464304,
+  "lr": 2.110758272493209e-06,
+  "seconds": 288.52,
+  "model_name": "efficientnet_b0",
+  "image_size": 224,
+  "latent_dim": 192,
+  "num_classes": 56,
+  "lewm_checkpoint": "data/models/food_lewm_b0_pretrain_3ep.pt",
+  "checkpoint": "data/models/food_lewm_b0_classifier_3ep_ft10.pt"
+}

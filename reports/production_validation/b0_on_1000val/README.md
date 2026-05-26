@@ -1,0 +1,16 @@
+# K-Food Model Evaluation
+
+- name: `b0_baseline_on_1000val`
+- checkpoint: `data/models/efficientnet_korean_b0_val08275.pt`
+- metadata: `data/models/korean_food_model_meta.json`
+- classes: `data/models/korean_food_classes.json`
+- data_dir: `data/raw/korean_food_1000`
+- model_type: `timm_classifier`
+- model_name: `efficientnet_b0`
+- image_size: `224`
+- tta: `none`
+- val_top1: `0.8678756476683938`
+- val_top3: `0.9623012328032875`
+- macro_f1: `0.8676525318479233`
+- num_classes: `56`
+- num_samples: `11194`

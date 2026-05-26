@@ -1,0 +1,24 @@
+{
+  "source": "AI_DRAFT_NOT_HUMAN_CONFIRMED",
+  "reviewed_csv": "reports/current_best/error_analysis/reviewed_current_best_high_conf_top300_AI_DRAFT.csv",
+  "total": 300,
+  "status_counts": {
+    "ambiguous": 34,
+    "wrong_label": 129,
+    "model_error": 112,
+    "multi_food": 23,
+    "bad_crop": 2
+  },
+  "action_counts": {
+    "needs_human_review": 34,
+    "relabel": 129,
+    "keep": 112,
+    "remove": 25
+  },
+  "label_boundary_noise_count": 188,
+  "label_boundary_noise_ratio": 0.6266666666666667,
+  "model_error_count": 112,
+  "model_error_ratio": 0.37333333333333335,
+  "human_confirmed": false,
+  "warning": "Do not use this as final human review or production cleaned_v1 input."
+}

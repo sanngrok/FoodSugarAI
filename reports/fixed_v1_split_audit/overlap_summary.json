@@ -1,0 +1,48 @@
+{
+  "old_data_dir": "data/raw/korean_food",
+  "new_data_dir": "data/raw/korean_food_fixed_v1",
+  "split_counts": {
+    "old_train": 26880,
+    "old_val": 6720,
+    "new_train": 49243,
+    "new_val": 6720
+  },
+  "overlaps": {
+    "old_train__old_val": {
+      "resolved_path_rows": 0,
+      "resolved_path_unique": 0,
+      "class_filename_rows": 0,
+      "class_filename_unique": 0
+    },
+    "old_train__new_train": {
+      "resolved_path_rows": 0,
+      "resolved_path_unique": 0,
+      "class_filename_rows": 26880,
+      "class_filename_unique": 26880
+    },
+    "old_train__new_val": {
+      "resolved_path_rows": 0,
+      "resolved_path_unique": 0,
+      "class_filename_rows": 0,
+      "class_filename_unique": 0
+    },
+    "old_val__new_train": {
+      "resolved_path_rows": 0,
+      "resolved_path_unique": 0,
+      "class_filename_rows": 0,
+      "class_filename_unique": 0
+    },
+    "old_val__new_val": {
+      "resolved_path_rows": 0,
+      "resolved_path_unique": 0,
+      "class_filename_rows": 6720,
+      "class_filename_unique": 6720
+    },
+    "new_train__new_val": {
+      "resolved_path_rows": 0,
+      "resolved_path_unique": 0,
+      "class_filename_rows": 0,
+      "class_filename_unique": 0
+    }
+  }
+}

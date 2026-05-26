@@ -1,0 +1,566 @@
+{
+  "cgm_csv": "data/processed/ohiot1dm/cgm_timeseries_enriched.csv",
+  "model_dir": "data/processed/glucose_models_enriched",
+  "report_dir": "reports/glucose_forecasting",
+  "horizons_minutes": [
+    30,
+    60,
+    90
+  ],
+  "train_rows_raw": 134790,
+  "test_rows_raw": 31743,
+  "train_rows_features": 101385,
+  "test_rows_features": 29536,
+  "saved_model_type": "enriched",
+  "saved_feature_columns": [
+    "glucose_mg_dl",
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_6",
+    "lag_12",
+    "diff_1",
+    "diff_3",
+    "diff_6",
+    "rolling_mean_3",
+    "rolling_mean_6",
+    "rolling_mean_12",
+    "rolling_std_6",
+    "rolling_std_12",
+    "hour_sin",
+    "hour_cos",
+    "carbs_current",
+    "carbs_last_30m",
+    "carbs_last_60m",
+    "carbs_last_120m",
+    "carbs_last_180m",
+    "bolus_current",
+    "bolus_last_30m",
+    "bolus_last_60m",
+    "bolus_last_120m",
+    "bolus_last_180m",
+    "basal_current",
+    "basal_mean_60m",
+    "basal_mean_120m",
+    "exercise_active",
+    "exercise_last_60m",
+    "exercise_last_120m",
+    "sleep_indicator",
+    "hypo_event_current",
+    "gsr_current",
+    "skin_temperature_current",
+    "acceleration_current",
+    "day_of_week",
+    "patient_id_numeric",
+    "time_since_last_meal",
+    "time_since_last_bolus",
+    "meal_bolus_gap_minutes",
+    "carbs_decay_30m",
+    "carbs_decay_60m",
+    "carbs_decay_120m",
+    "carbs_decay_180m",
+    "carbs_on_board_proxy",
+    "insulin_decay_60m",
+    "insulin_decay_120m",
+    "insulin_decay_180m",
+    "insulin_decay_240m",
+    "insulin_on_board_proxy",
+    "carb_insulin_ratio_proxy",
+    "net_glucose_pressure_proxy",
+    "glucose_slope_60m",
+    "glucose_slope_120m",
+    "glucose_volatility_120m",
+    "glucose_volatility_180m",
+    "glucose_mean_120m",
+    "glucose_mean_180m",
+    "recent_low_event_count_180m",
+    "recent_high_event_count_180m",
+    "time_since_last_low",
+    "time_since_last_high",
+    "basal_mean_180m",
+    "exercise_last_180m"
+  ],
+  "has_enriched_features": true,
+  "use_validation_selection": true,
+  "selection_split": "validation",
+  "evaluation_split": "test",
+  "validation_split_summary": {
+    "method": "time_based_per_source_patient_year",
+    "validation_fraction": 0.2,
+    "source_split": "train",
+    "test_split_used_for_selection": false,
+    "train_inner_rows": 107827,
+    "validation_rows": 26963,
+    "groups": 12,
+    "time_order_safe": true
+  },
+  "range_calibration": [
+    {
+      "horizon_minutes": 30,
+      "predicted_range": "high",
+      "sample_count": 31947,
+      "mean_error": -0.6762637980006934,
+      "median_error": -0.5302688811170526,
+      "mae": 14.321644605075559
+    },
+    {
+      "horizon_minutes": 30,
+      "predicted_range": "low",
+      "sample_count": 1290,
+      "mean_error": 2.975634309238691,
+      "median_error": 4.896577009531914,
+      "mae": 10.286677422041807
+    },
+    {
+      "horizon_minutes": 30,
+      "predicted_range": "normal",
+      "sample_count": 68148,
+      "mean_error": 0.2622364963152306,
+      "median_error": 1.369832785560142,
+      "mae": 11.910529757773785
+    },
+    {
+      "horizon_minutes": 60,
+      "predicted_range": "high",
+      "sample_count": 30434,
+      "mean_error": -2.094525410950648,
+      "median_error": -1.3239244881001753,
+      "mae": 22.769448890116397
+    },
+    {
+      "horizon_minutes": 60,
+      "predicted_range": "low",
+      "sample_count": 329,
+      "mean_error": 10.37190830444891,
+      "median_error": 11.916273460020875,
+      "mae": 13.331913859358846
+    },
+    {
+      "horizon_minutes": 60,
+      "predicted_range": "normal",
+      "sample_count": 70622,
+      "mean_error": 0.8861647758878193,
+      "median_error": 3.2620760574410497,
+      "mae": 19.64307007943291
+    },
+    {
+      "horizon_minutes": 90,
+      "predicted_range": "high",
+      "sample_count": 28319,
+      "mean_error": -4.843463753260163,
+      "median_error": -4.327860766035371,
+      "mae": 28.94512673983346
+    },
+    {
+      "horizon_minutes": 90,
+      "predicted_range": "low",
+      "sample_count": 44,
+      "mean_error": 13.522618752793191,
+      "median_error": 17.130789246738054,
+      "mae": 16.66917858913264
+    },
+    {
+      "horizon_minutes": 90,
+      "predicted_range": "normal",
+      "sample_count": 73022,
+      "mean_error": 1.8464754159306005,
+      "median_error": 5.067129434823322,
+      "mae": 24.90094422126132
+    }
+  ],
+  "event_classifier_metrics": [
+    {
+      "event_type": "hyper",
+      "horizon_minutes": 30,
+      "samples": 29536,
+      "positive_rate": 0.35028439869989164,
+      "accuracy": 0.9201652221018418,
+      "precision": 0.9007625928155729,
+      "recall": 0.8676783297892905,
+      "f1": 0.8839109885781804,
+      "roc_auc": 0.9749588848056314
+    },
+    {
+      "event_type": "hyper",
+      "horizon_minutes": 60,
+      "samples": 29536,
+      "positive_rate": 0.35038596966413865,
+      "accuracy": 0.8573943661971831,
+      "precision": 0.8312641692756126,
+      "recall": 0.744033239926563,
+      "f1": 0.7852335304915358,
+      "roc_auc": 0.9265826264756769
+    },
+    {
+      "event_type": "hyper",
+      "horizon_minutes": 90,
+      "samples": 29536,
+      "positive_rate": 0.35058911159263273,
+      "accuracy": 0.8065750270855905,
+      "precision": 0.7786983669548511,
+      "recall": 0.6262675036214389,
+      "f1": 0.6942139913290157,
+      "roc_auc": 0.8686527698434877
+    },
+    {
+      "event_type": "hypo",
+      "horizon_minutes": 30,
+      "samples": 29536,
+      "positive_rate": 0.027051733477789816,
+      "accuracy": 0.9534127843986999,
+      "precision": 0.35823095823095824,
+      "recall": 0.9123904881101377,
+      "f1": 0.5144671841919548,
+      "roc_auc": 0.9841171039607702
+    },
+    {
+      "event_type": "hypo",
+      "horizon_minutes": 60,
+      "samples": 29536,
+      "positive_rate": 0.02772887323943662,
+      "accuracy": 0.9110576923076923,
+      "precision": 0.20932475884244373,
+      "recall": 0.7948717948717948,
+      "f1": 0.33138203105115804,
+      "roc_auc": 0.9407102437015032
+    },
+    {
+      "event_type": "hypo",
+      "horizon_minutes": 90,
+      "samples": 29536,
+      "positive_rate": 0.028202871072589383,
+      "accuracy": 0.8927072047670639,
+      "precision": 0.15667254556143445,
+      "recall": 0.6398559423769508,
+      "f1": 0.25171192443919715,
+      "roc_auc": 0.8801045764088306
+    }
+  ],
+  "hypo_threshold_selection": {
+    "event_type": "hypo",
+    "selection_split": "validation",
+    "evaluation_split": "test",
+    "thresholds_tested": [
+      0.5,
+      0.4,
+      0.3,
+      0.25,
+      0.2,
+      0.15,
+      0.1
+    ],
+    "selection_rule": "choose highest F1 among thresholds meeting horizon recall target; fallback to best F1 if target is not met",
+    "horizons": {
+      "30": {
+        "threshold": 0.5,
+        "target_recall": 0.65,
+        "target_met": true,
+        "selection_split": "validation",
+        "evaluation_split": "test",
+        "precision": 0.33043478260869563,
+        "recall": 0.8394698085419735,
+        "f1": 0.47420965058236275,
+        "roc_auc": 0.9752907372386943,
+        "pr_auc": 0.5303729672934479,
+        "false_negative_count": 109,
+        "false_positive_count": 1155
+      },
+      "60": {
+        "threshold": 0.5,
+        "target_recall": 0.4,
+        "target_met": true,
+        "selection_split": "validation",
+        "evaluation_split": "test",
+        "precision": 0.17960971724412583,
+        "recall": 0.6536231884057971,
+        "f1": 0.281786941580756,
+        "roc_auc": 0.9181027226520768,
+        "pr_auc": 0.24096035612294875,
+        "false_negative_count": 239,
+        "false_positive_count": 2060
+      },
+      "90": {
+        "threshold": 0.5,
+        "target_recall": 0.25,
+        "target_met": true,
+        "selection_split": "validation",
+        "evaluation_split": "test",
+        "precision": 0.13691322901849218,
+        "recall": 0.5384615384615384,
+        "f1": 0.21831584916359512,
+        "roc_auc": 0.8520211495821252,
+        "pr_auc": 0.16132028303243431,
+        "false_negative_count": 330,
+        "false_positive_count": 2427
+      }
+    }
+  },
+  "event_thresholds": {
+    "selection_split": "validation",
+    "evaluation_split": "test",
+    "created_by": "validation_based_threshold_selection",
+    "threshold_selection_method": "threshold sweep maximizing F1 under recall target",
+    "hypo": {
+      "30": {
+        "threshold": 0.5,
+        "target_recall": 0.65,
+        "target_met": true,
+        "validation_recall": 0.8394698085419735,
+        "validation_precision": 0.33043478260869563,
+        "validation_f1": 0.47420965058236275
+      },
+      "60": {
+        "threshold": 0.5,
+        "target_recall": 0.4,
+        "target_met": true,
+        "validation_recall": 0.6536231884057971,
+        "validation_precision": 0.17960971724412583,
+        "validation_f1": 0.281786941580756
+      },
+      "90": {
+        "threshold": 0.5,
+        "target_recall": 0.25,
+        "target_met": true,
+        "validation_recall": 0.5384615384615384,
+        "validation_precision": 0.13691322901849218,
+        "validation_f1": 0.21831584916359512
+      }
+    },
+    "hyper": {
+      "30": {
+        "threshold": 0.5,
+        "selection_split": "validation",
+        "evaluation_split": "test"
+      },
+      "60": {
+        "threshold": 0.5,
+        "selection_split": "validation",
+        "evaluation_split": "test"
+      },
+      "90": {
+        "threshold": 0.5,
+        "selection_split": "validation",
+        "evaluation_split": "test"
+      }
+    },
+    "thresholds": {
+      "hypo": {
+        "30": 0.5,
+        "60": 0.5,
+        "90": 0.5
+      },
+      "hyper": {
+        "30": 0.5,
+        "60": 0.5,
+        "90": 0.5
+      }
+    },
+    "hypo_selection": {
+      "event_type": "hypo",
+      "selection_split": "validation",
+      "evaluation_split": "test",
+      "thresholds_tested": [
+        0.5,
+        0.4,
+        0.3,
+        0.25,
+        0.2,
+        0.15,
+        0.1
+      ],
+      "selection_rule": "choose highest F1 among thresholds meeting horizon recall target; fallback to best F1 if target is not met",
+      "horizons": {
+        "30": {
+          "threshold": 0.5,
+          "target_recall": 0.65,
+          "target_met": true,
+          "selection_split": "validation",
+          "evaluation_split": "test",
+          "precision": 0.33043478260869563,
+          "recall": 0.8394698085419735,
+          "f1": 0.47420965058236275,
+          "roc_auc": 0.9752907372386943,
+          "pr_auc": 0.5303729672934479,
+          "false_negative_count": 109,
+          "false_positive_count": 1155
+        },
+        "60": {
+          "threshold": 0.5,
+          "target_recall": 0.4,
+          "target_met": true,
+          "selection_split": "validation",
+          "evaluation_split": "test",
+          "precision": 0.17960971724412583,
+          "recall": 0.6536231884057971,
+          "f1": 0.281786941580756,
+          "roc_auc": 0.9181027226520768,
+          "pr_auc": 0.24096035612294875,
+          "false_negative_count": 239,
+          "false_positive_count": 2060
+        },
+        "90": {
+          "threshold": 0.5,
+          "target_recall": 0.25,
+          "target_met": true,
+          "selection_split": "validation",
+          "evaluation_split": "test",
+          "precision": 0.13691322901849218,
+          "recall": 0.5384615384615384,
+          "f1": 0.21831584916359512,
+          "roc_auc": 0.8520211495821252,
+          "pr_auc": 0.16132028303243431,
+          "false_negative_count": 330,
+          "false_positive_count": 2427
+        }
+      }
+    },
+    "hyper_selection_note": "hyper classifier keeps the default 0.50 threshold in this stage."
+  },
+  "metrics": [
+    {
+      "model_type": "enriched",
+      "horizon_minutes": 30,
+      "samples": 29536,
+      "mae": 13.026873588562012,
+      "rmse": 18.487969688242117,
+      "r2": 0.9052858948707581,
+      "persistence_mae": 16.93547248840332,
+      "history_mae": 13.525834083557129,
+      "mae_improvement_vs_persistence_pct": 23.07936139672364,
+      "mae_improvement_vs_history_pct": 3.6889443705485454
+    },
+    {
+      "model_type": "enriched_calibrated",
+      "horizon_minutes": 30,
+      "samples": 29536,
+      "mae": 12.998355865478516,
+      "rmse": 18.476086806772862,
+      "r2": 0.9054076075553894,
+      "persistence_mae": 16.93547248840332,
+      "history_mae": 13.525834083557129,
+      "mae_improvement_vs_persistence_pct": 23.2477518747751,
+      "mae_improvement_vs_history_pct": 3.8997832948420506
+    },
+    {
+      "model_type": "history",
+      "horizon_minutes": 30,
+      "samples": 29677,
+      "mae": 13.525834083557129,
+      "rmse": 19.162942983504973,
+      "r2": 0.8983033299446106,
+      "persistence_mae": 16.93547248840332,
+      "history_mae": 13.525834083557129,
+      "mae_improvement_vs_persistence_pct": 20.133116493684863,
+      "mae_improvement_vs_history_pct": 0.0
+    },
+    {
+      "model_type": "persistence",
+      "horizon_minutes": 30,
+      "samples": 29677,
+      "mae": 16.93547248840332,
+      "rmse": 23.384977608164927,
+      "r2": 0.8485545516014099,
+      "persistence_mae": 16.93547248840332,
+      "history_mae": 13.525834083557129,
+      "mae_improvement_vs_persistence_pct": 0.0,
+      "mae_improvement_vs_history_pct": -25.208341191994705
+    },
+    {
+      "model_type": "enriched",
+      "horizon_minutes": 60,
+      "samples": 29536,
+      "mae": 22.70378875732422,
+      "rmse": 31.042128946501883,
+      "r2": 0.7340013980865479,
+      "persistence_mae": 28.503252029418945,
+      "history_mae": 23.86916160583496,
+      "mae_improvement_vs_persistence_pct": 20.34667225377985,
+      "mae_improvement_vs_history_pct": 4.8823367479562405
+    },
+    {
+      "model_type": "enriched_calibrated",
+      "horizon_minutes": 60,
+      "samples": 29536,
+      "mae": 22.63336944580078,
+      "rmse": 31.008254398148768,
+      "r2": 0.7345815896987915,
+      "persistence_mae": 28.503252029418945,
+      "history_mae": 23.86916160583496,
+      "mae_improvement_vs_persistence_pct": 20.59372936659896,
+      "mae_improvement_vs_history_pct": 5.177358888600774
+    },
+    {
+      "model_type": "history",
+      "horizon_minutes": 60,
+      "samples": 29677,
+      "mae": 23.86916160583496,
+      "rmse": 32.41127838880897,
+      "r2": 0.7103003263473511,
+      "persistence_mae": 28.503252029418945,
+      "history_mae": 23.86916160583496,
+      "mae_improvement_vs_persistence_pct": 16.258111245695822,
+      "mae_improvement_vs_history_pct": 0.0
+    },
+    {
+      "model_type": "persistence",
+      "horizon_minutes": 60,
+      "samples": 29677,
+      "mae": 28.503252029418945,
+      "rmse": 38.50601109729492,
+      "r2": 0.5911040902137756,
+      "persistence_mae": 28.503252029418945,
+      "history_mae": 23.86916160583496,
+      "mae_improvement_vs_persistence_pct": 0.0,
+      "mae_improvement_vs_history_pct": -19.414550456816855
+    },
+    {
+      "model_type": "enriched",
+      "horizon_minutes": 90,
+      "samples": 29536,
+      "mae": 29.721202850341797,
+      "rmse": 39.86380928882267,
+      "r2": 0.5632538795471191,
+      "persistence_mae": 36.993194580078125,
+      "history_mae": 31.074413299560547,
+      "mae_improvement_vs_persistence_pct": 19.657647338336385,
+      "mae_improvement_vs_history_pct": 4.354741749019239
+    },
+    {
+      "model_type": "enriched_calibrated",
+      "horizon_minutes": 90,
+      "samples": 29536,
+      "mae": 29.6057186126709,
+      "rmse": 39.830811318292746,
+      "r2": 0.5639766454696655,
+      "persistence_mae": 36.993194580078125,
+      "history_mae": 31.074413299560547,
+      "mae_improvement_vs_persistence_pct": 19.96982431840474,
+      "mae_improvement_vs_history_pct": 4.72637945801673
+    },
+    {
+      "model_type": "history",
+      "horizon_minutes": 90,
+      "samples": 29677,
+      "mae": 31.074413299560547,
+      "rmse": 41.2192193988625,
+      "r2": 0.5344228744506836,
+      "persistence_mae": 36.993194580078125,
+      "history_mae": 31.074413299560547,
+      "mae_improvement_vs_persistence_pct": 15.999648983288964,
+      "mae_improvement_vs_history_pct": 0.0
+    },
+    {
+      "model_type": "persistence",
+      "horizon_minutes": 90,
+      "samples": 29677,
+      "mae": 36.993194580078125,
+      "rmse": 49.254215892684,
+      "r2": 0.33521848917007446,
+      "persistence_mae": 36.993194580078125,
+      "history_mae": 31.074413299560547,
+      "mae_improvement_vs_persistence_pct": 0.0,
+      "mae_improvement_vs_history_pct": -19.04712157703483
+    }
+  ],
+  "reference_notice": "이 결과는 참고용이며 의료 진단이나 치료 지침이 아닙니다. 혈당 관리 결정은 의료진과 상의하세요."
+}
