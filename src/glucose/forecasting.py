@@ -1002,10 +1002,17 @@ def forecast_from_enriched_payload(
     if event_classifiers:
         for event_name, horizon_models in event_classifiers.items():
             for horizon, model in horizon_models.items():
+                event_x = x
+                expected_features = getattr(model, "n_features_in_", None)
+                if expected_features is not None:
+                    expected_features = int(expected_features)
+                    if expected_features > x.shape[1]:
+                        continue
+                    event_x = x[:, :expected_features]
                 if hasattr(model, "predict_proba"):
-                    probability = float(model.predict_proba(x)[:, 1][0])
+                    probability = float(model.predict_proba(event_x)[:, 1][0])
                 else:
-                    probability = float(model.predict(x)[0])
+                    probability = float(model.predict(event_x)[0])
                 event_probabilities.setdefault(int(horizon), {})[f"{event_name}_probability"] = round(probability, 4)
     intervals, uncertainty_level, uncertainty_message = intervals_from_predictions(
         calibrated_predictions or raw_predictions,
