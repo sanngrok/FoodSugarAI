@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Any
 
 from pydantic import ConfigDict, field_validator
 from pydantic_settings import BaseSettings
@@ -48,6 +49,21 @@ class Settings(BaseSettings):
                 return False
             if normalized in {"dev", "development"}:
                 return True
+        return value
+
+    @field_validator(
+        "classifier_model_path",
+        "classifier_ensemble_config_path",
+        "predictor_model_path",
+        "label_encoder_path",
+        "glucose_forecast_model_dir",
+        "glucose_forecast_enriched_model_dir",
+        mode="before",
+    )
+    @classmethod
+    def strip_path_values(cls, value: Any):
+        if isinstance(value, str):
+            return value.strip()
         return value
 
 
