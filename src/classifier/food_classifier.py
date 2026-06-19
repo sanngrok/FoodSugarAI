@@ -140,6 +140,12 @@ def _candidate_companion_paths(model_path: Path) -> tuple[Path | None, Path | No
             model_path.with_name(f"{prefix}_classes_{suffix}.json"),
             model_path.with_name(f"{prefix}_meta_{suffix}.json"),
         ))
+    if stem.startswith("food_lewm_") and "_" in stem:
+        prefix, suffix = stem.rsplit("_", 1)
+        candidates.append((
+            model_path.with_name(f"{prefix}_classes_{suffix}.json"),
+            model_path.with_name(f"{prefix}_meta_{suffix}.json"),
+        ))
     candidates.extend([
         (model_path.with_suffix(".classes.json"), model_path.with_suffix(".meta.json")),
         (KOREAN_CLASSES_PATH, KOREAN_METADATA_PATH),
