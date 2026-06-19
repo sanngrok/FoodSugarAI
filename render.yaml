@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: foodsugar-ai-backend
+    env: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    autoDeploy: false
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: USE_XGBOOST_PREDICTOR_MODEL
+        value: "false"
+      - key: FOODSUGAR_MODEL_BUNDLE_URL
+        sync: false
