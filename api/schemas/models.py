@@ -1,4 +1,5 @@
-import pandas as pd
+from datetime import datetime
+
 from pydantic import BaseModel, Field, field_validator
 
 from src.glucose.constants import GLUCOSE_REFERENCE_NOTICE, GLUCOSE_RISK_INTERPRETATION, GLUCOSE_SAFETY_WARNING
@@ -36,17 +37,12 @@ class RiskResponse(BaseModel):
     safety_warning: str = GLUCOSE_SAFETY_WARNING
 
 
-class FullAnalysisResponse(BaseModel):
-    classification: ClassificationResponse
-    nutrition: NutritionInput | None
-    risk: RiskResponse
-
-
 class HealthResponse(BaseModel):
     status: str
     version: str
     classifier_ready: bool
     predictor_ready: bool
+    classifier_error: str | None = None
 
 
 class GlucoseRiskResponse(BaseModel):
@@ -58,6 +54,13 @@ class GlucoseRiskResponse(BaseModel):
     safety_warning: str = GLUCOSE_SAFETY_WARNING
 
 
+class FullAnalysisResponse(BaseModel):
+    classification: ClassificationResponse
+    nutrition: NutritionInput | None
+    risk: RiskResponse
+    glucose_risk: GlucoseRiskResponse | None = None
+
+
 class CGMReading(BaseModel):
     timestamp: str
     glucose_mg_dl: float = Field(..., gt=0, le=600, description="CGM glucose value in mg/dL")
@@ -66,9 +69,9 @@ class CGMReading(BaseModel):
     @classmethod
     def timestamp_must_be_parseable(cls, value: str) -> str:
         try:
-            pd.to_datetime(value)
+            datetime.fromisoformat(value.replace("Z", "+00:00"))
         except Exception as exc:
-            raise ValueError("timestamp는 ISO-8601 또는 pandas가 해석 가능한 날짜/시간 문자열이어야 합니다.") from exc
+            raise ValueError("timestamp는 ISO-8601 날짜/시간 문자열이어야 합니다.") from exc
         return value
 
 

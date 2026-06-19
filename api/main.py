@@ -45,11 +45,13 @@ async def lifespan(application: FastAPI):
     # eager xgboost loading can conflict with torch/MPS ensemble inference on macOS.
     logger.info("모델 로딩 시작...")
     application.state.predictor = SugarPredictor(use_model=settings.use_xgboost_predictor_model)
+    application.state.classifier_error = None
     try:
         application.state.classifier = load_classifier()
-    except ImportError as e:
-        logger.warning("분류기 로드 실패 (torch 미설치): %s", e)
+    except Exception as e:
+        logger.exception("분류기 로드 실패: %s", e)
         application.state.classifier = None
+        application.state.classifier_error = str(e)
     logger.info("모델 로딩 완료")
 
     yield  # 서버 실행 중
@@ -63,7 +65,7 @@ app = FastAPI(
     version=settings.app_version,
     description=(
         "음식 이미지를 EfficientNet-B0으로 분류하고, "
-        "영양정보 기반 XGBoost로 혈당 위험도(낮음/주의/위험)를 예측합니다."
+        "영양정보 기반으로 혈당 부담 참고 수준(낮음/주의/높음)을 예측합니다."
     ),
     docs_url="/docs",
     redoc_url="/redoc",
