@@ -11,5 +11,9 @@ services:
         value: 8000
       - key: USE_XGBOOST_PREDICTOR_MODEL
         value: "false"
+      - key: CLASSIFIER_MODE
+        value: "single"
+      - key: CLASSIFIER_MODEL_PATH
+        value: "data/models/food_lewm_b0_supervised_only_seed123_fixed_v1_ft10.pt"
       - key: FOODSUGAR_MODEL_BUNDLE_URL
         sync: false

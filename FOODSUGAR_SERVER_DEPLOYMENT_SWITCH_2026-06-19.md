@@ -186,7 +186,12 @@ Render에서 GitHub repo를 연결하고 `render.yaml`을 사용한다.
 FOODSUGAR_MODEL_BUNDLE_URL=<artifact tar.gz 다운로드 URL>
 PORT=8000
 USE_XGBOOST_PREDICTOR_MODEL=false
+CLASSIFIER_MODE=single
+CLASSIFIER_MODEL_PATH=data/models/food_lewm_b0_supervised_only_seed123_fixed_v1_ft10.pt
 ```
+
+Render Free 512MB 인스턴스에서는 7-model weighted ensemble이 메모리 초과로 실패할 수 있다.
+무료 플랜에서는 `CLASSIFIER_MODE=single`을 사용하고, 7-model 92% ensemble은 최소 1GB 이상 RAM이 있는 유료 인스턴스에서 사용한다.
 
 배포 후 확인:
 

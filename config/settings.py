@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     debug: bool = False
 
     # Model paths
+    classifier_mode: str = "ensemble"
     classifier_model_path: Path = BASE_DIR / "data" / "models" / "efficientnet_food.pt"
     classifier_ensemble_config_path: Path = BASE_DIR / "config" / "kfood_production_ensemble_config.json"
     predictor_model_path: Path = BASE_DIR / "data" / "models" / "xgboost_sugar.pkl"
@@ -27,7 +28,7 @@ class Settings(BaseSettings):
     classifier_threshold: float = 0.5
 
     # XGBoost risk labels
-    risk_labels: list[str] = ["낮음", "주의", "위험"]
+    risk_labels: list[str] = ["낮음", "주의", "높음"]
 
     # API
     api_host: str = "0.0.0.0"

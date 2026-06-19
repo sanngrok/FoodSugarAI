@@ -31,6 +31,13 @@ def load_classifier():
     FoodClassifier keeps local/dev environments usable when model artifacts have
     not been downloaded yet.
     """
+    classifier_mode = settings.classifier_mode.strip().lower()
+    if classifier_mode == "none":
+        logger.info("분류기 로드를 비활성화했습니다: CLASSIFIER_MODE=none")
+        return None
+    if classifier_mode == "single":
+        logger.info("단일 FoodClassifier 사용: %s", settings.classifier_model_path)
+        return FoodClassifier(model_path=settings.classifier_model_path)
     ensemble_config = settings.classifier_ensemble_config_path
     if ensemble_config and ensemble_config.exists():
         logger.info("운영 ensemble config 사용: %s", ensemble_config)
