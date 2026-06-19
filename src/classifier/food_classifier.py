@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 EfficientNet 기반 음식 이미지 분류기
 timm 라이브러리를 사용해 pretrained 가중치 로드 후 fine-tuning 구조 지원.
@@ -176,7 +178,12 @@ class FoodClassifier:
       3. ImageNet pretrained fallback
     """
 
-    def __init__(self, model_path: Path | None = None):
+    def __init__(
+        self,
+        model_path: Path | None = None,
+        classes_path: Path | None = None,
+        metadata_path: Path | None = None,
+    ):
         if not _TORCH_AVAILABLE:
             raise ImportError("torch가 설치되어 있지 않습니다: pip install torch torchvision timm")
         if torch.backends.mps.is_available():
@@ -194,7 +201,10 @@ class FoodClassifier:
 
         if model_path is not None:
             model_path = Path(model_path)
-            classes_path, metadata_path = _candidate_companion_paths(model_path)
+            if classes_path is None and metadata_path is None:
+                classes_path, metadata_path = _candidate_companion_paths(model_path)
+            classes_path = Path(classes_path) if classes_path is not None else None
+            metadata_path = Path(metadata_path) if metadata_path is not None else None
             if classes_path and classes_path.exists():
                 with open(classes_path, encoding="utf-8") as f:
                     self.classes = json.load(f)

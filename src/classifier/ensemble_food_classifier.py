@@ -116,7 +116,11 @@ class EnsembleFoodClassifier:
             elif class_reference != list(classes):
                 raise ValueError(f"class order mismatch: {name}")
 
-            classifier = FoodClassifier(model_path=checkpoint)
+            classifier = FoodClassifier(
+                model_path=checkpoint,
+                classes_path=classes_path,
+                metadata_path=metadata_path,
+            )
             if classifier.classes != class_reference:
                 raise ValueError(f"loaded classifier class order mismatch: {name}")
             members.append(EnsembleMember(name=name, weight=weight, classifier=classifier))
