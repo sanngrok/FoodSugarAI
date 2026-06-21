@@ -27,25 +27,30 @@ export function AnalysisPage({ analysis, onPrediction }: AnalysisPageProps) {
           </div>
         </section>
       )}
-      <section className="overflow-hidden rounded-[2rem] border border-line bg-forest text-white shadow-soft">
-        <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_360px]">
+      <section className="overflow-hidden rounded-[2.25rem] border border-black/[0.06] bg-white shadow-[0_28px_90px_rgba(15,23,42,0.08)]">
+        <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_380px] lg:p-10">
           <div>
-            <p className="text-sm font-bold text-[#A7E7B6]">분석 결과</p>
+            <p className="text-sm font-black text-leaf">분석 결과</p>
             <div className="mt-2 flex flex-wrap items-center gap-3">
-              <h1 className="text-4xl font-black tracking-tight sm:text-5xl">음식과 영양성분을 확인했어요</h1>
+              <h1 className="max-w-3xl text-4xl font-black leading-tight tracking-[-0.02em] text-[#101827] sm:text-6xl">
+                음식과 영양성분을 확인했어요
+              </h1>
               <ResultSourceBadge isDemo={analysis.isDemo} />
             </div>
-            <p className="mt-4 max-w-2xl leading-7 text-white/70">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-[#65716A]">
               먼저 음식명을 확인하고, 영양성분과 혈당 부담 참고 점수를 함께 봅니다.
             </p>
           </div>
-          <div className="rounded-3xl bg-white/10 p-5">
-            <p className="text-sm font-bold text-[#A7E7B6]">현재 인식 음식</p>
-            <p className="mt-2 text-4xl font-black">{analysis.foodName}</p>
-            <div className="mt-4 flex items-center justify-between rounded-2xl bg-[#FFFDF5] px-4 py-3 text-forest">
-              <span className="text-sm font-bold text-stone-500">분류 신뢰도</span>
+          <div className="rounded-[2rem] bg-[#071F18] p-5 text-white shadow-soft">
+            <p className="text-sm font-black text-[#58D68D]">현재 인식 음식</p>
+            <p className="mt-2 text-4xl font-black tracking-[-0.02em]">{analysis.foodName}</p>
+            <div className="mt-5 flex items-center justify-between rounded-[1.35rem] bg-white px-4 py-3 text-[#101827]">
+              <span className="text-sm font-bold text-[#65716A]">분류 신뢰도</span>
               <span className="text-2xl font-black">{analysis.confidence}%</span>
             </div>
+            <p className="mt-4 text-xs leading-5 text-white/52">
+              결과가 애매하면 음식 확인 단계에서 사용자가 직접 확인할 수 있습니다.
+            </p>
           </div>
         </div>
       </section>

@@ -11,14 +11,14 @@ type AppShellProps = {
 
 export function AppShell({ currentPage, onNavigate, children }: AppShellProps) {
   return (
-    <div className="min-h-screen bg-cream text-[#1F2A24]">
-      <div className="border-b border-line/70 bg-surface/80 backdrop-blur">
-        <div className="mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FAFAF7] text-[#111827]">
+      <div className="sticky top-0 z-40 border-b border-black/[0.04] bg-[#FAFAF7]/92 backdrop-blur-xl">
+        <div className="mx-auto w-full max-w-[1500px] px-5 py-5 sm:px-8 lg:px-10">
           <HeaderBar onNavigate={onNavigate} />
         </div>
       </div>
-      <div className="mx-auto flex min-h-[calc(100vh-81px)] w-full max-w-7xl flex-col px-4 pb-5 sm:px-6 lg:px-8">
-        <main className="flex-1 py-6 lg:py-8">{children}</main>
+      <div className="mx-auto flex min-h-[calc(100vh-89px)] w-full max-w-[1500px] flex-col px-5 pb-6 sm:px-8 lg:px-10">
+        <main className="flex-1 py-6 lg:py-10">{children}</main>
         <BottomNav currentPage={currentPage} onNavigate={onNavigate} />
       </div>
     </div>

@@ -15,33 +15,37 @@ type PredictionPageProps = {
 export function PredictionPage({ prediction, onRefresh, isLoading }: PredictionPageProps) {
   return (
     <div className="space-y-6">
-      <section className="overflow-hidden rounded-[2rem] border border-line bg-forest text-white shadow-soft">
-        <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_430px]">
+      <section className="overflow-hidden rounded-[2.25rem] border border-black/[0.06] bg-white shadow-[0_28px_90px_rgba(15,23,42,0.08)]">
+        <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_430px] lg:p-10">
           <div>
-            <p className="text-sm font-bold text-[#A7E7B6]">CGM 기반 참고 예측</p>
+            <p className="text-sm font-black text-leaf">CGM 기반 참고 예측</p>
             <div className="mt-2 flex flex-wrap items-center gap-3">
-              <h1 className="text-4xl font-black tracking-tight sm:text-5xl">식후 혈당 변화 가능성</h1>
+              <h1 className="max-w-3xl text-4xl font-black leading-tight tracking-[-0.02em] text-[#101827] sm:text-6xl">
+                식후 혈당 변화 가능성
+              </h1>
               <ResultSourceBadge isDemo={prediction.isDemo} />
             </div>
-            <p className="mt-4 text-white/70">현재 혈당 {prediction.currentGlucose} mg/dL 기준</p>
+            <p className="mt-5 text-lg font-semibold text-[#65716A]">
+              현재 혈당 {prediction.currentGlucose} mg/dL 기준 · 참고용 범위 예측
+            </p>
           </div>
-          <div className="rounded-3xl bg-[#FFFDF5] p-5 text-forest">
-            <p className="text-sm font-black text-[#A4560A]">90분 예상 범위</p>
-            <p className="mt-2 text-5xl font-black tracking-tight">
+          <div className="rounded-[2rem] bg-[#071F18] p-5 text-white shadow-soft">
+            <p className="text-sm font-black text-[#58D68D]">90분 예상 범위</p>
+            <p className="mt-2 text-5xl font-black tracking-[-0.03em]">
               {prediction.intervals["90"][0]}~{prediction.intervals["90"][1]}
             </p>
-            <p className="mt-1 text-sm font-bold text-stone-500">mg/dL · 불확실성 {prediction.uncertainty["90"]}</p>
-            <div className="mt-5 h-3 rounded-full bg-[#FFF1D6]">
-              <div className="h-3 w-3/4 rounded-full bg-[#F97316]" />
+            <p className="mt-1 text-sm font-bold text-white/58">mg/dL · 불확실성 {prediction.uncertainty["90"]}</p>
+            <div className="mt-5 h-3 rounded-full bg-white/14">
+              <div className="h-3 w-3/4 rounded-full bg-[#58D68D]" />
             </div>
           </div>
         </div>
       </section>
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-[2rem] border border-line bg-surface p-4 shadow-sm">
-        <p className="text-sm font-semibold text-stone-500">예측은 참고용 범위와 가능성 신호 중심으로 확인합니다.</p>
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-[2rem] border border-black/[0.06] bg-white p-4 shadow-sm">
+        <p className="text-sm font-semibold text-[#65716A]">예측은 참고용 범위와 가능성 신호 중심으로 확인합니다.</p>
         <button
           onClick={onRefresh}
-          className="inline-flex items-center gap-2 rounded-2xl border border-line bg-cream px-5 py-3 font-bold text-forest shadow-sm"
+          className="inline-flex items-center gap-2 rounded-full border border-black/[0.08] bg-[#FAFAF7] px-5 py-3 font-black text-[#101827] shadow-sm"
         >
           <RefreshCw className={`h-5 w-5 ${isLoading ? "animate-spin" : ""}`} />
           예측 새로고침
