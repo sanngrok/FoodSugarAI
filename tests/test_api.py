@@ -61,7 +61,7 @@ def mock_predictor():
         risk_label="주의",
         risk_color="#f39c12",
         risk_emoji="⚠️",
-        probabilities={"낮음": 0.1, "주의": 0.7, "위험": 0.2},
+        probabilities={"낮음": 0.1, "주의": 0.7, "높음": 0.2},
         serving_advice="섭취량을 줄이세요.",
     )
     pred.predict_from_dict.return_value = pred.predict.return_value
@@ -124,7 +124,7 @@ class TestRiskEndpoint:
         resp = client.post("/predict/risk", json=payload)
         assert resp.status_code == 200
         data = resp.json()
-        assert data["risk_label"] in ("낮음", "주의", "위험")
+        assert data["risk_label"] in ("낮음", "주의", "높음")
         assert abs(sum(data["probabilities"].values()) - 1.0) < 0.01
         assert "참고용" in data["reference_notice"]
 
@@ -167,7 +167,9 @@ class TestAnalyzeEndpoint:
         data = resp.json()
         assert "classification" in data
         assert "risk" in data
+        assert "glucose_risk" in data
         assert data["classification"]["food_key"] == "pizza"
+        assert data["glucose_risk"]["level"] in ("낮음", "주의", "높음")
 
 
 class TestCGMForecastEndpoint:

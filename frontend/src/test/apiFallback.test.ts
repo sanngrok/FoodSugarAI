@@ -13,7 +13,9 @@ describe("API fallback", () => {
     const result = await analyzeFoodImage(new File(["x"], "food.jpg", { type: "image/jpeg" }));
 
     expect(result.isDemo).toBe(true);
-    expect(result.foodName).toBe("비빔밥");
+    expect(result.foodName).toBe("비빔밥 데모 예시");
+    expect(result.confidence).toBe(0);
+    expect(result.sourceNotice).toContain("실제로 분석하지 못했습니다");
     expect(result.imageUrl).toBe("blob:foodsugar-test-preview");
   });
 
@@ -25,5 +27,45 @@ describe("API fallback", () => {
     expect(result.isDemo).toBe(true);
     expect(result.intervals["90"]).toEqual([104, 205]);
     expect(result.uncertaintyMessage90).toContain("참고용");
+  });
+
+  it("prefers score-based glucose_risk over legacy risk label", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          classification: {
+            food_key: "비빔밥",
+            food_name_ko: "비빔밥",
+            confidence: 0.91,
+          },
+          nutrition: {
+            calories: 171.1,
+            carbs: 29.74,
+            sugar: 1.98,
+            protein: 4.63,
+            fat: 3.7,
+            fiber: 0.96,
+          },
+          risk: {
+            risk_label: "낮음",
+            serving_advice: "legacy risk",
+          },
+          glucose_risk: {
+            score: 52.44,
+            level: "주의",
+            factors: { scaled_carbs_g: 44.61 },
+          },
+        }),
+      }),
+    );
+
+    const result = await analyzeFoodImage(new File(["x"], "food.jpg", { type: "image/jpeg" }));
+
+    expect(result.isDemo).toBe(false);
+    expect(result.glucoseRiskLevel).toBe("주의");
+    expect(result.glucoseRiskScore).toBe(52);
+    expect(result.explanation).toContain("참고 점수 52점");
   });
 });

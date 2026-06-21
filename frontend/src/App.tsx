@@ -30,7 +30,10 @@ export default function App() {
   const handleAnalyze = async () => {
     if (!selectedFile) return;
     setAnalysisLoading(true);
-    const result = await analyzeFoodImage(selectedFile);
+    const [result] = await Promise.all([
+      analyzeFoodImage(selectedFile),
+      new Promise((resolve) => setTimeout(resolve, 800)),
+    ]);
     setAnalysis(result);
     setAnalysisLoading(false);
     setPage("analysis");

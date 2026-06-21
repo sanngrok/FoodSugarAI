@@ -1,8 +1,7 @@
 import logging
 
-import numpy as np
 from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
-from PIL import Image
+from PIL import Image, ImageStat
 
 from api.schemas.models import (
     CGMEnrichedForecastRequest,
@@ -21,18 +20,25 @@ from api.schemas.models import (
 from config.settings import settings
 from src.classifier.food_classifier import ClassificationResult
 from src.glucose.constants import GLUCOSE_REFERENCE_NOTICE, GLUCOSE_RISK_INTERPRETATION, GLUCOSE_SAFETY_WARNING
-from src.glucose.forecasting import (
-    ENRICHED_FEATURE_COLUMNS,
-    build_enriched_features_from_raw_events,
-    forecast_from_enriched_payload,
-    forecast_from_recent_readings,
-    load_event_classifiers_cached,
-    load_event_thresholds_cached,
-    load_forecast_metadata_cached,
-    load_forecast_models_cached,
-    load_prediction_intervals_cached,
-    load_range_calibrators_cached,
-)
+try:
+    from src.glucose.forecasting import (
+        ENRICHED_FEATURE_COLUMNS,
+        build_enriched_features_from_raw_events,
+        forecast_from_enriched_payload,
+        forecast_from_recent_readings,
+        load_event_classifiers_cached,
+        load_event_thresholds_cached,
+        load_forecast_metadata_cached,
+        load_forecast_models_cached,
+        load_prediction_intervals_cached,
+        load_range_calibrators_cached,
+    )
+    _CGM_FORECASTING_AVAILABLE = True
+    _CGM_FORECASTING_IMPORT_ERROR = ""
+except ImportError as exc:
+    ENRICHED_FEATURE_COLUMNS = []
+    _CGM_FORECASTING_AVAILABLE = False
+    _CGM_FORECASTING_IMPORT_ERROR = str(exc)
 from src.glucose.risk import score_glucose_risk
 from src.nutrition.nutrition_db import NUTRITION_DB, get_nutrition
 from src.nutrition.nutrition_db import NutritionInfo
@@ -61,9 +67,8 @@ def _color_based_fallback(image: Image.Image) -> ClassificationResult:
     """
     import colorsys
 
-    img_small = image.resize((64, 64))
-    arr = np.array(img_small, dtype=np.float32) / 255.0
-    r, g, b = arr[:, :, 0].mean(), arr[:, :, 1].mean(), arr[:, :, 2].mean()
+    img_small = image.convert("RGB").resize((64, 64))
+    r, g, b = [channel / 255.0 for channel in ImageStat.Stat(img_small).mean[:3]]
     h, s, v = colorsys.rgb_to_hsv(r, g, b)
     hue_deg = h * 360
 
@@ -181,7 +186,10 @@ async def classify_image(
 
     image = load_image(data)
     classifier = request.app.state.classifier
-    result = classifier.predict(image)
+    if classifier is None:
+        result = _color_based_fallback(image)
+    else:
+        result = classifier.predict(image)
     return _clf_result_to_response(result)
 
 
@@ -225,6 +233,14 @@ async def cgm_forecast(payload: CGMForecastRequest):
     최근 5분 간격 CGM 값을 이용해 30/60/90분 뒤 혈당을 예측합니다.
     의료 진단이나 치료 지침이 아닙니다.
     """
+    if not _CGM_FORECASTING_AVAILABLE:
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                "이 배포 환경에서는 CGM 예측 의존성이 비활성화되어 있습니다. "
+                "서버형 백엔드 배포에서 사용할 수 있습니다."
+            ),
+        )
     if not settings.glucose_forecast_model_dir.exists():
         raise HTTPException(
             status_code=503,
@@ -260,6 +276,14 @@ async def cgm_forecast_enriched(payload: CGMEnrichedForecastRequest):
     raw 예측, range-aware 보정 예측, 저/고혈당 가능성 확률을 함께 반환합니다.
     의료 진단이나 치료 지침이 아닙니다.
     """
+    if not _CGM_FORECASTING_AVAILABLE:
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                "이 배포 환경에서는 enriched CGM 예측 의존성이 비활성화되어 있습니다. "
+                "서버형 백엔드 배포에서 사용할 수 있습니다."
+            ),
+        )
     model_dir = settings.glucose_forecast_enriched_model_dir
     if not model_dir.exists():
         raise HTTPException(
@@ -308,6 +332,14 @@ async def cgm_forecast_enriched_events(payload: CGMForecastEnrichedEventsRequest
     30/60/90분 뒤 혈당 예측, range-aware 보정값, 저/고혈당 가능성 flag를 반환합니다.
     의료 진단이나 치료 지침이 아닙니다.
     """
+    if not _CGM_FORECASTING_AVAILABLE:
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                "이 배포 환경에서는 enriched CGM 이벤트 예측 의존성이 비활성화되어 있습니다. "
+                "서버형 백엔드 배포에서 사용할 수 있습니다."
+            ),
+        )
     model_dir = settings.glucose_forecast_enriched_model_dir
     if not model_dir.exists():
         raise HTTPException(
@@ -395,6 +427,7 @@ async def full_analysis(
     # 2. 영양정보 조회
     nutrition_info = get_nutrition(clf_result.food_key)
     nutrition_response = None
+    glucose_risk_response = None
     if nutrition_info:
         nutrition_response = NutritionInput(
             food_name=nutrition_info.food_name,
@@ -408,6 +441,13 @@ async def full_analysis(
             portion_g=portion_g,
         )
         risk_result = predictor.predict(nutrition_info, portion_g=portion_g)
+        glucose_score = score_glucose_risk(nutrition_info, portion_g=portion_g)
+        glucose_risk_response = GlucoseRiskResponse(
+            score=glucose_score.score,
+            level=glucose_score.level,
+            factors=glucose_score.factors,
+            reference_notice=glucose_score.reference_notice,
+        )
     else:
         logger.warning("영양DB에 '%s' 없음 — 기본값으로 위험도 예측", clf_result.food_key)
         risk_result = predictor.predict_from_dict(
@@ -418,4 +458,5 @@ async def full_analysis(
         classification=clf_response,
         nutrition=nutrition_response,
         risk=_risk_result_to_response(risk_result),
+        glucose_risk=glucose_risk_response,
     )

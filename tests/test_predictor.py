@@ -62,7 +62,7 @@ class TestRuleBasedPredict:
         feat = self._make_features(sugar=35, gi=85, carbs=60)
         result = _rule_based_predict(feat)
         assert result.risk_level == 2
-        assert result.risk_label == "위험"
+        assert result.risk_label == "높음"
 
     def test_probabilities_sum_to_one(self):
         feat = self._make_features(sugar=15, gi=65, carbs=40)
@@ -78,7 +78,7 @@ class TestSugarPredictor:
         assert info is not None
         result = predictor_no_model.predict(info, portion_g=100)
         assert result.risk_level in (0, 1, 2)
-        assert result.risk_label in ("낮음", "주의", "위험")
+        assert result.risk_label in ("낮음", "주의", "높음")
         assert result.serving_advice
 
     def test_predict_from_dict(self, predictor_no_model):
@@ -92,7 +92,7 @@ class TestSugarPredictor:
             "fiber": 1,
             "glycemic_index": 80,
         }, portion_g=150)
-        assert result.risk_level == 2  # 고당도 → 위험
+        assert result.risk_level == 2  # 고당도 → 높음
 
     def test_low_sugar_food(self, predictor_no_model):
         info = get_nutrition("steak")
@@ -114,3 +114,11 @@ class TestNutritionDB:
         from src.nutrition.nutrition_db import NUTRITION_DB
         for key, info in NUTRITION_DB.items():
             assert 0 <= info.glycemic_index <= 100, f"{key} GI 범위 오류"
+
+    def test_kfood_gi_proxy_covers_56_classes(self):
+        from src.nutrition.nutrition_db import KFOOD_GI_PROXY
+
+        assert len(KFOOD_GI_PROXY) == 56
+        assert KFOOD_GI_PROXY["비빔밥"] > 50
+        assert KFOOD_GI_PROXY["떡볶이"] >= 70
+        assert KFOOD_GI_PROXY["후라이드치킨"] < 50

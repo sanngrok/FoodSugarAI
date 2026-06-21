@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { AlertTriangle, ArrowRight } from "lucide-react";
 import { FoodConfirmationCard } from "../components/FoodConfirmationCard";
 import { FoodPreviewCard } from "../components/FoodPreviewCard";
 import { GlucoseRiskCard } from "../components/GlucoseRiskCard";
@@ -15,6 +15,18 @@ type AnalysisPageProps = {
 export function AnalysisPage({ analysis, onPrediction }: AnalysisPageProps) {
   return (
     <div className="space-y-6">
+      {analysis.isDemo && (
+        <section className="flex gap-3 rounded-[2rem] border border-[#F97316]/30 bg-[#FFF8E8] p-5 text-[#8A4B0D] shadow-soft">
+          <AlertTriangle className="mt-0.5 h-6 w-6 shrink-0" />
+          <div>
+            <p className="font-black">실제 이미지 분석 결과가 아닙니다</p>
+            <p className="mt-1 text-sm leading-6">
+              {analysis.sourceNotice ||
+                "현재 화면은 데모 데이터입니다. 실제 모델 결과를 보려면 backend 서버가 켜져 있어야 합니다."}
+            </p>
+          </div>
+        </section>
+      )}
       <section className="overflow-hidden rounded-[2rem] border border-line bg-forest text-white shadow-soft">
         <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[1fr_360px]">
           <div>

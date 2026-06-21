@@ -18,6 +18,70 @@ REAL_DB_PATH = Path("data/processed/nutrition_db_real.json")
 KFOOD_DB_PATH = Path("data/processed/kfood_nutrition_db.json")
 
 
+# K-Food 56-class GI proxy values.
+#
+# These are conservative wellness-app proxies used when the source nutrition DB
+# only carries a generic GI=50 placeholder. They are not medical measurements.
+KFOOD_GI_PROXY: dict[str, float] = {
+    "갈비구이": 35.0,
+    "갈비찜": 45.0,
+    "갈비탕": 40.0,
+    "감자전": 70.0,
+    "감자탕": 45.0,
+    "계란말이": 20.0,
+    "고등어구이": 20.0,
+    "곰탕_설렁탕": 45.0,
+    "김밥": 62.0,
+    "김치볶음밥": 68.0,
+    "김치전": 65.0,
+    "김치찌개": 35.0,
+    "김치찜": 35.0,
+    "닭갈비": 45.0,
+    "닭계장": 35.0,
+    "닭볶음탕": 45.0,
+    "동태찌개": 30.0,
+    "된장찌개": 35.0,
+    "떡갈비": 45.0,
+    "떡볶이": 78.0,
+    "라면": 72.0,
+    "라볶이": 80.0,
+    "만두": 62.0,
+    "물냉면": 68.0,
+    "보쌈": 25.0,
+    "불고기": 42.0,
+    "비빔냉면": 70.0,
+    "비빔밥": 68.0,
+    "삼겹살": 20.0,
+    "삼계탕": 42.0,
+    "새우볶음밥": 68.0,
+    "수정과": 65.0,
+    "수제비": 72.0,
+    "순대": 58.0,
+    "순두부찌개": 30.0,
+    "식혜": 72.0,
+    "알밥": 65.0,
+    "약과": 78.0,
+    "약식": 75.0,
+    "양념치킨": 52.0,
+    "유부초밥": 65.0,
+    "잔치국수": 70.0,
+    "잡곡밥": 55.0,
+    "족발": 25.0,
+    "주먹밥": 68.0,
+    "짜장면": 70.0,
+    "짬뽕": 68.0,
+    "쫄면": 72.0,
+    "찜닭": 48.0,
+    "칼국수": 72.0,
+    "파전": 65.0,
+    "피자": 62.0,
+    "한과": 75.0,
+    "호박전": 62.0,
+    "후라이드치킨": 45.0,
+    "훈제오리": 25.0,
+}
+
+
 @dataclass
 class NutritionInfo:
     food_name: str
@@ -106,6 +170,9 @@ def _load_kfood_db() -> dict[str, NutritionInfo]:
         raw = json.load(f)
     db = {}
     for food_key, d in raw.items():
+        source_gi = float(d["glycemic_index"])
+        proxy_gi = KFOOD_GI_PROXY.get(food_key)
+        glycemic_index = proxy_gi if proxy_gi is not None and source_gi == 50.0 else source_gi
         db[food_key] = NutritionInfo(
             food_name=d.get("food_name", food_key),
             calories=d["calories"],
@@ -114,7 +181,7 @@ def _load_kfood_db() -> dict[str, NutritionInfo]:
             protein=d["protein"],
             fat=d["fat"],
             fiber=d["fiber"],
-            glycemic_index=d["glycemic_index"],
+            glycemic_index=glycemic_index,
         )
     logger.debug("kfood_nutrition_db.json 로드: %d개", len(db))
     return db

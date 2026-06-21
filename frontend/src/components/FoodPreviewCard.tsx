@@ -28,6 +28,11 @@ export function FoodPreviewCard({ analysis }: FoodPreviewCardProps) {
           <Utensils className="h-16 w-16" />
         </div>
       )}
+      {analysis.isDemo && analysis.sourceNotice && (
+        <div className="mt-4 rounded-2xl bg-[#FFF8E8] p-4 text-sm font-semibold leading-6 text-[#8A4B0D]">
+          {analysis.sourceNotice}
+        </div>
+      )}
       {needsConfirm && (
         <div className="mt-4 rounded-2xl bg-[#FFF1D6] p-4 text-sm font-semibold text-[#8A4B0D]">
           음식 인식 신뢰도가 낮습니다. 혈당 위험도는 음식명과 섭취량에 민감하므로 먼저 음식명을 확인하세요.

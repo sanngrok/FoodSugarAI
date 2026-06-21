@@ -9,12 +9,15 @@ export type AnalysisResult = {
   protein: number;
   fat: number;
   fiber: number;
-  glucoseRiskLevel: "낮음" | "보통" | "높음";
+  glucoseRiskLevel: "낮음" | "주의" | "높음";
+  glucoseRiskScore?: number;
+  glucoseRiskFactors?: Record<string, number>;
   predictedRise: number;
   peakTime: string;
   explanation: string;
   isDemo?: boolean;
   imageUrl?: string;
+  sourceNotice?: string;
 };
 
 export type GlucosePredictionResult = {
@@ -93,6 +96,7 @@ export const mockAnalysis: AnalysisResult = {
   fat: 15,
   fiber: 6,
   glucoseRiskLevel: "높음",
+  glucoseRiskScore: 52,
   predictedRise: 48,
   peakTime: "식후 60분",
   explanation: "탄수화물 함량이 높아 식후 혈당 상승 가능성이 있습니다.",

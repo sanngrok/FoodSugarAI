@@ -1,0 +1,17 @@
+# Vercel backend runtime requirements.
+#
+# PyTorch/timm are intentionally excluded because the 7-model image ensemble and
+# torch runtime exceed Vercel Function bundle limits. When torch is unavailable,
+# the API keeps /predict/analyze usable via its low-confidence color fallback,
+# while nutrition and glucose-risk endpoints remain available. CGM forecast
+# endpoints need pandas/scikit-learn/scipy, which exceed the default Vercel
+# Function bundle limit in this project and should be deployed on a server-style
+# backend.
+
+fastapi>=0.104.0
+python-multipart>=0.0.6
+pydantic>=2.4.0
+pydantic-settings>=2.0.0
+Pillow>=10.0.0
+joblib>=1.3.0
+python-dotenv>=1.0.0

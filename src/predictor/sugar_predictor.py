@@ -2,7 +2,7 @@
 XGBoost 기반 혈당 위험도 예측기
 
 입력 피처: 영양정보 (칼로리, 탄수화물, 당류, 단백질, 지방, 식이섬유, GI지수)
-출력:  0=낮음, 1=주의, 2=위험
+출력:  0=낮음, 1=주의, 2=높음
 """
 
 import logging
@@ -10,7 +10,10 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import joblib
-import numpy as np
+try:
+    import numpy as np
+except ImportError:
+    np = None  # type: ignore
 
 from config.settings import settings
 from src.nutrition.nutrition_db import NutritionInfo
@@ -27,7 +30,7 @@ FEATURE_NAMES = [
     "glycemic_index",
 ]
 
-RISK_LABELS = settings.risk_labels          # ["낮음", "주의", "위험"]
+RISK_LABELS = settings.risk_labels          # ["낮음", "주의", "높음"]
 RISK_COLORS = ["#2ecc71", "#f39c12", "#e74c3c"]
 RISK_EMOJIS = ["✅", "⚠️", "🚨"]
 
@@ -35,18 +38,18 @@ RISK_EMOJIS = ["✅", "⚠️", "🚨"]
 @dataclass
 class PredictionResult:
     risk_level: int            # 0 / 1 / 2
-    risk_label: str            # "낮음" / "주의" / "위험"
+    risk_label: str            # "낮음" / "주의" / "높음"
     risk_color: str
     risk_emoji: str
-    probabilities: dict[str, float]   # {"낮음": 0.1, "주의": 0.3, "위험": 0.6}
+    probabilities: dict[str, float]   # {"낮음": 0.1, "주의": 0.3, "높음": 0.6}
     feature_importance: dict[str, float] | None = None
     serving_advice: str = ""
 
 
-def _nutrition_to_features(info: NutritionInfo, portion_g: float = 100) -> np.ndarray:
+def _nutrition_to_features(info: NutritionInfo, portion_g: float = 100) -> list[float]:
     """NutritionInfo → numpy feature vector (portion_g 스케일 적용)"""
     scale = portion_g / 100.0
-    return np.array([
+    return [
         info.calories * scale,
         info.carbs * scale,
         info.sugar * scale,
@@ -54,10 +57,10 @@ def _nutrition_to_features(info: NutritionInfo, portion_g: float = 100) -> np.nd
         info.fat * scale,
         info.fiber * scale,
         info.glycemic_index,          # GI는 스케일 무관
-    ], dtype=np.float32)
+    ]
 
 
-def _rule_based_predict(features: np.ndarray) -> PredictionResult:
+def _rule_based_predict(features: list[float]) -> PredictionResult:
     """
     학습된 모델이 없을 때 사용하는 규칙 기반 fallback.
     sugar, GI, carbs를 기준으로 위험도 계산.
@@ -111,12 +114,10 @@ def _build_result(level: int, probs: list[float],
 
 def _serving_advice(level: int, probs: dict) -> str:
     if level == 0:
-        return "혈당에 미치는 영향이 낮은 음식입니다. 적정량을 섭취하면 안전합니다."
+        return "혈당 상승 가능성이 낮은 편입니다. 실제 반응은 개인과 섭취량에 따라 달라질 수 있습니다."
     if level == 1:
-        return ("혈당을 다소 올릴 수 있습니다. 섭취량을 절반으로 줄이거나 "
-                "단백질·채소와 함께 드세요.")
-    return ("혈당 급상승 위험이 높습니다. 당뇨·혈당 조절 중이라면 섭취를 피하거나 "
-            "소량만 드시고 식후 운동을 권장합니다.")
+        return ("혈당 상승 가능성 신호가 보통 수준입니다. 섭취량과 함께 먹는 음식 구성을 참고해 확인하세요.")
+    return ("혈당 상승 가능성 신호가 높은 편입니다. 단일 판단이 아니라 실제 측정값과 함께 참고하세요.")
 
 
 class SugarPredictor:
@@ -151,7 +152,9 @@ class SugarPredictor:
         if self.model is None:
             return _rule_based_predict(features)
 
-        x = features.reshape(1, -1)
+        if np is None:
+            raise ImportError("numpy가 설치되어 있지 않아 XGBoost 모델 추론을 사용할 수 없습니다.")
+        x = np.array(features, dtype=np.float32).reshape(1, -1)
         level = int(self.model.predict(x)[0])
         probs = self.model.predict_proba(x)[0].tolist()
 

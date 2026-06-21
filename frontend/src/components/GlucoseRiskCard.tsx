@@ -6,10 +6,12 @@ type GlucoseRiskCardProps = {
 };
 
 export function GlucoseRiskCard({ analysis }: GlucoseRiskCardProps) {
+  const score = analysis.glucoseRiskScore;
+  const scoreWidth = `${Math.max(0, Math.min(score ?? 0, 100))}%`;
   const riskStyle =
     analysis.glucoseRiskLevel === "높음"
       ? "bg-[#FFF1D6] text-[#A4560A]"
-      : analysis.glucoseRiskLevel === "보통"
+      : analysis.glucoseRiskLevel === "주의"
         ? "bg-sage text-forest"
         : "bg-[#E8F3E8] text-leaf";
 
@@ -19,6 +21,9 @@ export function GlucoseRiskCard({ analysis }: GlucoseRiskCardProps) {
         <div>
           <p className="text-sm font-semibold text-leaf">혈당 부담 참고 점수</p>
           <h3 className="mt-2 text-3xl font-black text-forest">{analysis.glucoseRiskLevel}</h3>
+          {typeof score === "number" && (
+            <p className="mt-1 text-sm font-bold text-stone-500">영양성분 기반 {score}/100점</p>
+          )}
         </div>
         <span className={`rounded-full px-4 py-2 text-sm font-black ${riskStyle}`}>{analysis.glucoseRiskLevel}</span>
       </div>
@@ -30,9 +35,19 @@ export function GlucoseRiskCard({ analysis }: GlucoseRiskCardProps) {
         </div>
         <div className="mt-2 grid grid-cols-3 text-xs font-bold text-stone-500">
           <span>낮음</span>
-          <span className="text-center">보통</span>
+          <span className="text-center">주의</span>
           <span className="text-right">높음</span>
         </div>
+        {typeof score === "number" && (
+          <div className="mt-4 rounded-2xl bg-[#FFF8E8] p-3">
+            <div className="h-3 overflow-hidden rounded-full bg-[#FFF1D6]">
+              <div className="h-full rounded-full bg-leaf" style={{ width: scoreWidth }} />
+            </div>
+            <p className="mt-2 text-xs font-semibold text-stone-500">
+              기존 위험도 라벨보다 0~100 참고 점수 결과를 우선 표시합니다.
+            </p>
+          </div>
+        )}
       </div>
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
         <div className="rounded-2xl bg-sage/70 p-4">

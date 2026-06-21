@@ -1,0 +1,23 @@
+# Backend Vercel deployment filter.
+#
+# The frontend is deployed from frontend/ as a separate Vercel project. This
+# root project is the FastAPI backend.
+
+frontend/
+
+# Large training data/checkpoints are not suitable for Vercel Functions.
+data/raw/
+data/models/
+data/processed/**
+!data/processed/
+!data/processed/kfood_nutrition_db.json
+!data/processed/nutrition_db_real.json
+
+reports/
+archive/
+tests/
+demo/
+
+__pycache__/
+*.pyc
+.DS_Store
