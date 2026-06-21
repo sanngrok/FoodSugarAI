@@ -33,7 +33,7 @@ export function HomePage({ previewUrl, isLoading, onFileSelect, onAnalyze }: Hom
                 업로드해주세요
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-[#65716A]">
-                WeMeet은 음식 스캔, 영양성분 확인, 90분 혈당 변화 가능성까지 한 흐름으로 보여주는
+                FoodSugarAI는 음식 스캔, 영양성분 확인, 90분 혈당 변화 가능성까지 한 흐름으로 보여주는
                 웰니스 AI 앱입니다. 혈당 관련 결과는 의료 판단이 아닌 참고용으로만 제공합니다.
               </p>
             </div>

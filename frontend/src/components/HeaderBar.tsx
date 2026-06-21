@@ -13,7 +13,7 @@ export function HeaderBar({ onNavigate }: HeaderBarProps) {
           <Leaf className="h-5 w-5" />
         </span>
         <span>
-          <span className="block text-2xl font-black tracking-[-0.02em] text-[#111827]">WeMeet</span>
+          <span className="block text-2xl font-black tracking-[-0.02em] text-[#111827]">FoodSugarAI</span>
           <span className="hidden text-xs font-semibold text-stone-500 sm:block">Food scan wellness AI</span>
         </span>
       </button>
