@@ -29,6 +29,55 @@ describe("API fallback", () => {
     expect(result.uncertaintyMessage90).toContain("참고용");
   });
 
+  it("shows the backend's risk flags, not demo risk signals, for a real forecast", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          calibrated_predictions_mg_dl: { "30": 156.59, "60": 205.92, "90": 198.29 },
+          prediction_intervals_mg_dl: { "30": [124.35, 188.83], "60": [152.37, 259.47], "90": [130.23, 266.35] },
+          uncertainty_level: { "30": "high", "60": "high", "90": "high" },
+          risk_flags: {
+            "30": { hypo_risk: false, hyper_risk: false },
+            "60": { hypo_risk: false, hyper_risk: true },
+            "90": { hypo_risk: false, hyper_risk: true },
+          },
+        }),
+      }),
+    );
+
+    const result = await predictGlucose(makeSampleCgmPayload());
+
+    expect(result.isDemo).toBe(false);
+    expect(result.riskSignals).toEqual({
+      hypo30: "낮음",
+      hypo60: "낮음",
+      hypo90: "낮음",
+      hyper30: "낮음",
+      hyper60: "주의",
+      hyper90: "주의",
+    });
+  });
+
+  it("marks risk signals as unavailable when a real forecast has no risk flags", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          predictions_mg_dl: { "30": 131, "60": 141, "90": 150 },
+          risk_flags: null,
+        }),
+      }),
+    );
+
+    const result = await predictGlucose(makeSampleCgmPayload());
+
+    expect(result.isDemo).toBe(false);
+    expect(Object.values(result.riskSignals)).toEqual(Array(6).fill("정보 없음"));
+  });
+
   it("prefers score-based glucose_risk over legacy risk label", async () => {
     vi.stubGlobal(
       "fetch",

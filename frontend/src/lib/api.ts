@@ -103,7 +103,7 @@ export async function predictGlucose(payload: CGMForecastPayload): Promise<Gluco
         "60": toKoreanUncertainty(uncertainty["60"] || uncertainty[60] || "medium"),
         "90": toKoreanUncertainty(uncertainty["90"] || uncertainty[90] || "high"),
       },
-      riskSignals: mockPrediction.riskSignals,
+      riskSignals: toRiskSignals(data.risk_flags),
       uncertaintyMessage90:
         data.uncertainty_message?.["90"] ||
         data.uncertainty_message?.[90] ||
@@ -127,6 +127,24 @@ function normalizeInterval(value: unknown, fallback: [number, number]): [number,
     return [Math.round(Number(value[0])), Math.round(Number(value[1]))];
   }
   return fallback;
+}
+
+// 실제 모델 결과에는 서버의 risk_flags만 사용한다. 값이 없으면 데모 값을 대신 넣지 않고
+// "정보 없음"으로 표시해, 모델이 내지 않은 신호가 실제 결과처럼 보이지 않게 한다.
+function toRiskSignals(riskFlags: unknown): GlucosePredictionResult["riskSignals"] {
+  const flags = (riskFlags && typeof riskFlags === "object" ? riskFlags : {}) as Record<
+    string,
+    { hypo_risk?: unknown; hyper_risk?: unknown } | undefined
+  >;
+  const label = (flag: unknown) => (flag === true ? "주의" : flag === false ? "낮음" : "정보 없음");
+  return {
+    hypo30: label(flags["30"]?.hypo_risk),
+    hypo60: label(flags["60"]?.hypo_risk),
+    hypo90: label(flags["90"]?.hypo_risk),
+    hyper30: label(flags["30"]?.hyper_risk),
+    hyper60: label(flags["60"]?.hyper_risk),
+    hyper90: label(flags["90"]?.hyper_risk),
+  };
 }
 
 function toKoreanUncertainty(value: string): string {
