@@ -1,69 +1,50 @@
 {
-  "name": "kfood_92_hflip_7model_weighted_2026_05_16",
+  "name": "kfood_hflip_4model_weighted_2026_11_25",
   "status": "production_candidate",
+  "derived_from": "kfood_92_hflip_7model_weighted_2026_05_16",
   "data_dir": "data/raw/korean_food_fixed_v1",
   "val_subdir": "val",
   "tta": "hflip",
   "verified_metrics": {
-    "top1": 0.9202380952380952,
-    "top3": 0.9794642857142857,
-    "macro_f1": 0.9200379850437458,
-    "correct": 6184,
+    "top1": 0.9199404716491699,
+    "top3": 0.9794642925262451,
+    "macro_f1": 0.9197266816377107,
+    "correct": 6182,
     "num_samples": 6720
   },
   "models": [
     {
       "name": "food_lewm_b0",
-      "weight": 0.14236057323734336,
+      "weight": 0.14369606951117167,
       "checkpoint": "data/models/food_lewm_b0_classifier_3ep_ft10.pt",
       "metadata": "data/models/food_lewm_b0_meta_3ep_ft10.json",
       "classes": "data/models/food_lewm_b0_classes_3ep_ft10.json"
     },
     {
       "name": "b0_seed123_fixed_v1",
-      "weight": 0.2567350687710819,
+      "weight": 0.25914352161661236,
       "checkpoint": "data/models/food_lewm_b0_supervised_only_seed123_fixed_v1_ft10.pt",
       "metadata": "data/models/food_lewm_b0_supervised_only_seed123_fixed_v1_meta_ft10.json",
       "classes": "data/models/food_lewm_b0_supervised_only_seed123_fixed_v1_classes_ft10.json"
     },
     {
       "name": "b3_full_fixed_v1",
-      "weight": 0.52949003398239,
+      "weight": 0.5344572236426464,
       "checkpoint": "data/models/efficientnet_korean_b3_full_fixed_v1.pt",
       "metadata": "data/models/korean_food_model_meta_b3_full_fixed_v1.json",
       "classes": "data/models/korean_food_classes_b3_full_fixed_v1.json"
     },
     {
       "name": "b0_seed7_fixed_v1",
-      "weight": 0.06212042836978825,
+      "weight": 0.06270318522956962,
       "checkpoint": "data/models/food_lewm_b0_supervised_only_seed7_fixed_v1_ft10.pt",
       "metadata": "data/models/food_lewm_b0_supervised_only_seed7_fixed_v1_meta_ft10.json",
       "classes": "data/models/food_lewm_b0_supervised_only_seed7_fixed_v1_classes_ft10.json"
-    },
-    {
-      "name": "b3_probe_fixed_v1",
-      "weight": 0.0010083266638448512,
-      "checkpoint": "data/models/efficientnet_korean_b3_probe_fixed_v1.pt",
-      "metadata": "data/models/korean_food_model_meta_b3_probe_fixed_v1.json",
-      "classes": "data/models/korean_food_classes_b3_probe_fixed_v1.json"
-    },
-    {
-      "name": "b3_cont_fixed_v1",
-      "weight": 0.00496452020109459,
-      "checkpoint": "data/models/efficientnet_korean_b3_cont_fixed_v1.pt",
-      "metadata": "data/models/korean_food_model_meta_b3_cont_fixed_v1.json",
-      "classes": "data/models/korean_food_classes_b3_cont_fixed_v1.json"
-    },
-    {
-      "name": "b0_supervised_only",
-      "weight": 0.0033210487744569726,
-      "checkpoint": "data/models/food_lewm_b0_supervised_only_ft10.pt",
-      "metadata": "data/models/food_lewm_b0_supervised_only_meta_ft10.json",
-      "classes": "data/models/food_lewm_b0_supervised_only_classes_ft10.json"
     }
   ],
   "notes": [
-    "This model cleared 92% on korean_food_fixed_v1/val with hflip TTA.",
+    "Derived from the 7-model hflip ensemble (top1 0.9202, 6184/6720) by dropping the three members whose weights summed to about 1% (b3_probe_fixed_v1, b3_cont_fixed_v1, b0_supervised_only) and renormalising the remaining weights to sum to 1.",
+    "Metrics were recomputed from reports/b3/weighted_ensemble_merged_candidates_hflip/logits_cache.pt on the same validation split: 4 of 6720 predictions changed (1 fixed, 3 broken), all near-ties. CPU inference is about 46% faster (93ms -> 50ms per image).",
     "Weights were selected on the validation split, so this is a production candidate until validated on a separate holdout or human-reviewed clean set."
   ]
 }

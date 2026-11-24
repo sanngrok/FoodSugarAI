@@ -41,10 +41,12 @@
 
 | 모델 | Top-1 | Top-3 | Macro F1 | 쓰이는 곳 |
 |---|---:|---:|---:|---|
-| 7개 모델 가중 앙상블 (좌우 반전 TTA) | 92.02% | 97.95% | 92.00% | 연구 최고 성능, 로컬 기본값 |
+| 4개 모델 가중 앙상블 (좌우 반전 TTA) | 91.99% | 97.95% | 91.97% | 로컬 기본값 |
 | 단일 모델 (Food-LeWM B0, seed123) | 88.29% | 96.52% | 88.27% | 실제 서버 (메모리 512MB 제한) |
 
-앙상블 가중치는 점수를 잰 것과 같은 검증 세트에서 골랐기 때문에 92.02%는 다소 낙관적인 수치입니다. 별도 holdout에서의 재검증은 아직 하지 않았습니다.
+앙상블 가중치는 점수를 잰 것과 같은 검증 세트에서 골랐기 때문에 91.99%는 다소 낙관적인 수치입니다. 별도 holdout에서의 재검증은 아직 하지 않았습니다.
+
+원래는 7개 모델(92.02%, 6,184/6,720)이었는데, 가중치 합이 약 1%였던 3개(`b3_probe_fixed_v1`, `b3_cont_fixed_v1`, `b0_supervised_only`)를 뺐습니다. 검증 세트에서 결과가 바뀐 사진은 4장(1장 개선, 3장 악화, 모두 1·2등 확률이 거의 같던 경우)이고, CPU 추론은 사진당 93ms에서 50ms로 빨라졌습니다.
 
 ### CGM 예측 (OhioT1DM, 테스트 29,536건)
 
@@ -76,7 +78,7 @@ FoodSugarAI/
 │   └── data/, utils/         # 데이터 준비, 이미지 유틸
 ├── config/
 │   ├── settings.py                            # 환경변수 기반 설정
-│   └── kfood_production_ensemble_config.json  # 7개 모델 앙상블 구성과 가중치
+│   └── kfood_production_ensemble_config.json  # 4개 모델 앙상블 구성과 가중치
 ├── frontend/                 # React + Vite 웹앱
 ├── scripts/                  # 학습, 평가, 데이터 점검, 배포용 모델 묶음 스크립트
 ├── tests/                    # 백엔드 테스트 (pytest)
@@ -130,7 +132,7 @@ uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
 
 | 변수 | 기본값 | 설명 |
 |---|---|---|
-| `CLASSIFIER_MODE` | `ensemble` | `ensemble`(7개 모델), `single`(모델 1개), `none`(분류기 끔) |
+| `CLASSIFIER_MODE` | `ensemble` | `ensemble`(4개 모델), `single`(모델 1개), `none`(분류기 끔) |
 | `CLASSIFIER_MODEL_PATH` | | `single` 모드에서 쓸 체크포인트 경로 |
 | `USE_XGBOOST_PREDICTOR_MODEL` | `false` | `true`면 XGBoost 위험도 모델 사용, 아니면 규칙 기반 |
 | `FOODSUGAR_MODEL_BUNDLE_URL` | | 모델 묶음 주소 (서버 시작 시 자동 다운로드에 사용) |
