@@ -1,4 +1,9 @@
-"""Shared text for glucose-related features."""
+"""Shared text and constants for glucose-related features."""
+
+# OhioT1DM(2018 + 2020) 학습 환자 ID. enriched CGM 모델은 patient_id_numeric을
+# feature로 쓰므로, 이 목록에 없는 ID(웹앱 기본값 0 포함)는 "모르는 사용자"로 보고
+# 12명 모두의 ID로 예측한 뒤 평균한다.
+OHIOT1DM_TRAINING_PATIENT_IDS = (540, 544, 552, 559, 563, 567, 570, 575, 584, 588, 591, 596)
 
 GLUCOSE_REFERENCE_NOTICE = (
     "이 결과는 식습관 관리를 위한 참고용 정보이며 의료 진단이나 치료 지침이 아닙니다. "

@@ -168,7 +168,13 @@ class CGMForecastEnrichedEventsRequest(CGMForecastRequest):
     basal: list[RawBasalEvent] = Field(default_factory=list)
     exercise: list[RawExerciseEvent] = Field(default_factory=list)
     sleep_indicator: float = 0.0
-    patient_id_numeric: float = 0.0
+    patient_id_numeric: float = Field(
+        0.0,
+        description=(
+            "OhioT1DM 학습 환자 ID(540~596). 학습 환자가 아닌 값(기본값 0 포함)이면 "
+            "12명 학습 환자 ID로 각각 예측한 뒤 평균합니다."
+        ),
+    )
     biosignals: CGMBiosignalFeatures = Field(default_factory=CGMBiosignalFeatures)
 
 

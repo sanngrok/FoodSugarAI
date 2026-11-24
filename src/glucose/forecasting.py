@@ -21,7 +21,7 @@ from sklearn.metrics import (
     roc_auc_score,
 )
 
-from src.glucose.constants import GLUCOSE_REFERENCE_NOTICE
+from src.glucose.constants import GLUCOSE_REFERENCE_NOTICE, OHIOT1DM_TRAINING_PATIENT_IDS
 
 
 DEFAULT_HORIZONS_MINUTES = (30, 60, 90)
@@ -809,12 +809,40 @@ def risk_flags_from_event_probabilities(
     return flags
 
 
+# 예측 범위 폭(mg/dL) 기준 불확실성 등급 경계.
+# 배포 모델의 범위 폭은 30분 약 64, 60분 약 107, 90분 약 136 mg/dL이다
+# (reports/glucose_forecasting/prediction_interval_metrics.csv). 예전 경계(30/60)는
+# 모든 시점이 "high"가 되어 정보가 없었으므로, 시점 간 차이가 드러나도록 다시 잡았다.
+UNCERTAINTY_WIDTH_LOW_MAX = 80.0
+UNCERTAINTY_WIDTH_MEDIUM_MAX = 120.0
+# 실제 혈당 70 미만 구간은 시점마다 오차가 정상 구간보다 크다
+# (test_final_range_metrics.csv: low 구간 MAE 14.8/31.8/45.2 vs normal 11.5/19.0/23.9).
+LOW_GLUCOSE_UNCERTAINTY_THRESHOLD = 70.0
+_UNCERTAINTY_LEVELS = ("low", "medium", "high")
+_UNCERTAINTY_LEVEL_KO = {"low": "낮음", "medium": "중간", "high": "높음"}
+
+
+def _uncertainty_level_from_width(width: float) -> str:
+    if width < UNCERTAINTY_WIDTH_LOW_MAX:
+        return "low"
+    if width < UNCERTAINTY_WIDTH_MEDIUM_MAX:
+        return "medium"
+    return "high"
+
+
 def intervals_from_predictions(
     predictions: dict[int, float],
     interval_config: dict[int, dict[str, float]] | None,
+    current_glucose: float | None = None,
 ) -> tuple[dict[int, list[float]] | None, dict[int, str] | None, dict[int, str] | None]:
+    """예측 범위와 시점별 불확실성 등급/문구를 만든다.
+
+    등급은 범위 폭으로 정하고, 90분 이상은 UX 지침에 따라 항상 "high"로 둔다.
+    현재 혈당이 70 미만이면 그 구간의 오차가 커서 한 단계 올린다.
+    """
     if not interval_config:
         return None, None, None
+    low_glucose_now = current_glucose is not None and float(current_glucose) < LOW_GLUCOSE_UNCERTAINTY_THRESHOLD
     intervals: dict[int, list[float]] = {}
     levels: dict[int, str] = {}
     messages: dict[int, str] = {}
@@ -826,20 +854,23 @@ def intervals_from_predictions(
         upper_error = float(config.get("upper_abs_error", config.get("p90_abs_error", 0.0)))
         lower = round(max(0.0, float(prediction) - lower_error), 2)
         upper = round(float(prediction) + upper_error, 2)
-        width = upper - lower
-        if width < 30:
-            level = "low"
-        elif width < 60:
-            level = "medium"
-        else:
+        level = _uncertainty_level_from_width(upper - lower)
+        if low_glucose_now:
+            level = _UNCERTAINTY_LEVELS[min(_UNCERTAINTY_LEVELS.index(level) + 1, len(_UNCERTAINTY_LEVELS) - 1)]
+        if int(horizon) >= 90:
             level = "high"
         intervals[int(horizon)] = [lower, upper]
         levels[int(horizon)] = level
-        messages[int(horizon)] = (
-            f"{horizon}분 예측은 불확실성이 {level} 수준이므로 참고용으로만 확인하세요."
-            if int(horizon) >= 90
-            else f"{horizon}분 예측 범위는 최근 validation 오차를 바탕으로 한 참고용 범위입니다."
-        )
+        if int(horizon) >= 90:
+            message = f"{horizon}분 예측은 불확실성이 높으므로 참고용 범위와 가능성 신호로만 확인하세요."
+        else:
+            message = (
+                f"{horizon}분 예측의 불확실성은 {_UNCERTAINTY_LEVEL_KO[level]} 수준이며, "
+                "범위는 최근 validation 오차를 바탕으로 한 참고용 범위입니다."
+            )
+        if low_glucose_now:
+            message += " 현재 혈당이 낮은 구간이라 예측 오차가 평소보다 클 수 있습니다."
+        messages[int(horizon)] = message
     return intervals or None, levels or None, messages or None
 
 
@@ -966,6 +997,22 @@ def build_enriched_features_from_raw_events(
     return features
 
 
+def _expand_unknown_patient_rows(x: np.ndarray, feature_columns: list[str]) -> np.ndarray:
+    """patient_id_numeric이 학습 환자 ID가 아니면 학습 환자 수만큼 행을 복제해 ID만 바꾼다.
+
+    트리 모델은 처음 보는 ID(예: 기본값 0)를 가장 가까운 분기, 즉 가장 작은 ID인
+    환자 540처럼 취급한다. 특정 환자 한 명 대신 학습 환자 전체의 평균 반응을 쓰기 위함이다.
+    """
+    if "patient_id_numeric" not in feature_columns:
+        return x
+    column = feature_columns.index("patient_id_numeric")
+    if int(round(float(x[0, column]))) in OHIOT1DM_TRAINING_PATIENT_IDS:
+        return x
+    expanded = np.repeat(x[:1], len(OHIOT1DM_TRAINING_PATIENT_IDS), axis=0)
+    expanded[:, column] = np.asarray(OHIOT1DM_TRAINING_PATIENT_IDS, dtype=x.dtype)
+    return expanded
+
+
 def forecast_from_enriched_payload(
     readings: list[dict[str, object]],
     event_features: dict[str, object],
@@ -994,7 +1041,11 @@ def forecast_from_enriched_payload(
     if latest[resolved_features].isna().any().any():
         raise ValueError("feature를 만들 수 없습니다. 최근 readings 간격과 event feature를 확인하세요.")
     x = latest[resolved_features].to_numpy(dtype=np.float32)
-    raw_predictions = {horizon: round(float(model.predict(x)[0]), 2) for horizon, model in sorted(models.items())}
+    x = _expand_unknown_patient_rows(x, resolved_features)
+    # 모르는 사용자는 학습 환자 ID별로 한 행씩 만들어 두었으므로 결과를 평균한다.
+    raw_predictions = {
+        horizon: round(float(np.mean(model.predict(x))), 2) for horizon, model in sorted(models.items())
+    }
     calibrated_predictions = None
     if calibration_table is not None and not calibration_table.empty:
         calibrated_predictions = _apply_api_calibration(raw_predictions, calibration_table)
@@ -1010,13 +1061,14 @@ def forecast_from_enriched_payload(
                         continue
                     event_x = x[:, :expected_features]
                 if hasattr(model, "predict_proba"):
-                    probability = float(model.predict_proba(event_x)[:, 1][0])
+                    probability = float(np.mean(model.predict_proba(event_x)[:, 1]))
                 else:
-                    probability = float(model.predict(event_x)[0])
+                    probability = float(np.mean(model.predict(event_x)))
                 event_probabilities.setdefault(int(horizon), {})[f"{event_name}_probability"] = round(probability, 4)
     intervals, uncertainty_level, uncertainty_message = intervals_from_predictions(
         calibrated_predictions or raw_predictions,
         interval_config,
+        current_glucose=float(latest["glucose_mg_dl"].iloc[0]),
     )
     return ForecastResult(
         predictions=raw_predictions,
