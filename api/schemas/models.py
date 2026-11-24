@@ -43,6 +43,8 @@ class HealthResponse(BaseModel):
     classifier_ready: bool
     predictor_ready: bool
     classifier_error: str | None = None
+    cgm_forecast_ready: bool | None = None
+    cgm_forecast_error: str | None = None
 
 
 class GlucoseRiskResponse(BaseModel):

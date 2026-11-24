@@ -5,9 +5,16 @@ timm>=0.9.12          # EfficientNet-B0
 
 # ML
 xgboost>=2.0.0
-scikit-learn>=1.3.0
-numpy>=1.24.0
-pandas>=2.0.0
+# Pinned exactly: the saved CGM forecast models (glucose_models*/*.joblib) were
+# pickled with scikit-learn 1.8.0 and do not unpickle on 1.9.x
+# (ModuleNotFoundError: No module named '_loss' -> /predict/cgm-forecast* failed).
+# Do not bump scikit-learn without retraining and re-saving those models.
+# numpy/scipy/pandas/joblib are pinned to the matching release series so a
+# rebuild cannot silently pick up a newer, incompatible stack again.
+scikit-learn==1.8.0
+scipy==1.17.1
+numpy==2.4.6
+pandas==3.0.6
 
 # API
 fastapi>=0.104.0
@@ -23,7 +30,7 @@ plotly>=5.17.0
 requests>=2.31.0
 
 # Utils
-joblib>=1.3.0
+joblib==1.5.3         # pinned with the ML stack above (model files are joblib pickles)
 python-dotenv>=1.0.0
 
 # Dev

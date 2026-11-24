@@ -15,4 +15,6 @@ def health_check(request: Request):
         classifier_ready=getattr(state, "classifier", None) is not None,
         predictor_ready=getattr(state, "predictor", None) is not None,
         classifier_error=getattr(state, "classifier_error", None),
+        cgm_forecast_ready=getattr(state, "cgm_forecast_ready", None),
+        cgm_forecast_error=getattr(state, "cgm_forecast_error", None),
     )

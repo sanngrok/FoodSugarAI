@@ -40,6 +40,15 @@ class _ConstantEventClassifier:
         return np.column_stack([negative, positive])
 
 
+def _write_unloadable_model(path) -> None:
+    """Write a pickle that refers to a module that does not exist.
+
+    Loading it raises ModuleNotFoundError, which is how a model saved with one
+    scikit-learn version fails to load on another (the production CGM 500).
+    """
+    path.write_bytes(b"c_module_missing_in_this_sklearn_version\nModel\n.")
+
+
 @pytest.fixture
 def mock_classifier():
     clf = MagicMock()
@@ -86,6 +95,21 @@ class TestHealthEndpoint:
         data = resp.json()
         assert data["status"] == "ok"
         assert "version" in data
+
+    def test_health_reports_cgm_forecast_load_failure(self, mock_classifier, mock_predictor):
+        error = "cgm-forecast: ModuleNotFoundError: No module named '_loss'"
+        with patch("api.main.load_classifier", return_value=mock_classifier), \
+             patch("api.main.SugarPredictor", return_value=mock_predictor), \
+             patch("api.routers.predict.check_cgm_forecast_readiness", return_value=(False, error)):
+            from api.main import app
+            with TestClient(app) as c:
+                resp = c.get("/health")
+
+        assert resp.status_code == 200
+        data = resp.json()
+        assert data["status"] == "ok"
+        assert data["cgm_forecast_ready"] is False
+        assert data["cgm_forecast_error"] == error
 
 
 class TestClassifyEndpoint:
@@ -357,3 +381,91 @@ class TestCGMForecastEndpoint:
         assert data["engineered_event_features"]["bolus_last_60m"] == 4
         assert data["risk_flags"]["30"]["hypo_risk"] is True
         assert "참고용" in data["reference_notice"]
+
+    def test_cgm_forecast_unloadable_model_returns_503(self, client, monkeypatch, tmp_path):
+        from config.settings import settings
+
+        clear_forecast_model_cache()
+        _write_unloadable_model(tmp_path / "glucose_forecast_30m.joblib")
+        monkeypatch.setattr(settings, "glucose_forecast_model_dir", tmp_path)
+
+        resp = client.post("/predict/cgm-forecast", json=self._payload())
+
+        assert resp.status_code == 503
+        assert "불러오지 못했습니다" in resp.json()["detail"]
+        assert "cgm_forecast_error" in resp.json()["detail"]
+
+    @pytest.mark.parametrize("endpoint", ["cgm-forecast-enriched", "cgm-forecast-enriched-events"])
+    def test_cgm_forecast_enriched_unloadable_model_returns_503(self, client, monkeypatch, tmp_path, endpoint):
+        from config.settings import settings
+
+        clear_forecast_model_cache()
+        _write_unloadable_model(tmp_path / "glucose_forecast_30m.joblib")
+        monkeypatch.setattr(settings, "glucose_forecast_enriched_model_dir", tmp_path)
+
+        resp = client.post(f"/predict/{endpoint}", json=self._payload())
+
+        assert resp.status_code == 503
+        assert "불러오지 못했습니다" in resp.json()["detail"]
+
+    @pytest.mark.parametrize("endpoint", ["cgm-forecast-enriched", "cgm-forecast-enriched-events"])
+    def test_cgm_forecast_enriched_unloadable_event_classifier_returns_503(
+        self, client, monkeypatch, tmp_path, endpoint
+    ):
+        from config.settings import settings
+
+        clear_forecast_model_cache()
+        for horizon, value in [(30, 120), (60, 140), (90, 160)]:
+            joblib.dump(_ConstantForecastModel(value), tmp_path / f"glucose_forecast_{horizon}m.joblib")
+        _write_unloadable_model(tmp_path / "glucose_event_hypo_30m.joblib")
+        monkeypatch.setattr(settings, "glucose_forecast_enriched_model_dir", tmp_path)
+
+        resp = client.post(f"/predict/{endpoint}", json=self._payload())
+
+        assert resp.status_code == 503
+        assert "불러오지 못했습니다" in resp.json()["detail"]
+
+
+class TestCGMForecastReadiness:
+    def _patch_model_dirs(self, monkeypatch, basic_dir, enriched_dir):
+        from config.settings import settings
+
+        clear_forecast_model_cache()
+        monkeypatch.setattr(settings, "glucose_forecast_model_dir", basic_dir)
+        monkeypatch.setattr(settings, "glucose_forecast_enriched_model_dir", enriched_dir)
+
+    def test_ready_when_all_models_load(self, monkeypatch, tmp_path):
+        from api.routers.predict import check_cgm_forecast_readiness
+
+        for name in ("basic", "enriched"):
+            (tmp_path / name).mkdir()
+            for horizon in (30, 60, 90):
+                joblib.dump(_ConstantForecastModel(120), tmp_path / name / f"glucose_forecast_{horizon}m.joblib")
+        self._patch_model_dirs(monkeypatch, tmp_path / "basic", tmp_path / "enriched")
+
+        assert check_cgm_forecast_readiness() == (True, None)
+
+    def test_not_ready_when_model_dirs_are_missing(self, monkeypatch, tmp_path):
+        from api.routers.predict import check_cgm_forecast_readiness
+
+        self._patch_model_dirs(monkeypatch, tmp_path / "missing_basic", tmp_path / "missing_enriched")
+
+        ready, error = check_cgm_forecast_readiness()
+
+        assert ready is False
+        assert "missing_basic" in error
+        assert "missing_enriched" in error
+
+    def test_not_ready_when_model_cannot_be_unpickled(self, monkeypatch, tmp_path):
+        from api.routers.predict import check_cgm_forecast_readiness
+
+        for name in ("basic", "enriched"):
+            (tmp_path / name).mkdir()
+            _write_unloadable_model(tmp_path / name / "glucose_forecast_30m.joblib")
+        self._patch_model_dirs(monkeypatch, tmp_path / "basic", tmp_path / "enriched")
+
+        ready, error = check_cgm_forecast_readiness()
+
+        assert ready is False
+        assert "ModuleNotFoundError" in error
+        assert "scikit-learn" in error

@@ -59,6 +59,13 @@ async def lifespan(application: FastAPI):
         logger.exception("분류기 로드 실패: %s", e)
         application.state.classifier = None
         application.state.classifier_error = str(e)
+    # CGM 예측 모델도 시작 시 한 번 로드해 본다. 실패해도 서버는 계속 뜨고,
+    # 원인은 /health 의 cgm_forecast_error 로 확인할 수 있다.
+    application.state.cgm_forecast_ready, application.state.cgm_forecast_error = (
+        predict.check_cgm_forecast_readiness()
+    )
+    if application.state.cgm_forecast_error:
+        logger.warning("CGM 예측 모델 준비 안 됨: %s", application.state.cgm_forecast_error)
     logger.info("모델 로딩 완료")
 
     yield  # 서버 실행 중

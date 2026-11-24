@@ -168,6 +168,77 @@ def _risk_messages_from_flags(risk_flags: dict[int, dict[str, bool]] | None) -> 
     return messages or None
 
 
+_CGM_MODEL_LOAD_FAILED_DETAIL = (
+    "CGM 예측 모델을 불러오지 못했습니다. "
+    "서버의 scikit-learn 등 라이브러리 버전이 모델을 저장한 환경과 다를 수 있습니다. "
+    "자세한 원인은 /health 의 cgm_forecast_error 를 확인하세요."
+)
+
+
+def _read_enriched_cgm_artifacts(model_dir) -> dict[str, object]:
+    """enriched 모델과 함께 쓰는 보조 artifact를 forecast_from_enriched_payload 인자 형태로 읽는다."""
+    metadata = load_forecast_metadata_cached(model_dir)
+    return {
+        "calibration_table": load_range_calibrators_cached(model_dir),
+        "event_classifiers": load_event_classifiers_cached(model_dir),
+        "event_thresholds": load_event_thresholds_cached(model_dir),
+        "interval_config": load_prediction_intervals_cached(model_dir),
+        "feature_columns": metadata.get("feature_columns", ENRICHED_FEATURE_COLUMNS),
+    }
+
+
+def _load_cgm_artifacts_or_503(loader, model_dir):
+    """
+    저장된 CGM 모델 파일을 읽지 못하면(예: scikit-learn 버전 불일치로 unpickle 실패)
+    원인을 알 수 없는 500 대신 이유가 담긴 503을 반환한다.
+    """
+    try:
+        return loader(model_dir)
+    except Exception as exc:
+        logger.exception("CGM 예측 모델 로드 실패: %s", model_dir)
+        raise HTTPException(status_code=503, detail=_CGM_MODEL_LOAD_FAILED_DETAIL) from exc
+
+
+def check_cgm_forecast_readiness() -> tuple[bool, str | None]:
+    """
+    CGM 예측에 필요한 모델 파일을 한 번 로드해 보고 (준비 여부, 문제 설명)을 반환한다.
+
+    서버 시작 시 호출해 /health 에 노출한다. 엔드포인트와 같은 cache를 쓰므로 성공하면
+    첫 요청 전에 모델이 미리 로드된다. 예외를 던지지 않는다.
+    """
+    if not _CGM_FORECASTING_AVAILABLE:
+        return False, f"CGM 예측 의존성을 불러오지 못했습니다: {_CGM_FORECASTING_IMPORT_ERROR}"
+    problems: list[str] = []
+    for label, model_dir, has_enriched_artifacts in (
+        ("cgm-forecast", settings.glucose_forecast_model_dir, False),
+        ("cgm-forecast-enriched", settings.glucose_forecast_enriched_model_dir, True),
+    ):
+        try:
+            if not model_dir.exists():
+                problems.append(f"{label}: 모델 폴더가 없습니다 ({model_dir.name})")
+                continue
+            if not load_forecast_models_cached(model_dir):
+                problems.append(f"{label}: 모델 파일이 없습니다 ({model_dir.name})")
+                continue
+            if has_enriched_artifacts:
+                _read_enriched_cgm_artifacts(model_dir)
+        except Exception as exc:
+            logger.exception("CGM 예측 모델 점검 실패: %s", model_dir)
+            problems.append(
+                f"{label}: {type(exc).__name__}: {exc} (설치된 scikit-learn {_installed_sklearn_version()})"
+            )
+    return not problems, "; ".join(problems) or None
+
+
+def _installed_sklearn_version() -> str:
+    try:
+        from importlib.metadata import version
+
+        return version("scikit-learn")
+    except Exception:
+        return "unknown"
+
+
 @router.post("/classify", response_model=ClassificationResponse,
              summary="음식 이미지 분류")
 async def classify_image(
@@ -249,7 +320,7 @@ async def cgm_forecast(payload: CGMForecastRequest):
                 "scripts/prepare_ohiot1dm_cgm.py 및 scripts/train_glucose_forecaster.py를 먼저 실행하세요."
             ),
         )
-    models = load_forecast_models_cached(settings.glucose_forecast_model_dir)
+    models = _load_cgm_artifacts_or_503(load_forecast_models_cached, settings.glucose_forecast_model_dir)
     if not models:
         raise HTTPException(status_code=503, detail="CGM 예측 모델 파일을 찾지 못했습니다.")
     try:
@@ -290,21 +361,16 @@ async def cgm_forecast_enriched(payload: CGMEnrichedForecastRequest):
             status_code=503,
             detail="enriched CGM 예측 모델이 없습니다. scripts/train_glucose_forecaster.py를 먼저 실행하세요.",
         )
-    models = load_forecast_models_cached(model_dir)
+    models = _load_cgm_artifacts_or_503(load_forecast_models_cached, model_dir)
     if not models:
         raise HTTPException(status_code=503, detail="enriched CGM 예측 모델 파일을 찾지 못했습니다.")
-    metadata = load_forecast_metadata_cached(model_dir)
-    feature_columns = metadata.get("feature_columns", ENRICHED_FEATURE_COLUMNS)
+    artifacts = _load_cgm_artifacts_or_503(_read_enriched_cgm_artifacts, model_dir)
     try:
         result = forecast_from_enriched_payload(
             [reading.model_dump() for reading in payload.readings],
             payload.event_features.model_dump(),
             models,
-            calibration_table=load_range_calibrators_cached(model_dir),
-            event_classifiers=load_event_classifiers_cached(model_dir),
-            event_thresholds=load_event_thresholds_cached(model_dir),
-            interval_config=load_prediction_intervals_cached(model_dir),
-            feature_columns=feature_columns,
+            **artifacts,
         )
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
@@ -346,11 +412,10 @@ async def cgm_forecast_enriched_events(payload: CGMForecastEnrichedEventsRequest
             status_code=503,
             detail="enriched CGM 예측 모델이 없습니다. scripts/train_glucose_forecaster.py를 먼저 실행하세요.",
         )
-    models = load_forecast_models_cached(model_dir)
+    models = _load_cgm_artifacts_or_503(load_forecast_models_cached, model_dir)
     if not models:
         raise HTTPException(status_code=503, detail="enriched CGM 예측 모델 파일을 찾지 못했습니다.")
-    metadata = load_forecast_metadata_cached(model_dir)
-    feature_columns = metadata.get("feature_columns", ENRICHED_FEATURE_COLUMNS)
+    artifacts = _load_cgm_artifacts_or_503(_read_enriched_cgm_artifacts, model_dir)
     readings = [reading.model_dump() for reading in payload.readings]
     try:
         event_features = build_enriched_features_from_raw_events(
@@ -367,11 +432,7 @@ async def cgm_forecast_enriched_events(payload: CGMForecastEnrichedEventsRequest
             readings,
             event_features,
             models,
-            calibration_table=load_range_calibrators_cached(model_dir),
-            event_classifiers=load_event_classifiers_cached(model_dir),
-            event_thresholds=load_event_thresholds_cached(model_dir),
-            interval_config=load_prediction_intervals_cached(model_dir),
-            feature_columns=feature_columns,
+            **artifacts,
         )
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
